@@ -3,6 +3,8 @@
 		"id": "org.nativescript.bracket",
 		"tns-ios": {
 			"version": "1.4.1"
+		"tns-android": {
+			"version": "1.4.0"
 		}
 	},
 	"dependencies": {
