@@ -1,8 +1,9 @@
 var observable = require("data/observable");
-var HelloWorldModel = (function (_super) {
-    __extends(HelloWorldModel, _super);
-    function HelloWorldModel() {
+var SwipePageModel = (function (_super) {
+    __extends(SwipePageModel, _super);
+    function SwipePageModel() {
         _super.call(this);
+        this.set("code", "Look at my awesome code snippet");
         // this.counter = 42;
         // this.set("message", this.counter + " taps left");
     }
@@ -15,13 +16,7 @@ var HelloWorldModel = (function (_super) {
     //         this.set("message", this.counter + " taps left");
     //     }
     // };
-    function switchPage() {
-        var frameModule = require('ui/frame');
-        var topmost frameModule.topmost();
-        //will check later for logged in user
-        topmost.navigate("swipe-page");
-    }
-    return HelloWorldModel;
+    return SwipePageModel;
 })(observable.Observable);
-exports.HelloWorldModel = HelloWorldModel;
-exports.mainViewModel = new HelloWorldModel();
+exports.SwipePageModel = SwipePageModel;
+exports.swipeViewModel = new SwipePageModel();

@@ -1,4 +1,6 @@
-﻿.title {
+﻿@import {url('~/platform.css')};
+
+.title {
     font-size: 30;
     horizontal-align: center;
     margin:20;

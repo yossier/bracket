@@ -1,0 +1,5 @@
+<Page xmlns="http://www.nativescript.org/tns.xsd" loaded="pageLoaded">
+  <StackLayout orientation="vertical">
+    	<TextView editable="false" class="card" horizontalAlignment="center" text="{{code}}" height="200" width="200"/>
+  </StackLayout>
+</Page>
