@@ -1,0 +1,11 @@
+{
+	"nativescript": {
+		"id": "org.nativescript.bracket",
+		"tns-ios": {
+			"version": "1.4.1"
+		}
+	},
+	"dependencies": {
+		"tns-core-modules": "1.4.0"
+	}
+}
