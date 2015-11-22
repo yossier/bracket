@@ -28,10 +28,11 @@ function pageLoaded(args) {
 	    	panDuration++;
 	    }
 
-	    swipeCard.animate({
-		    rotate: args.deltaX/360,
-		    duration:10
-		});
+	    //trying to figure out how to have the card rotate slightly in the swipe direction
+	 	//    swipeCard.animate({
+		//     rotate: args.deltaX/360,
+		//     duration:10
+		// });
 
 
 	   	if (args.deltaX > 100) {
@@ -61,14 +62,17 @@ function pageLoaded(args) {
 	      // Pan ended.
 	      absoluteLayout.AbsoluteLayout.setTop(swipeCard, this.oldTop);
 	      absoluteLayout.AbsoluteLayout.setLeft(swipeCard, this.oldLeft);
+	      return;
 	    } else if(args.state === "cancelled") {
 	      // Pan cancelled.
 	      absoluteLayout.AbsoluteLayout.setTop(swipeCard, this.oldTop);
 	      absoluteLayout.AbsoluteLayout.setLeft(swipeCard, this.oldLeft);
+	      return;
 	    } else if(args.state === "failed") {
 	      // Pan failed.
 	      absoluteLayout.AbsoluteLayout.setTop(swipeCard, this.oldTop);
 	      absoluteLayout.AbsoluteLayout.setLeft(swipeCard, this.oldLeft);
+	      return;
 	    }
 	});
 }

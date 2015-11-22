@@ -62,14 +62,17 @@ function pageLoaded(args) {
 	      // Pan ended.
 	      absoluteLayout.AbsoluteLayout.setTop(swipeCard, this.oldTop);
 	      absoluteLayout.AbsoluteLayout.setLeft(swipeCard, this.oldLeft);
+	      return;
 	    } else if(args.state === "cancelled") {
 	      // Pan cancelled.
 	      absoluteLayout.AbsoluteLayout.setTop(swipeCard, this.oldTop);
 	      absoluteLayout.AbsoluteLayout.setLeft(swipeCard, this.oldLeft);
+	      return;
 	    } else if(args.state === "failed") {
 	      // Pan failed.
 	      absoluteLayout.AbsoluteLayout.setTop(swipeCard, this.oldTop);
 	      absoluteLayout.AbsoluteLayout.setLeft(swipeCard, this.oldLeft);
+	      return;
 	    }
 	});
 }
