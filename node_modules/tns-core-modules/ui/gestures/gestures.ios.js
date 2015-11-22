@@ -236,6 +236,24 @@ function _getSwipeData(args) {
 }
 function _getPanData(args, view) {
     var recognizer = args.ios;
+    var state = "unknown";
+    switch(recognizer.state) {
+    case UIGestureRecognizerStateBegan:
+        state = "began";
+        break;
+    case UIGestureRecognizerStateChanged:
+        state = "changed";
+        break;
+    case UIGestureRecognizerStateEnded:
+        state = "ended";
+        break;
+    case UIGestureRecognizerStateCancelled:
+        state = "cancelled";
+        break;
+    case UIGestureRecognizerStateFailed:
+        state = "failed";
+        break;
+    }
     return {
         type: args.type,
         view: args.view,
@@ -244,7 +262,8 @@ function _getPanData(args, view) {
         deltaX: recognizer.translationInView(view).x,
         deltaY: recognizer.translationInView(view).y,
         object: args.view,
-        eventName: definition.toString(args.type)
+        eventName: definition.toString(args.type),
+        state: state
     };
 }
 function _getRotationData(args) {

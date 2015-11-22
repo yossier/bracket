@@ -9,15 +9,15 @@ function pageLoaded(args) {
     var swipeCard = view.getViewById(page, "swipeCard");
 
     swipeCard.on(gestures.GestureTypes.pan, function (args) {
-		console.log("Pan deltaX:" + args.deltaX + "; deltaY:" + args.deltaY + ";");
-		if ( typeof this.oldTop == 'undefined' ) {
+		// console.log("Pan deltaX:" + args.deltaX + "; deltaY:" + args.deltaY + ";");
+		if ( typeof this.oldTop === 'undefined' ) {
 	        this.oldTop = swipeCard._oldTop;
 	        this.oldLeft = swipeCard._oldLeft;
 	       	this.panDuration = 0;
 	    }
 
 	    //if the pan is starting from origin then we need to add oldTop and oldLeft
-	    if (panDuration == 0) {
+	    if (panDuration === 0) {
 	    	absoluteLayout.AbsoluteLayout.setTop(swipeCard, this.oldTop + args.deltaY);
 	    	absoluteLayout.AbsoluteLayout.setLeft(swipeCard, this.oldLeft + args.deltaX);
 	    }
@@ -27,6 +27,13 @@ function pageLoaded(args) {
 	    	absoluteLayout.AbsoluteLayout.setLeft(swipeCard, args.deltaX);
 	    	panDuration++;
 	    }
+
+	    //trying to figure out how to have the card rotate slightly in the swipe direction
+	 	//    swipeCard.animate({
+		//     rotate: args.deltaX/360,
+		//     duration:10
+		// });
+
 
 	   	if (args.deltaX > 100) {
 	    	dialogs.alert("swipe right");
@@ -43,14 +50,26 @@ function pageLoaded(args) {
 	    } 
 
 	    //args.state is undefined for some reason??
-	    if(args.state === gestures.GestureStateTypes.began) {
+	    if(args.state === "began") {
 	      // Pan began.
-	    } else if(args.state === gestures.GestureStateTypes.changed) {
+	      // absoluteLayout.AbsoluteLayout.setTop(swipeCard, this.oldTop + args.deltaY);
+	      // absoluteLayout.AbsoluteLayout.setLeft(swipeCard, this.oldLeft + args.deltaX);
+	    } else if(args.state === "changed") {
 	      // Pan changed.
-	    } else if(args.state === gestures.GestureStateTypes.ended) {
+	      // absoluteLayout.AbsoluteLayout.setTop(swipeCard, args.deltaY);
+	      // absoluteLayout.AbsoluteLayout.setLeft(swipeCard, args.deltaX);
+	    } else if(args.state === "ended") {
 	      // Pan ended.
-	    } else if(args.state === gestures.GestureStateTypes.cancelled) {
+	      absoluteLayout.AbsoluteLayout.setTop(swipeCard, this.oldTop);
+	      absoluteLayout.AbsoluteLayout.setLeft(swipeCard, this.oldLeft);
+	    } else if(args.state === "cancelled") {
 	      // Pan cancelled.
+	      absoluteLayout.AbsoluteLayout.setTop(swipeCard, this.oldTop);
+	      absoluteLayout.AbsoluteLayout.setLeft(swipeCard, this.oldLeft);
+	    } else if(args.state === "failed") {
+	      // Pan failed.
+	      absoluteLayout.AbsoluteLayout.setTop(swipeCard, this.oldTop);
+	      absoluteLayout.AbsoluteLayout.setLeft(swipeCard, this.oldLeft);
 	    }
 	});
 }
