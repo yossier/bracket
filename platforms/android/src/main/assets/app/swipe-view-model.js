@@ -3,7 +3,7 @@ var SwipePageModel = (function (_super) {
     __extends(SwipePageModel, _super);
     function SwipePageModel() {
         _super.call(this);
-        this.set("code", "Look at my awesome code snippet!");
+        this.set("code", "Look at my awesome code snippet");
         // this.counter = 42;
         // this.set("message", this.counter + " taps left");
     }
