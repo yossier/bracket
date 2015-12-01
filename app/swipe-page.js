@@ -35,43 +35,48 @@ function pageLoaded(args) {
 		// });
 
 
-	   	if (args.deltaX > 100) {
-	    	dialogs.alert("swipe right");
-	    	absoluteLayout.AbsoluteLayout.setTop(swipeCard, this.oldTop);
-	      	absoluteLayout.AbsoluteLayout.setLeft(swipeCard, this.oldLeft);
-	      	panDuration = 0;
-	      	return;
-	    } else if (args.deltaX < -90) {
-	    	dialogs.alert("swipe left");
-	    	absoluteLayout.AbsoluteLayout.setTop(swipeCard, this.oldTop);
-	      	absoluteLayout.AbsoluteLayout.setLeft(swipeCard, this.oldLeft);
-	      	panDuration = 0;
-	      	return;
-	    } 
+	   	// if (args.deltaX > 100) {
+	    // 	dialogs.alert("swipe right");
+	    // 	absoluteLayout.AbsoluteLayout.setTop(swipeCard, this.oldTop);
+	    //   	absoluteLayout.AbsoluteLayout.setLeft(swipeCard, this.oldLeft);
+	    //   	panDuration = 0;
+	    //   	return;
+	    // } else if (args.deltaX < -90) {
+	    // 	dialogs.alert("swipe left");
+	    // 	absoluteLayout.AbsoluteLayout.setTop(swipeCard, this.oldTop);
+	    //   	absoluteLayout.AbsoluteLayout.setLeft(swipeCard, this.oldLeft);
+	    //   	panDuration = 0;
+	    //   	return;
+	    // } 
 
 	    //args.state is undefined for some reason??
-	    if(args.state === "began") {
+	    if(args.state === gestures.GestureStateTypes.began) {
 	      // Pan began.
 	      // absoluteLayout.AbsoluteLayout.setTop(swipeCard, this.oldTop + args.deltaY);
 	      // absoluteLayout.AbsoluteLayout.setLeft(swipeCard, this.oldLeft + args.deltaX);
-	    } else if(args.state === "changed") {
+	    } else if(args.state === gestures.GestureStateTypes.changed) {
 	      // Pan changed.
 	      // absoluteLayout.AbsoluteLayout.setTop(swipeCard, args.deltaY);
 	      // absoluteLayout.AbsoluteLayout.setLeft(swipeCard, args.deltaX);
-	    } else if(args.state === "ended") {
+	    } else if(args.state === gestures.GestureStateTypes.ended) {
 	      // Pan ended.
-	      absoluteLayout.AbsoluteLayout.setTop(swipeCard, this.oldTop);
-	      absoluteLayout.AbsoluteLayout.setLeft(swipeCard, this.oldLeft);
+	      // absoluteLayout.AbsoluteLayout.setTop(swipeCard, this.oldTop);
+	      // absoluteLayout.AbsoluteLayout.setLeft(swipeCard, this.oldLeft);
+	      console.log("inside ended");
+	      swipeCard.animate({
+		    translate: { x: -args.deltaX, y: -args.deltaY },
+		    duration: 400
+		  });
 	      return;
-	    } else if(args.state === "cancelled") {
+	    } else if(args.state === gestures.GestureStateTypes.cancelled) {
 	      // Pan cancelled.
-	      absoluteLayout.AbsoluteLayout.setTop(swipeCard, this.oldTop);
-	      absoluteLayout.AbsoluteLayout.setLeft(swipeCard, this.oldLeft);
-	      return;
-	    } else if(args.state === "failed") {
-	      // Pan failed.
-	      absoluteLayout.AbsoluteLayout.setTop(swipeCard, this.oldTop);
-	      absoluteLayout.AbsoluteLayout.setLeft(swipeCard, this.oldLeft);
+	      // absoluteLayout.AbsoluteLayout.setTop(swipeCard, this.oldTop);
+	      // absoluteLayout.AbsoluteLayout.setLeft(swipeCard, this.oldLeft);
+	      console.log("inside cancelled");
+	      swipeCard.animate({
+		    translate: { x: -args.deltaX, y: -args.deltaY },
+		    duration: 400
+		  });
 	      return;
 	    }
 	});
