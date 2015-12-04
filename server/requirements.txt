@@ -1,5 +1,4 @@
 Flask==0.10.1
-flask-wtf
 Werkzeug==0.9.4
 gunicorn==18.0
 MySQL-python==1.2.5

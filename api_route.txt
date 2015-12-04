@@ -1,0 +1,156 @@
+Below are the api routes that out server - database will respond to
+All responses will be in JSON format
+All POSTS, PATCHES and PUTS must provide their body in JSON Format
+
+## Ignore anything about accessTokens for now
+
+POST /users -----> creates a new user and stores
+  body:
+     {
+       email,
+       first,
+       last,
+       passHash
+     }
+  resp:
+     {
+     status,
+     userID (if successful),
+     accessToken (if successful)
+     }
+
+POST /users/authenticate
+  body:
+     {
+     email,
+     passHash,
+     }
+  resp:
+     {
+     userId,
+     acccessToken
+     }
+
+GET /users/<userID> ----> retrieves user info
+  head:
+     {
+     accessToken
+     }
+  resp:
+     {
+     first,
+     last,
+     email,
+     totalPoints
+     }
+
+PATCH /users/<userID> -----> updates basic user info
+   head:
+      {
+      accessToken
+      }
+   body:
+      {
+      password(for authentication),
+      first,
+      last,
+      email,
+      }
+   resp:
+      {
+      status
+      }
+
+DELETE /users/<userID> ------> deletes the user from out database
+   body:
+      {
+      password
+      }
+   resp:
+      {
+      status
+      }
+
+PUT /users/<userID>/password -------> updates the user's password
+   body:
+      {
+      current_password,
+      new_password
+      }
+   resp:
+      {
+      status
+      }
+
+GET /users/<userID>/points -----> get's user total score
+   head:
+      {
+      accessToken
+      }
+   resp:
+      {
+      status,
+      score
+      }
+
+PUT /users/<userID>/points -------> updates the users points
+   head:
+      {
+      accessToken
+      }
+   body:
+      {
+      points
+      }
+   resp:
+      {
+      status
+      }
+
+GET /users/<userID>/completed-challenges ------> gets the users list of completed challenges
+   head:
+      {
+      accessToken
+      }
+   resp:
+      {
+      status,
+      challengeList,
+      }
+
+POST /users/<userID>/completed-challenges/<challengeID> -----> creates a new record when a challenge is completed
+   head:
+      {
+      accessToken
+      }
+   body:
+      {
+      score
+      }
+   resp:
+      {
+      status
+      }
+
+PUT /users/<userID>/completed-challenges/<challengeID> -----> replaces previous record of a completed challenge
+   head:
+      {
+      accessToken
+      }
+   body:
+      {
+      score
+      }
+   resp:
+      {
+      status
+      }
+
+GET /challenges ---------> returns list of challenges
+
+GET /challenges/<challenge-type> -----------> returns list of challenges of type <challenge-type>
+
+GET /challenges/<challenge-type>?userid='' ------------> returns a list of challenges of the challenge-type that the user has not completed
+
+GET /challenges/<challenge-id> -----------> gets challenge info for a specific challenge
+
