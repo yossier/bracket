@@ -1,0 +1,59 @@
+@import { url('~/platform.css') };
+
+Page{
+	background-color: black;
+	font-family: Menlo;
+	font-size: 12;
+}
+
+.type{
+	color: #62d5e4;
+}
+
+.title{
+	color: #a8e100;
+}
+
+.plain{
+	color: white;
+}
+
+.number{
+	color: #ac80fa;
+}
+
+.statement{
+	color: #fb3374;
+}
+
+.indent1{
+	margin-left: 20;
+}
+
+.indent2{
+	margin-left: 40;
+}
+
+.indent3{
+	margin-left: 60;
+}
+
+.oneChar{
+	width: 18;
+	text-align: center;
+}
+
+.fiveChar{
+	width: 55;
+	text-align: center;
+}
+
+.big{
+	width: 90;
+	text-align: center;
+}
+
+WrapLayout{
+	margin-top: 4;
+}
+
