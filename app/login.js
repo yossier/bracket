@@ -17,7 +17,7 @@ exports.loaded = function(args) {
 
 exports.signIn = function() {
     alert("Signing in");
-    console.log(email.text);
+    console.log(user.email);
 }
 
 exports.register = function() {
