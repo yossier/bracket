@@ -2,9 +2,9 @@
 	<StackLayout orientation="vertical">
 		<!-- Line 1 - Function Declaration -->
 		<WrapLayout>
-			<Label cssClass = "type" text="int " />
-			<Label cssClass = "title" text="findSmallestElt"/>
-			<Label cssClass = "plain" text="("/>
+			<Label cssClass= "type" text="int " />
+			<Label cssClass= "functionTitle" text="findSmallestElt"/>
+			<Label cssClass= "plain" text="("/>
 			<Label cssClass="type" text="int"/>
 			<Label cssClass="plain" text=" array[], " />
 			<Label cssClass="type" text="int"/>

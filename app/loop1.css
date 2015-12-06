@@ -10,7 +10,7 @@ Page{
 	color: #62d5e4;
 }
 
-.title{
+.functionTitle{
 	color: #a8e100;
 }
 
@@ -51,6 +51,17 @@ Page{
 .big{
 	width: 90;
 	text-align: center;
+}
+
+TextField{
+	background-color: white;
+	border-width: 1;
+	height: 18;
+	margin-left: 0;
+	margin-right: 0;
+	margin-top: 0;
+	margin-bottom: 0;
+	padding: 0;
 }
 
 WrapLayout{
