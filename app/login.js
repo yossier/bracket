@@ -21,7 +21,7 @@ exports.signIn = function() {
 }
 
 exports.register = function() {
-    alert("Registering");
+   // alert("moving");
     var topmost = frameModule.topmost();
-    topmost.navigate("register");    
+    topmost.navigate("loop2");    
 }
