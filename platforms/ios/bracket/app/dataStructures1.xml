@@ -1,0 +1,88 @@
+<Page loaded="loaded">
+	<StackLayout orientation="vertical">
+		<!-- Line 1 - Function Declaration -->
+		<WrapLayout>
+			<Label cssClass= "type" text="class " />
+			<Label cssClass= "plain" text="IntStack{"/>
+		</WrapLayout>
+		<WrapLayout>
+			<TextField id="IS" cssClass="big indent1" hint="?????" text="{{ IS }}"/>
+			<Label cssClass="plain" text="(){ top = "/>
+			<Label cssClass="number" text="0"/>
+			<Label cssClass="plain" text=";}"/>
+		</WrapLayout>
+		<WrapLayout>
+			<TextField id="Tvoid" cssClass="fiveChar indent1" hint="????" text="{{ Tvoid }}"/>
+			<Label cssClass="plain" text=" push("/>
+			<Label cssClass="type" text="int "/>
+			<Label cssClass="plain" text="pushVal){"/>
+		</WrapLayout>
+		<WrapLayout>
+			<Label cssClass="statement indent2" text="if "/>
+			<Label cssClass="plain" text="(top &#8805; "/>
+			<TextField id="topVal" cssClass="big" hint="?????" text = "{{ topVal }}"/>
+			<Label cssClass="plain" text="){"/>
+		</WrapLayout>
+		<WrapLayout>
+			<Label cssClass="statement indent3" text="return"/>
+			<Label cssClass="plain" text=";"/>
+			<Label cssClass="comment" text="//reached capacity" />
+		</WrapLayout>
+		<WrapLayout>
+			<Label cssClass="plain indent2" text="}"/>
+		</WrapLayout>
+		<WrapLayout>
+			<Label cssClass="plain indent2" text="array["/>
+			<TextField id="arrIndex" cssClass="fiveChar" hint="?????" text = "{{ arrIndex }}"/>
+			<Label cssClass="plain" text="] = "/>
+			<TextField id="arrIndexEq" cssClass="big" hint="?????" text = "{{ arrIndexEq }}"/>
+		</WrapLayout>
+		<WrapLayout>
+			<Label cssClass="plain indent1" text="}"/>
+		</WrapLayout>
+		<WrapLayout>
+			<Label cssClass="type indent1" text="int "/>
+			<Label cssClass="functionTitle" text="pop"/>
+			<Label cssClass="plain" text="(){"/>
+		</WrapLayout>
+		<WrapLayout>
+			<Label cssClass="statement indent2" text="if "/>
+			<Label cssClass="plain" text="(top &#61;&#61; "/>
+			<Label cssClass="number" text="0"/>
+			<Label cssClass="plain" text="){"/>
+			<Label cssClass="statement" text="return "/>
+			<Label cssClass="plain" text="-"/>
+			<Label cssClass="number" text="1"/>
+			<Label cssClass="plain" text="};"/>
+		</WrapLayout>
+		<WrapLayout>
+			<Label cssClass="statement indent2" text="return "/>
+			<Label cssClass="plain" text="array["/>
+			<TextField id="rarr" cssClass="fiveChar" hint="?????" text= "{{ rarr }}"/>
+			<Label cssClass="plain" text="];"/>
+		</WrapLayout>
+		<WrapLayout>
+			<Label cssClass="plain indent1" text="}"/>
+		</WrapLayout>
+		<WrapLayout>
+			<Label cssClass="statement" text="private:"/>
+		</WrapLayout>
+		<WrapLayout>
+			<TextField id="priv" cssClass="fiveChar indent1" hint="?????" text="{{ priv }}"/>
+			<Label cssClass="plain" text=" array["/>
+			<Label cssClass="number" text="10"/>
+			<Label cssClass="plain" text=" ];"/>
+		</WrapLayout>
+		<WrapLayout>
+			<Label cssClass="type indent1" text="int "/>
+			<Label cssClass="plain" text="maxSize &#61; "/>
+			<label cssClass="number" text="10"/>
+			<Label cssClass="plain" text=";"/>
+		</WrapLayout>
+		<WrapLayout>
+			<Label cssClass="plain" text=" };"/>
+		</WrapLayout>
+		<Button text="Print!" tap="print"/>
+	</StackLayout>
+
+</Page>
