@@ -1,0 +1,17 @@
+@import { url('~/platform.css') };
+
+Page{
+	background-color: black;
+}
+
+.type{
+	color: blue;
+}
+
+.title{
+	color: green;
+}
+
+.plain{
+	color: white;
+}
