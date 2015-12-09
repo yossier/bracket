@@ -1,0 +1,18 @@
+<Page loaded="pageLoaded">
+ <TabView id="homeTabView">
+<!--    <TabView.items>
+     <TabViewItem title="Home">
+       <TabViewItem.view>
+          <Label text="Label in Tab1" />
+       </TabViewItem.view>
+     </TabViewItem>
+     <TabViewItem title="Completed">
+       <TabViewItem.view>
+          <Label text="Label in Tab2" />
+       </TabViewItem.view>
+     </TabViewItem>
+     <TabViewItem title="Profile">
+     </TabViewItem>
+   </TabView.items> -->
+ </TabView>
+</Page>

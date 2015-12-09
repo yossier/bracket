@@ -1,17 +1,9 @@
 <Page>
-	<StackLayout verticalAlignment="center" horizontalAlignment="center" orientation="vertical">
+	<StackLayout orientation="vertical">
 		<!-- <Image src="~/Downloads/download.jpeg" stretch ="none" / >  -->
-		<Label id="nameVal" text="Becca Lesser"/>
-		<Label id="emailAddr" text="raless&#64;umich.edu"/>
-		<Label cssClass="points" text="Points:"/>
-		<Label cssClass="points" id="pointNum" text="110"/>
-		<WrapLayout>
-			<Label cssClass="challenges" text="Challenges Attempted: "/>
-			<Label id="attemptedBox" cssClass="challenges" text="{{ attempted }}"/>
-		</WrapLayout>
-		<WrapLayout>
-			<Label cssClass="challenges" text="Challenges Completed: "/>
-			<Label id="completedBox" cssClass="challenges" text="{{ completed }}"/>
-		</WrapLayout>
+		<Label text="raless&#64;umich.edu"/>
+		<Label text="Points:"/>
+		<Label text="110"/>
+		<Button text="Print!" tap="print"/>
 	</StackLayout>
 </Page>

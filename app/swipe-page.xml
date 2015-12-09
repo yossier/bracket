@@ -1,9 +1,28 @@
 <Page xmlns="http://www.nativescript.org/tns.xsd" loaded="pageLoaded">
-<!--   <StackLayout orientation="vertical"> -->
     	<AbsoluteLayout class="cardContainer" top="0" left="0">
-    		<TextView editable="false" id="swipeCardPrevious" class="card" left="-165" top="127.5"  text="{{codePrevious}}" height="200" width="200" />
+    		<!-- <TextView editable="false" id="swipeCardPrevious" class="card" left="-165" top="127.5"  text="{{codePrevious}}" height="200" width="200" />
     		<TextView editable="false" id="swipeCard" class="card" left="62.5" top="102.5"  text="{{code}}" height="250" width="250" />
-    		<TextView editable="false" id="swipeCardNext" class="card" left="340" top="127.5"  text="{{codeNext}}" height="200" width="200" />
+    		<TextView editable="false" id="swipeCardNext" class="card" left="340" top="127.5"  text="{{codeNext}}" height="200" width="200" /> -->
     	</AbsoluteLayout>
-<!--   </StackLayout> -->
 </Page>
+<!--  <Page loaded="pageLoaded">
+ <ListView id="listView1" items="{{ challenges }}">
+    <ListView.itemTemplate>
+      <Label id="label1" text="{{ name }}"  />
+    </ListView.itemTemplate>
+  </ListView>
+ </Page> -->
+
+ <Page loaded="pageLoaded">
+ <ScrollView>
+   <Repeater items="{{ challenges }}">
+     <Repeater.itemsLayout>
+        <WrapLayout orientation="vertical"/>
+     </Repeater.itemsLayout>
+     <Repeater.itemTemplate>
+        <Label text="{{ name }}" margin="10" />
+        <AbsoluteLayout margin="10"/>
+     </Repeater.itemTemplate>
+   </Repeater>
+  </ScrollView>
+ </Page>
