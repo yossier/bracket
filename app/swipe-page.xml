@@ -1,7 +1,9 @@
 <Page xmlns="http://www.nativescript.org/tns.xsd" loaded="pageLoaded">
-  <StackLayout orientation="vertical">
-    	<AbsoluteLayout class="cardContainer" height="300" width="300">
-    		<TextView editable="false" id="swipeCard" class="card" left="50" top="40"  text="{{code}}" height="200" width="200" />
+<!--   <StackLayout orientation="vertical"> -->
+    	<AbsoluteLayout class="cardContainer" top="0" left="0">
+    		<TextView editable="false" id="swipeCardPrevious" class="card" left="-165" top="127.5"  text="{{codePrevious}}" height="200" width="200" />
+    		<TextView editable="false" id="swipeCard" class="card" left="62.5" top="102.5"  text="{{code}}" height="250" width="250" />
+    		<TextView editable="false" id="swipeCardNext" class="card" left="340" top="127.5"  text="{{codeNext}}" height="200" width="200" />
     	</AbsoluteLayout>
-  </StackLayout>
+<!--   </StackLayout> -->
 </Page>

@@ -2,3 +2,8 @@
 	background-color: black;
 	color: #00FF00;
 }
+
+.cardContainer {
+	top:0;
+	left: 0;
+}
