@@ -38,9 +38,11 @@ Page{
 }
 
 .pts{
+	margin-top: 5;
 	font-size: 15;
 	color: #a6a6a6;
 }
+
 
 .lname{
 	margin-top: 20;
