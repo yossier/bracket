@@ -1,0 +1,7 @@
+<Page xmlns="http://www.nativescript.org/tns.xsd" loaded="pageLoaded">
+  <StackLayout orientation="vertical">
+    	<AbsoluteLayout class="cardContainer" height="300" width="300">
+    		<TextView editable="false" id="swipeCard" class="card" left="50" top="40"  text="{{code}}" height="200" width="200" />
+    	</AbsoluteLayout>
+  </StackLayout>
+</Page>

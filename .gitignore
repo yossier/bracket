@@ -1,3 +1,7 @@
+#NativeScript
+/platforms
+/node_modules
+
 # OSX
 #
 .DS_Store
@@ -32,3 +36,6 @@ local.properties
 #
 node_modules/
 npm-debug.log
+
+#emacs
+*~

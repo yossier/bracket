@@ -1,0 +1,9 @@
+<Page>
+	<StackLayout orientation="vertical">
+		<!-- <Image src="~/Downloads/download.jpeg" stretch ="none" / >  -->
+		<Label text="raless&#64;umich.edu"/>
+		<Label text="Points:"/>
+		<Label text="110"/>
+		<Button text="Print!" tap="print"/>
+	</StackLayout>
+</Page>

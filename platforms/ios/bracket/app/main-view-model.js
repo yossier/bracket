@@ -17,7 +17,7 @@ var HelloWorldModel = (function (_super) {
     // };
     function switchPage() {
         var frameModule = require('ui/frame');
-        var topmost frameModule.topmost();
+        var topmost = frameModule.topmost();
         //will check later for logged in user
         topmost.navigate("swipe-page");
     }
