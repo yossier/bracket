@@ -1,10 +1,9 @@
-<Page loaded="loaded">
+<Page xmlns="http://www.nativescript.org/tns.xsd" loaded="loaded" actionBarHidden="true">
 	<ScrollView>
-		<StackLayout orientation ="vertical">
-			
-			<GridLayout columns="*, *, *, *" rows="auto, auto, auto, auto, auto, auto, auto, auto, auto, auto, auto, auto, auto, auto, auto" verticalAlignment="left" horizontalAlignment="center">
-				<Border cssClass="pageHead" row="0" colSpan="4">
-					<Label id="navHeader" text="&#60; Choose A Challenge &#62;" horizontalAlignment="center" cssId="banner"/>
+		<StackLayout orientation ="vertical" verticalAlignment="stretch">
+			<GridLayout columns="*, *, *, *" rows="auto, auto, auto, auto, auto, auto, auto, auto, auto, auto, auto, auto, auto, auto, auto, auto" verticalAlignment="stretch" horizontalAlignment="stretch">
+				<Border cssClass="pageHead" row="0" colSpan="4" horizontalAlignment="stretch">
+					<Label id="navHeader" text="&#60; Choose A Challenge &#62;" horizontalAlignment="stretch" cssId="banner"/>
 				</Border>
 				<Border cssClass="listElts" row="1" col="0" rowSpan="2" colSpan="4"></Border>
 	    			<Label tap="recursion" row="1" cssClass="boxHeader" colSpan="3" text="Recursion"/>
@@ -31,18 +30,20 @@
 					<Label cssClass="spacer" text=" " row="9" colSpan="4"/>
 
 				<Border cssClass="listElts" row="10" col="0" rowSpan="2" colSpan="4"></Border>
-	    			<Label tap="oo" cssClass="boxHeader" row="10" colSpan="3" text="Object-Oriented Design"/>
+	    			<Label tap="loops" cssClass="boxHeader" row="10" colSpan="3" text="Loops"/>
 	    			<Button colSpan="1" rowSpan="2" row="10" col="4" text="&#62;" cssClass="collapseButton" verticalAlignment="center"/>
-	    			<Label tap="oo" cssClass="description" text="description" row="11" colSpan="2"/>
+	    			<Label tap="loops" cssClass="description" text="description" row="11" colSpan="2"/>
 
 				<Border cssClass="listElts" row="12" col="0" colSpan="4"></Border>
 					<Label cssClass="spacer" text=" " row="12" colSpan="4"/>
 
 				<Border cssClass="listElts" row="13" col="0" rowSpan="2" colSpan="4"></Border>
-	    			<Label tap="bigO" cssClass="boxHeader" row="13" colSpan="3" text="Big O Notation"/>
+	    			<Label tap="sorts" cssClass="boxHeader" row="13" colSpan="3" text="Sorts"/>
 	    			<Button colSpan="1" rowSpan="2" row="13" col="4" text="&#62;" cssClass="collapseButton" verticalAlignment="center"/>
-	    			<Label tap="bigO" cssClass="description" text="description" row="14" colSpan="2"/>
-
+	    			<Label tap="sorts" cssClass="description" text="description" row="14" colSpan="2"/>
+				
+				<Border row="15" col="0" colSpan="4"></Border>
+					<Label cssClass="spacer" text=" " row="15" colSpan="4"/>
 
 	    	</GridLayout>
 
