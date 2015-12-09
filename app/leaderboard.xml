@@ -1,0 +1,37 @@
+<Page xmlns="http://www.nativescript.org/tns.xsd" loaded="loaded" actionBarHidden="true">
+	<ScrollView>
+	  <StackLayout orientation="vertical">
+			<Label horizontalAlignment="stretch" id="navHeader" text="&#60; Leader Board &#62;"/>
+	    	<GridLayout columns="*, *" rows="*, *" verticalAlignment="left" horizontalAlignment="stretch">
+	    		<Border cssClass="elts" row="0" col="0" rowSpan="2" colSpan="2"></Border>
+	    			<Label cssClass="rank" text="&#35;1" row="0" rowSpan="2" col="0"/>
+	    			<Label horizontalAlign="left" cssClass="lname" text="Becca Lesser" row="0" col="1"/>
+	    			<Label cssClass="pts" text="Points: 35" row="1" col="1"/>
+			</GridLayout>
+			<GridLayout columns="*, *" rows="*, *" verticalAlignment="left" horizontalAlignment="stretch">
+	    		<Border cssClass="elts" row="0" col="0" rowSpan="2" colSpan="2"></Border>
+	    			<Label cssClass="rank" text="&#35;2" row="0" rowSpan="2" col="0"/>
+	    			<Label horizontalAlign="left" cssClass="lname" text="Becca Lesser" row="0" col="1"/>
+	    			<Label cssClass="pts" text="Points: 35" row="1" col="1"/>
+			</GridLayout>
+			<GridLayout columns="*, *" rows="*, *" verticalAlignment="left" horizontalAlignment="stretch">
+	    		<Border cssClass="elts" row="0" col="0" rowSpan="2" colSpan="2"></Border>
+	    			<Label cssClass="rank" text="&#35;3" row="0" rowSpan="2" col="0"/>
+	    			<Label horizontalAlign="left" cssClass="lname" text="Becca Lesser" row="0" col="1"/>
+	    			<Label cssClass="pts" text="Points: 35" row="1" col="1"/>
+			</GridLayout>
+			<GridLayout columns="*, *" rows="*, *" verticalAlignment="left" horizontalAlignment="stretch">
+	    		<Border cssClass="elts" row="0" col="0" rowSpan="2" colSpan="2"></Border>
+	    			<Label cssClass="rank" text="&#35;4" row="0" rowSpan="2" col="0"/>
+	    			<Label horizontalAlign="left" cssClass="lname" text="Becca Lesser" row="0" col="1"/>
+	    			<Label cssClass="pts" text="Points: 35" row="1" col="1"/>
+			</GridLayout>
+			<GridLayout columns="*, *" rows="*, *" verticalAlignment="left" horizontalAlignment="stretch">
+	    		<Border cssClass="elts" row="0" col="0" rowSpan="2" colSpan="2"></Border>
+	    			<Label cssClass="rank" text="&#35;5" row="0" rowSpan="2" col="0"/>
+	    			<Label horizontalAlign="left" cssClass="lname" text="Becca Lesser" row="0" col="1"/>
+	    			<Label cssClass="pts" text="Points: 35" row="1" col="1"/>
+			</GridLayout>
+	  </StackLayout>
+	</ScrollView>
+</Page>
