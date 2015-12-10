@@ -1,4 +1,5 @@
 <Page loaded="loaded">
+  <ScrollView>
 	<StackLayout orientation="vertical">
 		<!-- Line 1 - Function Declaration -->
 		<WrapLayout>
@@ -79,4 +80,5 @@
 		</WrapLayout>
 		<Button text="Print!" tap="print"/>
 	</StackLayout>
+</ScrollView>
 </Page>
