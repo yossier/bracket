@@ -1,0 +1,119 @@
+<Page loaded="loaded">
+	<StackLayout orientation="vertical">
+		<WrapLayout>
+            <Label cssClass="description1 indent0" text="/* GOAL: implement a binary search."/>
+        </WrapLayout>
+        <WrapLayout> 
+            <Label cssClass="description2 indent0" text="* return array index val was found at."/>
+        </WrapLayout>
+        <WrapLayout>
+            <Label cssClass="description2 indent0" text="* if val not found, return -1."/>
+        </WrapLayout>
+        <WrapLayout>
+            <Label cssClass="description3 indent0" text="*/"/>
+        </WrapLayout>
+		<!-- Line 1 - Function Declaration -->
+		<WrapLayout>
+			<Label cssClass="type" text="int "/>
+			<Label cssClass="functionTitle" text="binarySearch"/>
+			<Label cssClass="type" text="int"/>
+			<Label cssClass="plain" text=" arr[], "/>
+			<Label cssClass="type" text="int"/>
+			<Label cssClass="plain" text=" size, "/>
+			<Label cssClass="type" text="int"/>
+			<Label cssClass="plain" text=" val){"/>
+		</WrapLayout>
+		<!-- Line 2 - declare indexFound -->
+		<WrapLayout>
+			<Label cssClass="type indent1" text="int"/>
+			<Label cssClass="plain" text=" indexFound = "/>
+			<Label cssClass="number" text="-1"/>
+			<Label cssClass="plain" text=";"/>
+		</WrapLayout>
+		<!-- Line 3 - declare others -->
+		<WrapLayout>
+			<Label cssClass="type indent1" text="int "/>
+			<Label cssClass="plain" text="low = "/>
+			<Label cssClass="number" text="0"/>
+			<Label cssClass="plain" text=", high = size - "/>
+			<Label cssClass="number" text="1"/>
+			<Label cssClass="plain" text=", mid = "/>
+			<Label cssClass="number" text="0"/>
+			<Label cssClass="plain" text=";"/>
+		</WrapLayout>
+		<!-- Line 2 - while loop -->
+		<WrapLayout>
+			<Label cssClass="statement indent1" text="while"/>
+			<Label cssClass="plain" text="(low "/>
+			<TextField id="lessThanEqual" cssClass="twoChar" hint="??" text= "{{ lessThanEqual }}"/>
+			<Label cssClass="plain" text=" high){"/>
+		</WrapLayout>
+		<WrapLayout>
+			<Label cssClass="plain indent2" text="mid = ("/>
+			<TextField id="lowForMid" cssClass="fiveChar" hint="????" text= "{{ lowForMid }}"/>
+			<Label cssClass="plain" text=" + "/>
+			<TextField id="highForMid" cssClass="fiveChar" hint="????" text= "{{ highForMid }}"/>
+			<Label cssClass="plain" text=") / "/>
+			<Label cssClass="number" text="2"/>
+			<Label cssClass="plain" text=";"/>
+		</WrapLayout>
+		<!-- Line 3 - If statement 1 -->
+		<WrapLayout>
+			<Label cssClass="statement indent2" text="if "/>
+			<Label cssClass="plain" text="(val == "/>
+			<TextField id="arrayMid" cssClass="big" hint="??????????" text= "{{ arrayMid }}"/>
+			<Label cssClass="plain" text="){"/>
+		</WrapLayout>
+		<!-- Line 4 - return for base case 1 -->
+		<WrapLayout>
+			<Label cssClass="statement indent3" text= "return "/>
+			<Label cssClass="plain" text="indexFound;"/>
+		</WrapLayout>
+		<!-- Line 5 - End Bracket If1 -->
+		<WrapLayout>
+			<Label cssClass="plain indent2" text="}"/>
+		</WrapLayout>
+		<!-- Line 6 - else statement-->
+		<WrapLayout>
+			<Label cssClass="statement indent2" text="else if"/>
+			<Label cssClass="plain" text="(val < array[mid]){"/>
+		</WrapLayout>
+
+		<WrapLayout>
+			<Label cssClass="plain indent3" text="high = "/>
+			<TextField id="highSet" cssClass="big" hint="???????" text= "{{ highSet }}"/>
+			<Label cssClass="plain" text=";"/>
+		</WrapLayout>
+		<WrapLayout>
+			<Label cssClass="plain indent2" text="}"/>
+		</WrapLayout>
+
+		<WrapLayout>
+			<Label cssClass="statement indent2" text="else"/>
+			<Label cssClass="plain" text="{"/>
+		</WrapLayout>
+		<!-- Line 7 - Return for else-->
+		<WrapLayout>
+			<TextField id="lowSet" cssClass="fiveChar indent3" hint="?????" text= "{{ lowSet }}"/>
+			<Label class="plain" text=" = mid + "/>
+			<Label cssClass="number" text="1"/>
+			<Label class="plain" text=";"/>
+		</WrapLayout>
+		<!-- Line 8 close paren else --> 
+ 		<WrapLayout>
+			<Label cssClass="plain indent2" text="}"/>
+		</WrapLayout>
+		<!-- Line 9 close paren while --> 
+ 		<WrapLayout>
+			<Label cssClass="plain indent1" text="}"/>
+		</WrapLayout>
+		<!-- Line 10 - Return for findGCD -->
+		<WrapLayout>
+			<Label cssClass="statement indent1" text= "return "/>
+			<Label cssClass="plain" text="indexFound;"/>
+		</WrapLayout>
+
+		<Button text="Print!" tap="print"/>
+	</StackLayout>
+
+</Page>

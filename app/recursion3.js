@@ -2,14 +2,12 @@ var observableModule = require("data/observable");
 
 // inside brackets of text fields - data binding
 var response = new observableModule.Observable({
-    conditioni: "",
-    conditionj1: "",
-    conditionj2: "",
-    rowVal: "",
-    colVal: "",
-    equality: "",
-    returnVal1: "",
-    returnVal2: ""
+    whileCondition: "",
+    ifCondition: "",
+    baseFirstParam: "",
+    elseFirstParam: "",
+    elseSecondParam: "",
+    returnFunc: "",
 });
 
 var frameModule = require("ui/frame");
@@ -23,22 +21,18 @@ exports.loaded = function(args) {
 
 
 exports.print = function() {
-    var conditioni = (response.conditioni).replace(/ /g,'');
-    var conditionj1 = (response.conditionj1).replace(/ /g,'');
-    var conditionj2 = (response.conditionj2).replace(/ /g,'');
-    var rowVal = (response.rowVal).replace(/ /g,'');
-    var colVal = (response.colVal).replace(/ /g,'');
-    console.log(rowVal);
-    console.log(colVal);
-    var equality = (response.equality).replace(/ /g,'');
-    var returnVal1 = (response.returnVal1).replace(/ /g,'');
-    var returnVal2 = (response.returnVal2).replace(/ /g,'');
+    var whileCondition = (response.whileCondition).replace(/ /g,'');
+    var ifCondition = (response.ifCondition).replace(/ /g,'');
+    var baseFirstParam = (response.baseFirstParam).replace(/ /g,'');
+    var elseFirstParam = (response.elseFirstParam).replace(/ /g,'');
+    var elseSecondParam = (response.elseSecondParam).replace(/ /g,'');
+    var returnFunc = (response.returnFunc).replace(/ /g,'');
 
-    var names = ["conditioni", "conditionj1", "conditionj2", "rowVal", "colVal", "equality", "returnVal1", "returnVal2"];
-    var vals = [conditioni, conditionj1, conditionj2, rowVal, colVal, equality, returnVal1, returnVal2];
-    var correct = [10, 0, 10, "i", "j", "findval", "i", -1];
+    var names = ["whileCondition", "ifCondition", "baseFirstParam", "elseFirstParam", "elseSecondParam", "returnFunc"];
+    var vals = [whileCondition, ifCondition, baseFirstParam, elseFirstParam, elseSecondParam, returnFunc];
+    var correct = ["x!=y", ">", "x-y", "x", "y-x", "x"];
     var numCorrect = 0;
-    
+
     for (var i = 0; i < names.length; i++){
     	if (vals[i].toLowerCase() != correct[i] || vals[i].length == 0){
     		page.addCss("#" + names[i] + " {border-color: red; background-color: #ffcccc}");

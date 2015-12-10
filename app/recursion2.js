@@ -2,14 +2,9 @@ var observableModule = require("data/observable");
 
 // inside brackets of text fields - data binding
 var response = new observableModule.Observable({
-    conditioni: "",
-    conditionj1: "",
-    conditionj2: "",
-    rowVal: "",
-    colVal: "",
-    equality: "",
-    returnVal1: "",
-    returnVal2: ""
+    ifCondition: "",
+    tempSet: "",
+    factCall: "",
 });
 
 var frameModule = require("ui/frame");
@@ -23,22 +18,15 @@ exports.loaded = function(args) {
 
 
 exports.print = function() {
-    var conditioni = (response.conditioni).replace(/ /g,'');
-    var conditionj1 = (response.conditionj1).replace(/ /g,'');
-    var conditionj2 = (response.conditionj2).replace(/ /g,'');
-    var rowVal = (response.rowVal).replace(/ /g,'');
-    var colVal = (response.colVal).replace(/ /g,'');
-    console.log(rowVal);
-    console.log(colVal);
-    var equality = (response.equality).replace(/ /g,'');
-    var returnVal1 = (response.returnVal1).replace(/ /g,'');
-    var returnVal2 = (response.returnVal2).replace(/ /g,'');
+    var ifCondition = (response.ifCondition).replace(/ /g,'');
+    var tempSet = (response.tempSet).replace(/ /g,'');
+    var factCall = (response.factCall).replace(/ /g,'');
 
-    var names = ["conditioni", "conditionj1", "conditionj2", "rowVal", "colVal", "equality", "returnVal1", "returnVal2"];
-    var vals = [conditioni, conditionj1, conditionj2, rowVal, colVal, equality, returnVal1, returnVal2];
-    var correct = [10, 0, 10, "i", "j", "findval", "i", -1];
+    var names = ["ifCondition", "tempSet", "factCall"];
+    var vals = [ifCondition, tempSet, factCall];
+    var correct = ["<=", "temp", "num"];
     var numCorrect = 0;
-    
+
     for (var i = 0; i < names.length; i++){
     	if (vals[i].toLowerCase() != correct[i] || vals[i].length == 0){
     		page.addCss("#" + names[i] + " {border-color: red; background-color: #ffcccc}");

@@ -30,6 +30,10 @@ Page{
 	color: #e5e07f;
 }
 
+.indent0{
+	margin-left: 5;
+}
+
 .indent1{
 	margin-left: 20;
 }
@@ -51,6 +55,11 @@ Page{
 	text-align: center;
 }
 
+.twoChar{
+	width: 30;
+	text-align: center;
+}
+
 .fiveChar{
 	width: 55;
 	text-align: center;
@@ -58,6 +67,29 @@ Page{
 
 .big{
 	width: 90;
+	text-align: center;
+}
+
+.description1{
+	padding-top: 12;
+	color: #9bc4e3;
+	text-align: center;
+}
+
+.description2{
+	color: #9bc4e3;
+	text-align: center;
+}
+
+.description3{
+	padding-bottom: 36;
+	color: #9bc4e3;
+	text-align: center;
+}
+.descriptionSingle{
+	padding-top: 12;
+	padding-bottom: 36;
+	color: #9bc4e3;
 	text-align: center;
 }
 

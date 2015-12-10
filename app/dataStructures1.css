@@ -65,6 +65,29 @@ Page{
 	color: #989581
 }
 
+.description1{
+	padding-top: 12;
+	color: #9bc4e3;
+	text-align: center;
+}
+
+.description2{
+	color: #9bc4e3;
+	text-align: center;
+}
+
+.description3{
+	padding-bottom: 36;
+	color: #9bc4e3;
+	text-align: center;
+}
+.descriptionSingle{
+	padding-top: 12;
+	padding-bottom: 36;
+	color: #9bc4e3;
+	text-align: center;
+}
+
 TextField{
 	background-color: white;
 	border-width: 1;

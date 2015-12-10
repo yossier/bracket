@@ -1,0 +1,77 @@
+<Page loaded="loaded">
+	<StackLayout orientation="vertical">
+		<WrapLayout>
+            <Label cssClass="description1 indent0" text="/* GOAL: compute nth fibonacci number"/>
+        </WrapLayout>
+        <WrapLayout> 
+            <Label cssClass="description2 indent0" text="* in the fibonacci sequence."/>
+        </WrapLayout>
+        <WrapLayout>
+            <Label cssClass="description2 indent0" text="* n is passed in as a parameter."/>
+        </WrapLayout>
+        <WrapLayout>
+            <Label cssClass="description3 indent0" text="*/"/>
+        </WrapLayout>
+		<!-- Line 1 - Function Declaration -->
+		<WrapLayout>
+			<Label cssClass="type" text="int " />
+			<Label cssClass="functionTitle" text="fib"/>
+			<Label cssClass="plain" text="("/>
+			<Label cssClass="type" text="int"/>
+			<Label cssClass="plain" text=" n){"/>
+		</WrapLayout>
+		<!-- Line 2 - base case 1 if -->
+		<WrapLayout>
+			<Label cssClass="statement indent1" text="if "/>
+			<Label cssClass="plain" text="("/>
+			<TextField id="baseCase1" cssClass="fiveChar" hint="?????" text= "{{ baseCase1 }}"/>
+			<Label cssClass="plain" text="){"/>
+		</WrapLayout> -->
+		<!-- Line 3 - return for base case 1 -->
+		<WrapLayout>
+			<Label cssClass="statement indent2" text= "return "/>
+			<Label cssClass="number" text="0"/>
+			<Label class="plain" text=";"/>
+		</WrapLayout>
+		<!-- Line 4 - End Bracket If1 -->
+		<WrapLayout>
+			<Label cssClass="plain indent1" text="}"/>
+		</WrapLayout>
+		<!-- Line 5 - base case 2 if -->
+		<WrapLayout>
+			<Label cssClass="statement indent1" text="if "/>
+			<Label cssClass="plain" text="(n == "/>
+			<Label cssClass="number" text="1"/>
+			<Label cssClass="plain" text="){"/>
+		</WrapLayout>
+		<!-- Line 6 - return for base case 2 -->
+		<WrapLayout>
+			<Label cssClass="statement indent2" text="return "/>
+			<TextField id="returnBase2" cssClass="oneChar" hint="??" text="{{ returnBase2 }}"/>
+			<Label cssClass="plain" text=";"/>
+		</WrapLayout>
+		<!-- Line 6 - End Bracket If2 -->
+		<WrapLayout>
+			<Label cssClass="plain indent1" text="}"/>
+		</WrapLayout>
+		<!-- Line 7 - Return for fib -->
+		<WrapLayout>
+			<Label cssClass="statement indent1" text= "return "/>
+			<TextField id="fibCall" cssClass="fiveChar" hint="????" text="{{ fibCall }}"/>
+			<Label cssClass="plain" text="(n - "/>
+			<Label cssClass="number" text="1"/>
+			<Label cssClass="plain" text=") + "/>
+			<Label cssClass="functionTitle" text="fib"/>
+			<Label cssClass="plain" text="("/>
+			<TextField id="fibParam2" cssClass="fiveChar" hint="????" text="{{ fibParam2 }}"/>
+			<Label cssClass="plain" text=");"/>
+		</WrapLayout>
+		<!-- Line 9 - End Bracket Function -->
+		<WrapLayout>
+			<Label cssClass="plain" text="}"/>
+		</WrapLayout>
+		
+		<Button text="Print!" tap="print"/>
+	</StackLayout>
+
+</Page>
