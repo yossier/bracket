@@ -1,4 +1,5 @@
 <Page loaded="loaded">
+  <ScrollView>
 	<StackLayout orientation="vertical">
 		<WrapLayout>
             <Label cssClass="descriptionSingle indent0" text="/* GOAL: find the smallest elt in array */"/>
@@ -66,4 +67,5 @@
 		</WrapLayout>
 		<Button text="Print!" tap="print"/>
 	</StackLayout>
+</ScrollView>
 </Page>

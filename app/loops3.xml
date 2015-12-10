@@ -1,4 +1,5 @@
 <Page loaded="loaded">
+  <ScrollView>
 	<StackLayout orientation="vertical">
 		<WrapLayout>
             <Label cssClass="description1 indent0" text="/* GOAL: search array for increasing pods."/>
@@ -73,4 +74,5 @@
 		</WrapLayout>
 		<Button text="Print!" tap="print"/>
 	</StackLayout>
+</ScrollView>
 </Page>

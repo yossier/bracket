@@ -1,14 +1,15 @@
 <Page loaded="loaded">
+  <ScrollView>
 	<StackLayout orientation="vertical">
 		<WrapLayout>
-            <Label cssClass="description1 indent0" text="/* GOAL: Compute the factorial of num."/>
-        </WrapLayout>
-        <WrapLayout> 
-            <Label cssClass="description2 indent0" text="* Hint: the factorial of 5 is (5*4*3*2*1)"/>
-        </WrapLayout>
-        <WrapLayout>
-            <Label cssClass="description3 indent0" text="*/"/>
-        </WrapLayout>
+      <Label cssClass="description1 indent0" text="/* GOAL: Compute the factorial of num."/>
+    </WrapLayout>
+    <WrapLayout> 
+      <Label cssClass="description2 indent0" text="* Hint: the factorial of 5 is (5*4*3*2*1)"/>
+    </WrapLayout>
+    <WrapLayout>
+      <Label cssClass="description3 indent0" text="*/"/>
+    </WrapLayout>
 		<!-- Line 1 - Function Declaration -->
 		<WrapLayout>
 			<Label cssClass="type" text="int " />
@@ -32,7 +33,7 @@
 			<Label cssClass="plain" text=" "/>
 			<Label cssClass="number" text="1"/>
 			<Label cssClass="plain" text="){"/>
-		</WrapLayout> -->
+		  </WrapLayout> -->
 		<!-- Line 3 - return for base case 1 -->
 		<WrapLayout>
 			<Label cssClass="statement indent2" text= "return "/>
@@ -66,5 +67,5 @@
 		
 		<Button text="Print!" tap="print"/>
 	</StackLayout>
-
+  </ScrollView>
 </Page>
