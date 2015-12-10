@@ -1,5 +1,5 @@
 .card {
-	background-color: black;
+	background-color: #34495e;
 	color: #00FF00;
 }
 
@@ -10,4 +10,9 @@
 .cardContainer {
 	top:0;
 	left: 0;
+}
+
+.swipe-page {
+	/*background-color: #BDC3C7;*/
+	background-color: #f4f4f4;
 }
