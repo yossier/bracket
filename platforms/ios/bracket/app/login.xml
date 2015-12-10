@@ -1,9 +1,0 @@
- <Page xmlns="http://www.nativescript.org/tns.xsd" loaded="loaded" actionBarHidden="true">
-  <StackLayout orientation="vertical">
-    <Label text="&lt;bracket&gt;" horizontalAlignment="center" id="title"/>
-    <TextField id="email" hint="Email Address" keyboardType="email" text="{{ email }}"/>
-    <TextField id="password" hint="Password" secure="true" text="{{ password }}"/>
-    <Button text="Sign in" cssClass="link" tap="signIn"/>
-    <Button text="Register" cssClass="link" tap="register"/>
-  </StackLayout>
-</Page>
