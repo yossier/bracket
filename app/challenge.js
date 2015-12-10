@@ -1,4 +1,5 @@
 var frameModule = require("ui/frame");
+var view = require("ui/core/view");
 
 // var controller = frameModule.topmost().ios.controller;
 // // get the view controller navigation item
@@ -21,8 +22,9 @@ exports.loaded = function(args) {
 	//Use this if want to set IOS title bar
   	// frameModule.topmost().ios.navBarVisibility = "always";
   	// page.ios.title = "<Choose A Challenge >";
-
-  	
+  }
+  module.exports = {
+  	page: page
   }
 };
 
@@ -45,3 +47,4 @@ exports.algorithms = function(){
 exports.sorts = function(){
 	alert('Sorts Clicked');
 }
+

@@ -3,6 +3,10 @@
 	color: #00FF00;
 }
 
+.cardPrevious {
+	visibility: visible;
+}
+
 .cardContainer {
 	top:0;
 	left: 0;

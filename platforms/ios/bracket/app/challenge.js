@@ -1,4 +1,5 @@
 var frameModule = require("ui/frame");
+var view = require("ui/core/view");
 
 // var controller = frameModule.topmost().ios.controller;
 // // get the view controller navigation item
@@ -16,9 +17,14 @@ exports.loaded = function(args) {
 
 	// hide back button
 	navigationItem.setHidesBackButtonAnimated(true, false);
-  	frameModule.topmost().ios.navBarVisibility = "never";
+	frameModule.topmost().ios.navBarVisibility = "never";
 
-  	
+	//Use this if want to set IOS title bar
+  	// frameModule.topmost().ios.navBarVisibility = "always";
+  	// page.ios.title = "<Choose A Challenge >";
+  }
+  module.exports = {
+  	page: page
   }
 };
 
@@ -30,14 +36,15 @@ exports.dataStructures = function(){
 	alert('Data Structures Clicked');
 }
 
-exports.oo = function(){
-	alert('Object Oriented Clicked');
+exports.loops = function(){
+	alert('Loops Clicked');
 }
 
 exports.algorithms = function(){
 	alert('Algorithms Clicked');
 }
 
-exports.bigO = function(){
-	alert('Big O Clicked');
+exports.sorts = function(){
+	alert('Sorts Clicked');
 }
+
