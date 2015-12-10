@@ -1,97 +1,110 @@
 <Page xmlns="http://www.nativescript.org/tns.xsd" loaded="pageLoaded" actionBarHidden="true">
- <TabView id="homeTabView">
-   <TabView.items>
-     <TabViewItem title="Home">
-       <TabViewItem.view>
-		         <StackLayout orientation ="vertical" verticalAlignment="stretch">
-			         <GridLayout columns="*, *, *, *" rows="auto, auto, auto, auto, auto, auto, auto, auto, auto, auto, auto, auto, auto, auto, auto, auto" verticalAlignment="stretch" horizontalAlignment="stretch">
-				         <Border cssClass="pageHead" row="0" colSpan="4" horizontalAlignment="stretch">
-					         <Label id="navHeader" text="&#60; Choose A Challenge &#62;" horizontalAlignment="stretch" cssId="banner"/>
-				         </Border>
-				         <Border cssClass="listElts" row="1" col="0" rowSpan="2" colSpan="4"></Border>
-	    			     <Label tap="recursion" row="1" cssClass="boxHeader" colSpan="3" text="Recursion"/>
-	    			     <Button row="1" colSpan="1" rowSpan="2" col="4" text="&#62;" cssClass="collapseButton" verticalAlignment="center" tap="recursion"/>
-                 
-				         <Border cssClass="spacer" row="3" col="0" rowSpan="1" colSpan="4"></Border>
-					       <Label text=" " cssClass="spacer" row="3" col="0" colSpan="4"/>
-                 
-				         <Border cssClass="listElts" row="4" col="0" rowSpan="2" colSpan="4"></Border>
-	    			     <Label tap="dataStructures" cssClass="boxHeader" row="4" colSpan="3" text="Data Structures"/>
-	    			     <Button colSpan="1" rowSpan="2" row="4" col="4" text="&#62;" cssClass="collapseButton" verticalAlignment="center" tap="dataStructures"/>
-				         
-				         <Border cssClass="listElts" row="6" col="0" colSpan="4"></Border>
-					       <Label cssClass="spacer" text=" " row="6" colSpan="4"/>
-                 
-				         <Border cssClass="listElts" row="7" col="0" rowSpan="2" colSpan="4"></Border>
-	    			     <Label tap="algorithms" cssClass="boxHeader" row="7" colSpan="3" text="Algorithms"/>
-	    			     <Button colSpan="1" rowSpan="2" row="7" col="4" text="&#62;" cssClass="collapseButton" verticalAlignment="center" tap="algorithms"/>
-                 
-				         <Border cssClass="listElts" row="9" col="0" colSpan="4"></Border>
-					       <Label cssClass="spacer" text=" " row="9" colSpan="4"/>
-                 
-				         <Border cssClass="listElts" row="10" col="0" rowSpan="2" colSpan="4"></Border>
-	    			     <Label tap="loops" cssClass="boxHeader" row="10" colSpan="3" text="Loops"/>
-	    			     <Button colSpan="1" rowSpan="2" row="10" col="4" text="&#62;" cssClass="collapseButton" verticalAlignment="center" tap="loops"/>
-                 
-				         <Border cssClass="listElts" row="12" col="0" colSpan="4"></Border>
-				         <Label cssClass="spacer" text=" " row="12" colSpan="4"/>
-                 
-				         <Border cssClass="listElts" row="13" col="0" rowSpan="2" colSpan="4"></Border>
-	    	         <Label tap="sorts" cssClass="boxHeader" row="13" colSpan="3" text="Sorts"/>
-	    			     <Button colSpan="1" rowSpan="2" row="13" col="4" text="&#62;" cssClass="collapseButton" verticalAlignment="center" tap="sorts"/>
-				         
-				         <Border row="15" col="0" colSpan="4"></Border>
-					       <Label cssClass="spacer" text=" " row="15" colSpan="4"/>
-                 
-	    	       </GridLayout>
-			         
-			         <!-- <Button text="Sign in" cssClass="link" tap="signIn" /> -->
-		         </StackLayout>
-         
-       </TabViewItem.view>
-     </TabViewItem>
+  <TabView id="homeTabView">
+    <TabView.items>
+      <TabViewItem title="Home">
+        <TabViewItem.view>
+		      <StackLayout orientation ="vertical" verticalAlignment="stretch">
+					  <Label id="navHeader" text="&#60; Choose A Challenge &#62;" horizontalAlignment="stretch" cssId="banner"/>
+            
+            <ScrollView>
+              <StackLayout orientation ="vertical" verticalAlignment="stretch">
+                <DockLayout stretchLastChild="false">
+	    			      <Label tap="recursion" dock="left" cssClass="boxHeader" verticalAlignment="center" text="Recursion"/>
+	    			      <Button text="&#62;" dock="right" cssClass="collapseButton" verticalAlignment="center" tap="recursion"/>
+                </DockLayout>
+                
+                <Label horizontalAlignment="stretch" cssClass="spacer"/>
+                
+                <DockLayout stretchLastChild="false" >
+	    			      <Label tap="dataStructures" dock="left" cssClass="boxHeader" verticalAlignment="center" text="Data Structures"/>
+	    			      <Button text="&#62;" dock="right" cssClass="collapseButton" verticalAlignment="center" tap="dataStructures"/>
+                </DockLayout>
+                
+                <Label horizontalAlignment="stretch" cssClass="spacer"/>
+                
+                <DockLayout stretchLastChild="false">
+	    			      <Label tap="algorithms" dock="left" cssClass="boxHeader" verticalAlignment="center" text="Algorithms"/>
+	    			      <Button text="&#62;" dock="right" cssClass="collapseButton" verticalAlignment="center" tap="algorithms"/>
+                </DockLayout>
+                
+                <Label horizontalAlignment="stretch" cssClass="spacer"/>
 
-     <TabViewItem title="Leaderboard">
-       <TabViewItem.view>
-	       <StackLayout orientation="vertical">
-			     <Label horizontalAlignment="stretch" id="navHeader" text="&#60; Leader Board &#62;"/>
-	    	   <GridLayout columns="*, *" rows="*, *" verticalAlignment="left" horizontalAlignment="stretch">
-	    		   <Border cssClass="elts" row="0" col="0" rowSpan="2" colSpan="2"></Border>
-	    			 <Label cssClass="rank" text="&#35;1" row="0" rowSpan="2" col="0"/>
-	    			 <Label horizontalAlign="left" id="n1" cssClass="lname" text="{{ n1 }}" row="0" col="1"/>
-	    			 <WrapLayout row="1" col="1">
-	    				 <Label cssClass="pts" text="Points: "/>
-	    				 <Label id="place1" cssClass="pts" text="{{ place1 }}"/>
-	    			 </WrapLayout>
-			     </GridLayout>
-			     <GridLayout columns="*, *" rows="*, *" verticalAlignment="left" horizontalAlignment="stretch">
-	    		   <Border cssClass="elts" row="0" col="0" rowSpan="2" colSpan="2"></Border>
-	    			 <Label cssClass="rank" text="&#35;2" row="0" rowSpan="2" col="0"/>
-	    			 <Label horizontalAlign="left" id="n2" cssClass="lname" text="{{ n2 }}" row="0" col="1"/>
-	    			 <WrapLayout row="1" col="1">
-	    				 <Label cssClass="pts" text="Points: "/>
-	    				 <Label id="place2" cssClass="pts" text="{{ place2 }}"/>
-	    			 </WrapLayout>
-			     </GridLayout>
-			     <GridLayout columns="*, *" rows="*, *" verticalAlignment="left" horizontalAlignment="stretch">
-	    		   <Border cssClass="elts" row="0" col="0" rowSpan="2" colSpan="2"></Border>
-	    			 <Label cssClass="rank" text="&#35;3" row="0" rowSpan="2" col="0"/>
-	    			 <Label horizontalAlign="left" id="n3" cssClass="lname" text="{{ n3 }}" row="0" col="1"/>
-	    			 <WrapLayout row="1" col="1">
-	    				 <Label cssClass="pts" text="Points: "/>
-	    				 <Label id="place3" cssClass="pts" text="{{ place3 }}"/>
-	    			 </WrapLayout>
-			     </GridLayout>
-			     <GridLayout columns="*, *" rows="*, *" verticalAlignment="left" horizontalAlignment="stretch">
-	    		     <Border cssClass="elts" row="0" col="0" rowSpan="2" colSpan="2"></Border>
-	    			   <Label cssClass="rank" text="&#35;4" row="0" rowSpan="2" col="0"/>
-	    			   <Label horizontalAlign="left" id="n4" cssClass="lname" text="{{ n4 }}" row="0" col="1"/>
-	    			   <WrapLayout row="1" col="1">
-	    				<Label cssClass="pts" text="Points: "/>
-	    				<Label id="place4" cssClass="pts" text="{{ place4 }}"/>
-	    			   </WrapLayout>
-			     </GridLayout>
-			     <GridLayout columns="*, *" rows="*, *" verticalAlignment="left" horizontalAlignment="stretch">
+                <DockLayout stretchLastChild="false">
+	    			      <Label tap="loops" dock="left" cssClass="boxHeader" verticalAlignment="center" text="Loops"/>
+	    			      <Button text="&#62;" dock="right" cssClass="collapseButton" verticalAlignment="center" tap="loops"/>
+                </DockLayout>
+                
+                <Label horizontalAlignment="stretch" cssClass="spacer"/>
+                
+                <DockLayout stretchLastChild="false">
+	    	          <Label tap="sorts" dock="left" cssClass="boxHeader" verticalAlignment="center" text="Sorts"/>
+	    			      <Button text="&#62;" dock="right" cssClass="collapseButton" verticalAlignment="center" tap="sorts"/>
+			          </DockLayout>
+                
+                <Label horizontalAlignment="stretch" cssClass="spacer"/>
+
+                <DockLayout stretchLastChild="false">
+	    	          <Label tap="sorts" dock="left" cssClass="boxHeader" verticalAlignment="center" text="Scalability"/>
+	    			      <Button text="&#62;" dock="right" cssClass="collapseButton" verticalAlignment="center" tap="sorts"/>
+			          </DockLayout>
+
+                <Label horizontalAlignment="stretch" cssClass="spacer"/>
+
+                <DockLayout stretchLastChild="false">
+	    	          <Label tap="sorts" dock="left" cssClass="boxHeader" verticalAlignment="center" text="Selection"/>
+	    			      <Button text="&#62;" dock="right" cssClass="collapseButton" verticalAlignment="center" tap="sorts"/>
+			          </DockLayout>
+                
+                
+              </StackLayout>
+            </ScrollView>
+			      <!-- <Button text="Sign in" cssClass="link" tap="signIn" /> -->
+		      </StackLayout>
+          
+        </TabViewItem.view>
+      </TabViewItem>
+      
+      <TabViewItem title="Leaderboard">
+        <TabViewItem.view>
+	        <StackLayout orientation="vertical">
+			      <Label horizontalAlignment="stretch" id="navHeader" text="&#60; Leader Board &#62;"/>
+	    	    <GridLayout columns="*, *" rows="*, *" verticalAlignment="left" horizontalAlignment="stretch">
+	    		    <Border cssClass="elts" row="0" col="0" rowSpan="2" colSpan="2"></Border>
+	    			  <Label cssClass="rank" text="&#35;1" row="0" rowSpan="2" col="0"/>
+	    			  <Label horizontalAlign="left" id="n1" cssClass="lname" text="{{ n1 }}" row="0" col="1"/>
+	    			  <WrapLayout row="1" col="1">
+	    				  <Label cssClass="pts" text="Points: "/>
+	    				  <Label id="place1" cssClass="pts" text="{{ place1 }}"/>
+	    			  </WrapLayout>
+			      </GridLayout>
+			      <GridLayout columns="*, *" rows="*, *" verticalAlignment="left" horizontalAlignment="stretch">
+	    		    <Border cssClass="elts" row="0" col="0" rowSpan="2" colSpan="2"></Border>
+	    			  <Label cssClass="rank" text="&#35;2" row="0" rowSpan="2" col="0"/>
+	    			  <Label horizontalAlign="left" id="n2" cssClass="lname" text="{{ n2 }}" row="0" col="1"/>
+	    			  <WrapLayout row="1" col="1">
+	    				  <Label cssClass="pts" text="Points: "/>
+	    				  <Label id="place2" cssClass="pts" text="{{ place2 }}"/>
+	    			  </WrapLayout>
+			      </GridLayout>
+			      <GridLayout columns="*, *" rows="*, *" verticalAlignment="left" horizontalAlignment="stretch">
+	    		    <Border cssClass="elts" row="0" col="0" rowSpan="2" colSpan="2"></Border>
+	    			  <Label cssClass="rank" text="&#35;3" row="0" rowSpan="2" col="0"/>
+	    			  <Label horizontalAlign="left" id="n3" cssClass="lname" text="{{ n3 }}" row="0" col="1"/>
+	    			  <WrapLayout row="1" col="1">
+	    				  <Label cssClass="pts" text="Points: "/>
+	    				  <Label id="place3" cssClass="pts" text="{{ place3 }}"/>
+	    			  </WrapLayout>
+			      </GridLayout>
+			      <GridLayout columns="*, *" rows="*, *" verticalAlignment="left" horizontalAlignment="stretch">
+	    		    <Border cssClass="elts" row="0" col="0" rowSpan="2" colSpan="2"></Border>
+	    			  <Label cssClass="rank" text="&#35;4" row="0" rowSpan="2" col="0"/>
+	    			  <Label horizontalAlign="left" id="n4" cssClass="lname" text="{{ n4 }}" row="0" col="1"/>
+	    			  <WrapLayout row="1" col="1">
+	    				  <Label cssClass="pts" text="Points: "/>
+	    				  <Label id="place4" cssClass="pts" text="{{ place4 }}"/>
+	    			  </WrapLayout>
+			      </GridLayout>
+			      <GridLayout columns="*, *" rows="*, *" verticalAlignment="left" horizontalAlignment="stretch">
 	    		   <Border cssClass="elts" row="0" col="0" rowSpan="2" colSpan="2"></Border>
 	    			 <Label cssClass="rank" text="&#35;5" row="0" rowSpan="2" col="0"/>
 	    			 <Label horizontalAlign="left" id="n5" cssClass="lname" text="{{ n5 }}" row="0" col="1"/>
@@ -99,30 +112,30 @@
 	    				 <Label cssClass="pts" text="Points: "/>
 	    				 <Label id="place5" cssClass="pts" text="{{ place5 }}"/>
 	    			 </WrapLayout>
-			     </GridLayout>
-	       </StackLayout>
-       </TabViewItem.view>
-     </TabViewItem>
-     
-     <TabViewItem title="Profile">
-       <TabViewItem.view>
-         <StackLayout verticalAlignment="center" horizontalAlignment="center" orientation="vertical">
-		       <!-- <Image src="~/Downloads/download.jpeg" stretch ="none" / >  -->
-		       <Label id="nameVal" text="{{ nameVal }}"/>
-		       <Label id="emailAddr" text="{{ emailAddr }}"/>
-		       <Label cssClass="points" text="Points:"/>
-		       <Label cssClass="points" id="pointNum" text="{{ numPoints }}"/>
-		       <WrapLayout>
-			       <Label cssClass="challenges" text="Challenges Attempted: "/>
-			       <Label id="attemptedBox" cssClass="challenges" text="{{ attempted }}"/>
-		       </WrapLayout>
-		       <WrapLayout>
-			       <Label cssClass="challenges" text="Challenges Completed: "/>
-			       <Label id="completedBox" cssClass="challenges" text="{{ completed }}"/>
-		       </WrapLayout>
-	       </StackLayout>
-       </TabViewItem.view>
-     </TabViewItem>
-   </TabView.items>
+			      </GridLayout>
+	        </StackLayout>
+        </TabViewItem.view>
+      </TabViewItem>
+      
+      <TabViewItem title="Profile">
+        <TabViewItem.view>
+          <StackLayout verticalAlignment="center" horizontalAlignment="center" orientation="vertical">
+		        <!-- <Image src="~/Downloads/download.jpeg" stretch ="none" / >  -->
+		        <Label id="nameVal" text="{{ nameVal }}"/>
+		        <Label id="emailAddr" text="{{ emailAddr }}"/>
+		        <Label cssClass="points" text="Points:"/>
+		        <Label cssClass="points" id="pointNum" text="{{ numPoints }}"/>
+		        <WrapLayout>
+			        <Label cssClass="challenges" text="Challenges Attempted: "/>
+			        <Label id="attemptedBox" cssClass="challenges" text="{{ attempted }}"/>
+		        </WrapLayout>
+		        <WrapLayout>
+			        <Label cssClass="challenges" text="Challenges Completed: "/>
+			        <Label id="completedBox" cssClass="challenges" text="{{ completed }}"/>
+		        </WrapLayout>
+	        </StackLayout>
+        </TabViewItem.view>
+      </TabViewItem>
+    </TabView.items>
  </TabView>
 </Page>
