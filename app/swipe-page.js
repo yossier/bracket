@@ -8,7 +8,11 @@ var scrollViewModule = require("ui/scroll-view");
 var builder = require("ui/builder");
 var frameModule = require("ui/frame");
 var observableModule = require("data/observable");
-var cardIndex = 2;
+var actionBarModule = require("ui/action-bar");
+var cardIndex = 0;
+var loopIndex = 0;
+var dataStructuresIndex = 0;
+var context = "loops";
 
 var code = new observableModule.Observable({
 	previous: "previous",
@@ -16,16 +20,30 @@ var code = new observableModule.Observable({
 	next: "next"
 });
 
+var titleInfo = new observableModule.Observable({
+	title: "context"
+});
+
 function pageLoaded(args) {
+	// console.log("pageLoaded");
     var page = args.object;
-    var absoluteLayout = new absoluteLayoutModule.AbsoluteLayout();
+
+    context = page.navigationContext.info;
+
+    titleTemp = context.charAt(0).toUpperCase() + context.slice(1);
+    titleInfo.title = titleTemp;
+
     // page.bindingContext = sModule.swipeViewModel;
     page.bindingContext = code;
+
+
     var swipeCard = view.getViewById(page, "swipeCard");
     var swipeCardPrevious = view.getViewById(page, "swipeCardPrevious");
     var swipeCardNext = view.getViewById(page, "swipeCardNext");
+
     var screenWidth = platformModule.screen.mainScreen.widthPixels / platformModule.screen.mainScreen.scale;
     var screenHeight = platformModule.screen.mainScreen.heightPixels / platformModule.screen.mainScreen.scale;
+    var absoluteLayout = new absoluteLayoutModule.AbsoluteLayout();
     absoluteLayout.width = screenWidth;
 	absoluteLayout.height = screenHeight;
 	var middleCardLeft = (screenWidth - 250) / 2;
@@ -37,33 +55,32 @@ function pageLoaded(args) {
     absoluteLayoutModule.AbsoluteLayout.setTop(swipeCard, middleCardTop);
     absoluteLayoutModule.AbsoluteLayout.setTop(swipeCardNext, middleCardTop + 25);
 
-    var loopDescList = ["loop 1", "loop 2", "loop 3", "loop 4", "loop 5"];
-	var loopList = ["loop1", "loop2", "loop3", "loop4", "loop5"];
-
-	var context = "loops";
+ //    var loopDescList = ["loop 1", "loop 2", "loop 3", "loop 4", "loop 5"];
+	// var loopList = ["loop1", "loop2", "loop3", "loop4", "loop5"];
 
 	//You can access a challenge like this:
 	//challenges["loopChallenges"]["loop1"]
-	// loops={ 
- //     "loop1":"Find the smallest element using a loop.", 
- //     "loop2":"Return the number of times a value occurs.", 
- //     "loop3":"Find the last increasing pod of 3 elts.",
- //     "loop4":"Return the row the value is found in." 
-	// };
+	var loops= ["Find the smallest element using a loop.", "Return the number of times a value occurs.", 
+	"Find the last increasing pod of 3 elts.", "Return the row the value is found in."];
 
-	// dataStructures={
-	// 	"dataStructures1":"Implement an IntStack class",
-	//   "dataStructures2":"Finish implementing the Person class."
-	// };
+	var dataStructures = ["Implement an IntStack class", "Finish implementing the Person class."]
 
-	// challenges={
+	// var challenges={
 	// 	"loopChallenges":loops,
 	//   "dataStructureChallenges": dataStructures
 	// };
 
-	code.previous = loopDescList[cardIndex - 1];
-	code.current = loopDescList[cardIndex];
-	code.next = loopDescList[cardIndex + 1];
+	if (context === "loops") {
+		var challengeDescriptions = loops;
+		cardIndex = loopIndex;
+	} else if (context === 'dataStructures') {
+		var challengeDescriptions = dataStructures;
+		cardIndex = dataStructuresIndex;
+	}
+
+	code.previous = challengeDescriptions[cardIndex - 1];
+	code.current = challengeDescriptions[cardIndex];
+	code.next = challengeDescriptions[cardIndex + 1];
 
 	// if (this.loopCurIndex === 0) {
 	// 	page.css = "cardPrevious { visibility: collapsed }";
@@ -93,21 +110,18 @@ function pageLoaded(args) {
 	    	absoluteLayoutModule.AbsoluteLayout.setLeft(swipeCard, this.oldLeftMiddle);
 		    absoluteLayoutModule.AbsoluteLayout.setLeft(swipeCardPrevious, this.oldLeftPrevious);
 		    absoluteLayoutModule.AbsoluteLayout.setLeft(swipeCardNext, this.oldLeftNext);
-		   	if (args.deltaX > 200) {
-		   		console.log("swipe left");
+		   	if (args.deltaX > 175) {
 		   		//NEED TO UPDATE FOR EDGE CASES
 		   		cardIndex -= 1;
-		   		code.current = loopDescList[cardIndex];
-		      	code.previous = loopDescList[cardIndex - 1];
-		      	code.next = loopDescList[cardIndex + 1];
-		      	console.log("previous: " + code.previous + ", current: " + code.current + ", next: " + code.next);
-		    } else if (args.deltaX < -200) {
-		    	console.log("swipe right");
+		   		code.current = challengeDescriptions[cardIndex];
+		      	code.previous = challengeDescriptions[cardIndex - 1];
+		      	code.next = challengeDescriptions[cardIndex + 1];
+		    } else if (args.deltaX < -175) {
 		      	cardIndex += 1;
-		      	code.current = loopDescList[cardIndex];
-		      	code.previous = loopDescList[cardIndex - 1];
-		      	code.next = loopDescList[cardIndex + 1];
-		      	console.log("previous: " + code.previous + ", current: " + code.current + ", next: " + code.next);
+		      	code.current = challengeDescriptions[cardIndex];
+		      	code.previous = challengeDescriptions[cardIndex - 1];
+		      	code.next = challengeDescriptions[cardIndex + 1];
+		      	// console.log("previous: " + code.previous + ", current: " + code.current + ", next: " + code.next);
 		    } 
 	    } else if(args.state === gestures.GestureStateTypes.cancelled) {
 	    	// console.log("cancelled");
@@ -119,47 +133,10 @@ function pageLoaded(args) {
 	});
 
 	swipeCard.on(gestures.GestureTypes.tap, function (args) {
-    	console.log("Tap");
+    	var key = context + (cardIndex + 1);
     	var topmost = frameModule.topmost();
-    	console.log("this.cardIndex:" + cardIndex);
-    	console.log("loopList[cardIndex]: " + loopList[cardIndex]);
-		topmost.navigate(loopList[cardIndex]);
-
+		topmost.navigate(key);
 	});
 
-	// swipeCard.on(gestures.GestureTypes.pinch, function (args) {
- //    // 	if (args.scale > 1) {
- //    // 		if(args.state === gestures.GestureStateTypes.changed) {
-	// 	  //   	console.log("pinch changed");
-	// 	  //   	swipeCard.animate({
-	// 		 //    	scale: { x: args.scale, y: args.scale},
-	// 		 //    	duration: 30
-	// 			// });
-	// 	  //   } else if(args.state === gestures.GestureStateTypes.ended) {
-	// 	  //   	console.log("pinch ended");
-	//    //  		absoluteLayoutModule.AbsoluteLayout.setTop(swipeCard, 0);
-	//    //  		absoluteLayoutModule.AbsoluteLayout.setLeft(swipeCard, 0);
-	//    //  		swipeCard.width = screenWidth;
-	// 			// swipeCard.height = screenHeight
-	// 	  //     	return;
-	// 	  //   }
- //    // 	} else {
- //    	if (args.scale < 1 && swipeCard.width > 250) {
- //    		if(args.state === gestures.GestureStateTypes.changed) {
-	// 	    	console.log("pinch changed");
-	// 	    	swipeCard.animate({
-	// 		    	scale: { x: args.scale, y: args.scale},
-	// 		    	duration: 30
-	// 			});
-	// 	    } else if(args.state === gestures.GestureStateTypes.ended) {
-	// 	    	console.log("pinch ended");
-	//     		absoluteLayoutModule.AbsoluteLayout.setTop(swipeCard, middleCardTop);
-	//     		absoluteLayoutModule.AbsoluteLayout.setLeft(swipeCard, middleCardLeft);
-	//     		swipeCard.width = 250;
-	// 			swipeCard.height = 250;
-	// 	      	return;
-	// 	    }
- //    	}
-	// });
 }
 exports.pageLoaded = pageLoaded;
