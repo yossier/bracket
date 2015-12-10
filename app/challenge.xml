@@ -1,4 +1,4 @@
-<Page xmlns="http://www.nativescript.org/tns.xsd" loaded="loaded" actionBarHidden="true">
+<Page xmlns="http://www.nativescript.org/tns.xsd" actionBarHidden="true">
 	<ScrollView>
 		<StackLayout orientation ="vertical" verticalAlignment="stretch">
 			<GridLayout columns="*, *, *, *" rows="auto, auto, auto, auto, auto, auto, auto, auto, auto, auto, auto, auto, auto, auto, auto, auto" verticalAlignment="stretch" horizontalAlignment="stretch">
