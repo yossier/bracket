@@ -7,7 +7,7 @@
 					  <Label id="navHeader" text="&#60; Choose A Challenge &#62;" horizontalAlignment="stretch" cssId="banner"/>
             
             <ScrollView>
-              <StackLayout orientation ="vertical" verticalAlignment="stretch">
+              <StackLayout orientation ="vertical" verticalAlignment="stretch" style="background-color: #f4f4f4;">
                 <DockLayout tap="recursion" stretchLastChild="false">
 	    			      <Label  dock="left" cssClass="boxHeader" verticalAlignment="center" text="Recursion"/>
 	    			      <Button text="&#62;" dock="right" cssClass="collapseButton" verticalAlignment="center" tap="recursion"/>
@@ -36,16 +36,16 @@
                 
                 <Label horizontalAlignment="stretch" cssClass="spacer"/>
                 
-                <DockLayout tap="sorts" stretchLastChild="false">
+<!--                 <DockLayout tap="sorts" stretchLastChild="false">
 	    	          <Label dock="left" cssClass="boxHeader" verticalAlignment="center" text="Sorts"/>
 	    			      <Button text="&#62;" dock="right" cssClass="collapseButton" verticalAlignment="center" tap="sorts"/>
 			          </DockLayout>
                 
-                <Label horizontalAlignment="stretch" cssClass="spacer"/>
+                <Label horizontalAlignment="stretch" cssClass="spacer"/> -->
                 
-                <DockLayout tap="big0" stretchLastChild="false">
+                <DockLayout tap="bigO" stretchLastChild="false">
 	    	          <Label dock="left" cssClass="boxHeader" verticalAlignment="center" text="Complexity"/>
-	    			      <Button text="&#62;" dock="right" cssClass="collapseButton" verticalAlignment="center" tap="big0"/>
+	    			      <Button text="&#62;" dock="right" cssClass="collapseButton" verticalAlignment="center" tap="bigO"/>
 			          </DockLayout>
 
                 <Label horizontalAlignment="stretch" cssClass="spacer"/>

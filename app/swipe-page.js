@@ -9,6 +9,7 @@ var builder = require("ui/builder");
 var frameModule = require("ui/frame");
 var observableModule = require("data/observable");
 var actionBarModule = require("ui/action-bar");
+var animation = require("ui/animation");
 var indexes={ 
      "loops": 0, 
      "dataStructures": 0,
@@ -33,6 +34,7 @@ function pageLoaded(args) {
     var page = args.object;
 
     context = page.navigationContext.info;
+    console.log("context: " + context);
 
     titleTemp = context.charAt(0).toUpperCase() + context.slice(1);
     titleInfo.title = titleTemp;
@@ -122,10 +124,23 @@ function pageLoaded(args) {
 	    	absoluteLayoutModule.AbsoluteLayout.setLeft(swipeCard, this.oldLeftMiddle + args.deltaX);
 	    	absoluteLayoutModule.AbsoluteLayout.setLeft(swipeCardNext, this.oldLeftNext + args.deltaX);
 	    } else if(args.state === gestures.GestureStateTypes.ended) {
-	    	// console.log("ended");
+	    	console.log("ended");
 	    	absoluteLayoutModule.AbsoluteLayout.setLeft(swipeCard, this.oldLeftMiddle);
 		    absoluteLayoutModule.AbsoluteLayout.setLeft(swipeCardPrevious, this.oldLeftPrevious);
 		    absoluteLayoutModule.AbsoluteLayout.setLeft(swipeCardNext, this.oldLeftNext);
+		 //    var animations = [
+			//     { target: swipeCardPrevious, translate: { x: -args.deltaX }, duration: 300, delay: 0 },
+			//     { target: swipeCard, translate: { x: -args.deltaX }, duration: 300, delay: 0 },
+			//     { target: swipeCardNext, translate: { x: -args.deltaX }, duration: 300, delay: 0 },
+			// ];
+			// var a = new animation.Animation(animations);
+			// a.play()
+			//     .then(function () {
+			//     //console.log("Animations finished");
+			// })
+			//     .catch(function (e) {
+			//     console.log(e.message);
+			// });
 		   	if (args.deltaX > 175) {
 		   		//NEED TO UPDATE FOR EDGE CASES
 		   		indexes[context] -= 1;

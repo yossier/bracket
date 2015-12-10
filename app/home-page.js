@@ -44,7 +44,7 @@ exports.sorts = function(){
     frameModule.topmost().navigate(navigationEntry);
 };
 
-exports.big0 = function() {
-    navigationEntry.context = {info: "big0"};
+exports.bigO = function() {
+    navigationEntry.context = {info: "bigO"};
     frameModule.topmost().navigate(navigationEntry);
 };
