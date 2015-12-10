@@ -9,14 +9,8 @@ function pageLoaded(args) {
     if( appSettings.getBoolean("logged-in", false) ){
         //switch to main-page
         var topmost = frameModule.topmost();
-        topmost.navigate("swipe-page");
+        topmost.navigate("home-page");
     } else {
-       /* var navEntry = {
-            moduleName: "login",
-            context: "login into bracket",
-            animated: false
-        }
-       */
         var topmost = frameModule.topmost();
         topmost.navigate("login");
     }

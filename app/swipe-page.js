@@ -9,9 +9,10 @@ var builder = require("ui/builder");
 var frameModule = require("ui/frame");
 var observableModule = require("data/observable");
 var actionBarModule = require("ui/action-bar");
-var cardIndex = 0;
-var loopIndex = 0;
-var dataStructuresIndex = 0;
+var indexes={ 
+     "loops": 0, 
+     "dataStructures": 0
+};
 var context = "loops";
 
 var code = new observableModule.Observable({
@@ -72,12 +73,11 @@ function pageLoaded(args) {
 
 	if (context === "loops") {
 		var challengeDescriptions = loops;
-		cardIndex = loopIndex;
-	} else if (context === 'dataStructures') {
+	} else if (context === "dataStructures") {
 		var challengeDescriptions = dataStructures;
-		cardIndex = dataStructuresIndex;
 	}
 
+	cardIndex = indexes[context];
 	code.previous = challengeDescriptions[cardIndex - 1];
 	code.current = challengeDescriptions[cardIndex];
 	code.next = challengeDescriptions[cardIndex + 1];
@@ -112,12 +112,14 @@ function pageLoaded(args) {
 		    absoluteLayoutModule.AbsoluteLayout.setLeft(swipeCardNext, this.oldLeftNext);
 		   	if (args.deltaX > 175) {
 		   		//NEED TO UPDATE FOR EDGE CASES
-		   		cardIndex -= 1;
+		   		indexes[context] -= 1;
+		   		cardIndex = indexes[context];
 		   		code.current = challengeDescriptions[cardIndex];
 		      	code.previous = challengeDescriptions[cardIndex - 1];
 		      	code.next = challengeDescriptions[cardIndex + 1];
 		    } else if (args.deltaX < -175) {
-		      	cardIndex += 1;
+		      	indexes[context] += 1;
+		   		cardIndex = indexes[context];
 		      	code.current = challengeDescriptions[cardIndex];
 		      	code.previous = challengeDescriptions[cardIndex - 1];
 		      	code.next = challengeDescriptions[cardIndex + 1];
@@ -133,6 +135,7 @@ function pageLoaded(args) {
 	});
 
 	swipeCard.on(gestures.GestureTypes.tap, function (args) {
+    	cardIndex = indexes[context];
     	var key = context + (cardIndex + 1);
     	var topmost = frameModule.topmost();
 		topmost.navigate(key);
