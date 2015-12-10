@@ -33,6 +33,12 @@ function pageLoaded(args) {
 	// items.push(tabEntry1);
 	// tabView.items = items;
 }
+
+var navigationEntry = {
+    moduleName: "swipe-page",
+    animated: false
+}
+
 exports.pageLoaded = pageLoaded;
 
 exports.recursion = function(){

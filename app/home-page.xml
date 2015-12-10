@@ -3,7 +3,6 @@
    <TabView.items>
      <TabViewItem title="Home">
        <TabViewItem.view>
-	         <ScrollView>
 		         <StackLayout orientation ="vertical" verticalAlignment="stretch">
 			         <GridLayout columns="*, *, *, *" rows="auto, auto, auto, auto, auto, auto, auto, auto, auto, auto, auto, auto, auto, auto, auto, auto" verticalAlignment="stretch" horizontalAlignment="stretch">
 				         <Border cssClass="pageHead" row="0" colSpan="4" horizontalAlignment="stretch">
@@ -53,18 +52,86 @@
 			         
 			         <!-- <Button text="Sign in" cssClass="link" tap="signIn" /> -->
 		         </StackLayout>
-	         </ScrollView>
          
        </TabViewItem.view>
      </TabViewItem>
-     <TabViewItem title="Completed">
+
+     <TabViewItem title="Leaderboard">
        <TabViewItem.view>
-          <Label text="Label in Tab2" />
+	       <StackLayout orientation="vertical">
+			     <Label horizontalAlignment="stretch" id="navHeader" text="&#60; Leader Board &#62;"/>
+	    	   <GridLayout columns="*, *" rows="*, *" verticalAlignment="left" horizontalAlignment="stretch">
+	    		   <Border cssClass="elts" row="0" col="0" rowSpan="2" colSpan="2"></Border>
+	    			 <Label cssClass="rank" text="&#35;1" row="0" rowSpan="2" col="0"/>
+	    			 <Label horizontalAlign="left" id="n1" cssClass="lname" text="{{ n1 }}" row="0" col="1"/>
+	    			 <WrapLayout row="1" col="1">
+	    				 <Label cssClass="pts" text="Points: "/>
+	    				 <Label id="place1" cssClass="pts" text="{{ place1 }}"/>
+	    			 </WrapLayout>
+			     </GridLayout>
+			     <GridLayout columns="*, *" rows="*, *" verticalAlignment="left" horizontalAlignment="stretch">
+	    		   <Border cssClass="elts" row="0" col="0" rowSpan="2" colSpan="2"></Border>
+	    			 <Label cssClass="rank" text="&#35;2" row="0" rowSpan="2" col="0"/>
+	    			 <Label horizontalAlign="left" id="n2" cssClass="lname" text="{{ n2 }}" row="0" col="1"/>
+	    			 <WrapLayout row="1" col="1">
+	    				 <Label cssClass="pts" text="Points: "/>
+	    				 <Label id="place2" cssClass="pts" text="{{ place2 }}"/>
+	    			 </WrapLayout>
+			     </GridLayout>
+			     <GridLayout columns="*, *" rows="*, *" verticalAlignment="left" horizontalAlignment="stretch">
+	    		   <Border cssClass="elts" row="0" col="0" rowSpan="2" colSpan="2"></Border>
+	    			 <Label cssClass="rank" text="&#35;3" row="0" rowSpan="2" col="0"/>
+	    			 <Label horizontalAlign="left" id="n3" cssClass="lname" text="{{ n3 }}" row="0" col="1"/>
+	    			 <WrapLayout row="1" col="1">
+	    				 <Label cssClass="pts" text="Points: "/>
+	    				 <Label id="place3" cssClass="pts" text="{{ place3 }}"/>
+	    			 </WrapLayout>
+			     </GridLayout>
+			     <GridLayout columns="*, *" rows="*, *" verticalAlignment="left" horizontalAlignment="stretch">
+	    		     <Border cssClass="elts" row="0" col="0" rowSpan="2" colSpan="2"></Border>
+	    			   <Label cssClass="rank" text="&#35;4" row="0" rowSpan="2" col="0"/>
+	    			   <Label horizontalAlign="left" id="n4" cssClass="lname" text="{{ n4 }}" row="0" col="1"/>
+	    			   <WrapLayout row="1" col="1">
+	    				<Label cssClass="pts" text="Points: "/>
+	    				<Label id="place4" cssClass="pts" text="{{ place4 }}"/>
+	    			   </WrapLayout>
+			     </GridLayout>
+			     <GridLayout columns="*, *" rows="*, *" verticalAlignment="left" horizontalAlignment="stretch">
+	    		   <Border cssClass="elts" row="0" col="0" rowSpan="2" colSpan="2"></Border>
+	    			 <Label cssClass="rank" text="&#35;5" row="0" rowSpan="2" col="0"/>
+	    			 <Label horizontalAlign="left" id="n5" cssClass="lname" text="{{ n5 }}" row="0" col="1"/>
+	    			 <WrapLayout row="1" col="1">
+	    				 <Label cssClass="pts" text="Points: "/>
+	    				 <Label id="place5" cssClass="pts" text="{{ place5 }}"/>
+	    			 </WrapLayout>
+			     </GridLayout>
+	       </StackLayout>
        </TabViewItem.view>
      </TabViewItem>
+     
+     <TabViewItem title="Completed">
+       <TabViewItem.view>
+         <Label text="Label in Tab2" />
+       </TabViewItem.view>
+     </TabViewItem>
+     
      <TabViewItem title="Profile">
-      <TabViewItem.view>
-          <Label text="Label in Tab3" />
+       <TabViewItem.view>
+         <StackLayout verticalAlignment="center" horizontalAlignment="center" orientation="vertical">
+		       <!-- <Image src="~/Downloads/download.jpeg" stretch ="none" / >  -->
+		       <Label id="nameVal" text="{{ nameVal }}"/>
+		       <Label id="emailAddr" text="{{ emailAddr }}"/>
+		       <Label cssClass="points" text="Points:"/>
+		       <Label cssClass="points" id="pointNum" text="{{ numPoints }}"/>
+		       <WrapLayout>
+			       <Label cssClass="challenges" text="Challenges Attempted: "/>
+			       <Label id="attemptedBox" cssClass="challenges" text="{{ attempted }}"/>
+		       </WrapLayout>
+		       <WrapLayout>
+			       <Label cssClass="challenges" text="Challenges Completed: "/>
+			       <Label id="completedBox" cssClass="challenges" text="{{ completed }}"/>
+		       </WrapLayout>
+	       </StackLayout>
        </TabViewItem.view>
      </TabViewItem>
    </TabView.items>
