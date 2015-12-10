@@ -25,6 +25,20 @@ Button {
     border-color: black;
 }
 
+.nums{
+    text-align: center;
+    margin-top: 112;
+    color: #808285;
+    font-size:30;
+}
+
+#words{
+    color: #0177e8;
+    margin-top: 112;
+    text-align: center;
+    font-size: 30;
+}
+
 .link{
     border-color: transparent;
     background-color: #0177e8;
@@ -36,11 +50,10 @@ Button {
 }
 
 #title{
-    border: black;
-    border-width: 4;
-    width: 150;
-    text-align: center;
-    margin-top: 120;
+    /*border: black;*/
+    /*border-width: 4;*/
+    /*width: 150;*/
+    
 }
 
 #registerPrompt{
