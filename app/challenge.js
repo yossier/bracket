@@ -7,6 +7,13 @@ var view = require("ui/core/view");
 // // hide back button
 // navigationItem.setHidesBackButtonAnimated(true, false);
 
+var topmost = frameModule.topmost();
+
+var navigationEntry = {
+    moduleName: "swipe-page",
+    animated: false
+};
+
 exports.loaded = function(args) {
   var page = args.object;
   
@@ -29,22 +36,32 @@ exports.loaded = function(args) {
 };
 
 exports.recursion = function(){
-	alert('Recursion Clicked');
-}
+	  alert('Recursion Clicked');
+    navigationEntry.context = {info: 'recursion'};
+    frameModule.topmost().navigate(navigationEntry);
+};
 
 exports.dataStructures = function(){
-	alert('Data Structures Clicked');
-}
+	  alert('Data Structures Clicked');
+    navigationEntry.context = {info: "dataStructures"};
+    frameModule.topmost().navigate(navigationEntry);
+};
 
 exports.loops = function(){
-	alert('Loops Clicked');
-}
+	  alert('Loops Clicked');
+    navigationEntry.context = {info: "loops"};
+    frameModule.topmost().navigate(navigationEntry);
+};
 
 exports.algorithms = function(){
-	alert('Algorithms Clicked');
-}
+	  alert('Algorithms Clicked');
+    navigationEntry.context = {info: "algorithms"};
+    frameModule.topmost().navigate(navigationEntry);
+};
 
 exports.sorts = function(){
-	alert('Sorts Clicked');
-}
+	  alert('Sorts Clicked');
+    navigationEntry.context = {info: "sorts"};
+    frameModule.topmost().navigate(navigationEntry);
+};
 
