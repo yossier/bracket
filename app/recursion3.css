@@ -30,6 +30,10 @@ Page{
 	color: #e5e07f;
 }
 
+.indent0{
+	margin-left: 5;
+}
+
 .indent1{
 	margin-left: 20;
 }
@@ -51,6 +55,11 @@ Page{
 	text-align: center;
 }
 
+.twoChar{
+	width: 30;
+	text-align: center;
+}
+
 .fiveChar{
 	width: 55;
 	text-align: center;
@@ -59,10 +68,6 @@ Page{
 .big{
 	width: 90;
 	text-align: center;
-}
-
-.comment{
-	color: #989581
 }
 
 .description1{

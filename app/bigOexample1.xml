@@ -1,0 +1,69 @@
+<Page loaded="loaded">
+	<StackLayout orientation="vertical">
+		<WrapLayout>
+            <Label cssClass="description1 indent0" text="/* GOAL: Determine the BigO of this function"/>
+        </WrapLayout>
+        <WrapLayout> 
+            <Label cssClass="description2 indent0" text="* BigO is time complexity,"/>
+        </WrapLayout>
+        <WrapLayout>
+            <Label cssClass="description2 indent0" text="* example solution format: n^3, n, nlogn"/>
+        </WrapLayout>
+        <WrapLayout>
+            <Label cssClass="description3 indent0" text="*/"/>
+        </WrapLayout>
+		<!-- Line 1 - Function Declaration -->
+		<WrapLayout>
+			<Label cssClass= "type" text="void " />
+			<Label cssClass= "functionTitle" text="doSomething"/>
+			<Label cssClass= "plain" text="("/>
+			<Label cssClass= "type" text="int "/>
+			<Label cssClass= "plain" text="n){"/>
+		</WrapLayout>
+		<WrapLayout>
+			<Label cssClass="type indent1" text="int "/>
+			<Label cssClass="plain" text="sum = "/>
+			<Label cssClass="number" text="0"/>
+			<Label cssClass="plain" text=";"/>
+		</WrapLayout>
+		<WrapLayout>
+			<Label cssClass="statement indent1" text="for"/>
+			<Label cssClass="plain" text=" ("/>
+			<Label cssClass="type" text="int "/>
+			<Label cssClass="plain" text="i = "/>
+			<Label cssClass="number" text="0"/>
+			<Label cssClass="plain" text="; i < n"/>
+			<Label cssClass="plain" text="; ++i){"/>
+		</WrapLayout>
+		<WrapLayout>
+			<Label cssClass="statement indent2" text="for"/>
+			<Label cssClass="plain" text=" ("/>
+			<Label cssClass="type" text="int "/>
+			<Label cssClass="plain" text="j = "/>
+			<Label cssClass="number" text="0"/>
+			<Label cssClass="plain" text="; j < n"/>
+			<Label cssClass="plain" text="; ++j){"/>
+		</WrapLayout>
+		<WrapLayout>
+			<Label cssClass="plain indent3" text="sum += 2;"/>
+		</WrapLayout>
+		<WrapLayout>
+			<Label cssClass="plain indent2" text="}"/>
+		</WrapLayout>
+		<WrapLayout>
+			<Label cssClass="plain indent1" text="}"/>
+		</WrapLayout>
+		<WrapLayout>
+			<Label cssClass="plain bigOQuestion" text= "What is the complexity of this function?"/>
+		</WrapLayout>
+		<WrapLayout>
+			<Label cssClass="plain indent1" text= "O( "/>
+			<TextField id="bigO" cssClass="fiveChar" hint="???" text="{{ bigO }}"/>
+			<Label class="plain" text=" )"/>
+		</WrapLayout>
+		<WrapLayout>
+			<Label cssClass="plain" text="}"/>
+		</WrapLayout>
+		<Button text="Print!" tap="print"/>
+	</StackLayout>
+</Page>

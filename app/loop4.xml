@@ -1,0 +1,83 @@
+<Page loaded="loaded">
+	<StackLayout orientation="vertical">
+		<WrapLayout>
+            <Label cssClass="description1 indent0" text="/* GOAL: search the 2-D array for val"/>
+        </WrapLayout>
+        <WrapLayout>
+            <Label cssClass="description2 indent0" text="* If found, return 1st row elt was found."/>
+        </WrapLayout>
+        <WrapLayout>
+            <Label cssClass="description2 indent0" text="* If not found, return -1."/>
+        </WrapLayout>
+        <WrapLayout>
+            <Label cssClass="description3 indent0" text="*/"/>
+        </WrapLayout>
+		<!-- Line 1 - Function Declaration -->
+		<WrapLayout>
+			<Label cssClass="type" text="int " />
+			<Label cssClass="functionTitle" text="findIdx"/>
+			<Label cssClass="plain" text="("/>
+			<Label cssClass="type" text="int"/>
+			<Label cssClass="plain" text=" array["/>
+			<Label cssClass="number" text="10"/>
+			<Label cssClass="plain" text="]["/>
+			<Label cssClass="number" text="10"/>
+			<Label cssClass="plain" text="],"/>
+			<Label cssClass="type" text="int "/>
+			<Label cssClass="plain" text="findVal){"/>
+		</WrapLayout>
+		<WrapLayout>
+			<Label cssClass="statement indent1" text="for"/>
+			<Label cssClass="plain" text=" ("/>
+			<Label cssClass="type" text="int "/>
+			<Label cssClass="plain" text="i = "/>
+			<Label cssClass="number" text="0"/>
+			<Label cssClass="plain" text="; i < "/>
+			<TextField id="conditioni" cssClass="oneChar" hint="??" text="{{ conditioni }}"/>
+			<Label cssClass="plain" text="; ++i){"/>
+		</WrapLayout>
+		<WrapLayout>
+			<Label cssClass="statement indent2" text="for"/>
+			<Label cssClass="plain" text=" ("/>
+			<Label cssClass="type" text="int "/>
+			<Label cssClass="plain" text="j = "/>
+			<TextField id="conditionj1" cssClass="oneChar" hint="??" text="{{ conditionj1 }}"/>
+			<Label cssClass="plain" text="; j < "/>
+			<TextField id="conditionj2" cssClass="oneChar" hint="??" text="{{ conditionj2 }}"/>
+			<Label cssClass="plain" text="; ++j){"/>
+		</WrapLayout>
+		<WrapLayout>
+			<Label cssClass="statement indent3" text="if "/>
+			<Label cssClass="plain" text="(array["/>
+			<TextField id="rowVal" cssClass="oneChar" hint="??" text = "{{ rowVal }}"/>
+			<Label cssClass="plain" text="]["/>
+			<TextField id="colVal" cssClass="oneChar" hint="??" text = "{{ colVal }}"/>
+			<Label cssClass="plain" text="] == "/>
+			<TextField id="equality" cssClass="fiveChar" hint="?????" text = "{{ equality }}"/>
+			<Label cssClass="plain" text="){"/>
+		</WrapLayout> 
+		<WrapLayout>
+			<Label cssClass="statement indent4" text="return "/>
+			<TextField id="returnVal1" cssClass="oneChar" hint="??" text = "{{ returnVal1 }}"/>
+			<Label cssClass="plain" text=";"/>
+		</WrapLayout>
+		<WrapLayout>
+			<Label cssClass="plain indent3" text="}"/>
+		</WrapLayout>
+		<WrapLayout>
+			<Label cssClass="plain indent2" text="}"/>
+		</WrapLayout>
+		<WrapLayout>
+			<Label cssClass="plain indent1" text="}"/>
+		</WrapLayout>
+		<WrapLayout>
+			<Label cssClass="statement indent1" text="return "/>
+			<TextField id="returnVal2" cssClass="oneChar" hint="??" text = "{{ returnVal2 }}"/>
+			<Label cssClass="plain" text=";"/>
+		</WrapLayout>
+		<WrapLayout>
+			<Label cssClass="plain" text="}"/>
+		</WrapLayout>
+		<Button text="Print!" tap="print"/>
+	</StackLayout>
+</Page>

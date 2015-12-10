@@ -2,14 +2,12 @@ var observableModule = require("data/observable");
 
 // inside brackets of text fields - data binding
 var response = new observableModule.Observable({
-    fillPublic: "",
-    IS: "",
-    Tvoid: "",
-    topVal: "",
-    arrIndex: "",
-    arrIndexEq: "",
-    rarr: "",
-    priv: ""
+    baseCaseRight: "",
+    strIndex1: "",
+    strIndex2: "",
+    recursiveCall: "",
+    funcParam2: "",
+    returnFalse: "",
 });
 
 var frameModule = require("ui/frame");
@@ -23,21 +21,18 @@ exports.loaded = function(args) {
 
 
 exports.print = function() {
-    var fillPublic = (response.fillPublic).replace(/ /g,'');
-    var IS = (response.IS).replace(/ /g,'');
-    var Tvoid = (response.Tvoid).replace(/ /g,'');
-    var topVal = (response.topVal).replace(/ /g,'');
-    var arrIndex = (response.arrIndex).replace(/ /g,'');
-    var arrIndexEq = (response.arrIndexEq).replace(/ /g,'');
-    var rarr = (response.rarr).replace(/ /g,'');
-    var priv = (response.priv).replace(/ /g,'');
-    var returnVal2 = (response.returnVal2).replace(/ /g,'');
-    
-    var names = ["fillPublic", "IS", "Tvoid", "topVal", "arrIndex", "arrIndexEq", "rarr", "priv"];
-    var vals = [fillPublic, IS, Tvoid, topVal, arrIndex, arrIndexEq, rarr, priv];
-    var correct = ["public", "intstack", "void", "maxsize", "top++", "pushval", "--top", "int"];
+    var baseCaseRight = (response.baseCaseRight).replace(/ /g,'');
+    var strIndex1 = (response.strIndex1).replace(/ /g,'');
+    var strIndex2 = (response.strIndex2).replace(/ /g,'');
+    var recursiveCall = (response.recursiveCall).replace(/ /g,'');
+    var funcParam2 = (response.funcParam2).replace(/ /g,'');
+    var returnFalse = (response.returnFalse).replace(/ /g,'');
+
+    var names = ["baseCaseRight", "strIndex1", "strIndex2", "recursiveCall", "funcParam2", "returnFalse"];
+    var vals = [baseCaseRight, strIndex1, strIndex2, recursiveCall, funcParam2, returnFalse];
+    var correct = [2, 0, 1, "ispalindrome", 2, "false"];
     var numCorrect = 0;
-    
+
     for (var i = 0; i < names.length; i++){
     	if (vals[i].toLowerCase() != correct[i] || vals[i].length == 0){
     		page.addCss("#" + names[i] + " {border-color: red; background-color: #ffcccc}");

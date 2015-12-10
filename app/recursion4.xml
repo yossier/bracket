@@ -1,0 +1,98 @@
+<Page loaded="loaded">
+	<StackLayout orientation="vertical">
+		<WrapLayout>
+            <Label cssClass="description1 indent0" text="/* GOAL: check if str is a palindrome."/>
+        </WrapLayout>
+        <WrapLayout> 
+            <Label cssClass="description2 indent0" text="* A palindrome is a phrase that is"/>
+        </WrapLayout>
+        <WrapLayout>
+            <Label cssClass="description2 indent0" text="* the same forwards and backwards."/>
+        </WrapLayout>
+        <WrapLayout>
+            <Label cssClass="description2 indent0" text="* Return true or false."/>
+        </WrapLayout>
+        <WrapLayout>
+            <Label cssClass="description3 indent0" text="*/"/>
+        </WrapLayout>
+		<!-- Line 1 - Function Declaration -->
+		<WrapLayout>
+			<Label cssClass="type" text="bool " />
+			<Label cssClass="functionTitle" text="isPalindrome"/>
+			<Label cssClass="plain" text="(string s){"/>
+		</WrapLayout>
+		<!-- Line 2 - base case 1 if -->
+		<WrapLayout>
+			<Label cssClass="statement indent1" text="if "/>
+			<Label cssClass="plain" text="(s."/>
+			<Label cssClass="type" text="length"/>
+			<Label cssClass="plain" text="() < "/>
+			<TextField id="baseCaseRight" cssClass="twoChar" hint="??" text= "{{ baseCaseRight }}"/>
+			<Label cssClass="plain" text="){"/>
+		</WrapLayout> -->
+		<!-- Line 3 - return for base case 1 -->
+		<WrapLayout>
+			<Label cssClass="statement indent2" text= "return "/>
+			<Label cssClass="number" text="true"/>
+			<Label class="plain" text=";"/>
+		</WrapLayout>
+		<!-- Line 4 - End Bracket If1 -->
+		<WrapLayout>
+			<Label cssClass="plain indent1" text="}"/>
+		</WrapLayout>
+		<!-- Line 5 - else if statement -->
+		<WrapLayout>
+			<Label cssClass="statement indent1" text="else if"/>
+			<Label cssClass="plain" text="(s["/>
+			<TextField id="strIndex1" cssClass="twoChar" hint="??" text= "{{ strIndex1 }}"/>
+			<Label cssClass="plain" text="] == s[s."/>
+			<Label cssClass="type" text="length"/>
+			<Label cssClass="plain" text="() - "/>
+			<TextField id="strIndex2" cssClass="twoChar" hint="??" text= "{{ strIndex2 }}"/>
+			<Label cssClass="plain" text="])"/>
+		</WrapLayout>
+		<!-- Line 6 - else if open bracket -->
+		<WrapLayout>
+			<Label cssClass="plain indent1" text="{"/>
+		</WrapLayout>
+		<!-- Line 7 - else if return recursive call-->
+		<WrapLayout>
+			<Label cssClass="statement indent2" text= "return "/>
+			<TextField id="recursiveCall" cssClass="big" hint="?????????" text= "{{ recursiveCall }}"/>
+			<Label cssClass="plain" text="("/>
+		</WrapLayout>
+		<!-- Line 8 - recursive call params -->
+		<WrapLayout>
+			<Label cssClass="plain indent3" text="s."/>
+			<Label cssClass="type" text="substr"/>
+			<Label cssClass="plain" text="("/>
+			<Label cssClass="number" text="1"/>
+			<Label cssClass="plain" text=", s."/>
+			<Label cssClass="type" text="length"/>
+			<Label cssClass="plain" text="() - "/>
+			<TextField id="funcParam2" cssClass="twoChar" hint="??" text= "{{ funcParam2 }}"/>
+			<Label cssClass="plain" text=" );"/>
+		</WrapLayout>
+		<!-- Line 9 - close return recursive call -->
+		<WrapLayout>
+			<Label cssClass="plain indent2" text=");"/>
+		</WrapLayout>
+		<!-- Line 10 - close else if -->
+		<WrapLayout>
+			<Label cssClass="plain indent1" text="}"/>
+		</WrapLayout>
+		<!-- Line 11 - return for func -->
+		<WrapLayout>
+			<Label cssClass="statement indent1" text= "return "/>
+			<TextField id="returnFalse" cssClass="fiveChar" hint="?????" text="{{ returnFalse }}"/>
+			<Label cssClass="plain" text=" ;"/>
+		</WrapLayout>
+		<!-- Line 8 - End Bracket Function -->
+		<WrapLayout>
+			<Label cssClass="plain" text="}"/>
+		</WrapLayout>
+		
+		<Button text="Print!" tap="print"/>
+	</StackLayout>
+
+</Page>

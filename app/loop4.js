@@ -2,14 +2,14 @@ var observableModule = require("data/observable");
 
 // inside brackets of text fields - data binding
 var response = new observableModule.Observable({
-    fillPublic: "",
-    IS: "",
-    Tvoid: "",
-    topVal: "",
-    arrIndex: "",
-    arrIndexEq: "",
-    rarr: "",
-    priv: ""
+    conditioni: "",
+    conditionj1: "",
+    conditionj2: "",
+    rowVal: "",
+    colVal: "",
+    equality: "",
+    returnVal1: "",
+    returnVal2: ""
 });
 
 var frameModule = require("ui/frame");
@@ -23,19 +23,20 @@ exports.loaded = function(args) {
 
 
 exports.print = function() {
-    var fillPublic = (response.fillPublic).replace(/ /g,'');
-    var IS = (response.IS).replace(/ /g,'');
-    var Tvoid = (response.Tvoid).replace(/ /g,'');
-    var topVal = (response.topVal).replace(/ /g,'');
-    var arrIndex = (response.arrIndex).replace(/ /g,'');
-    var arrIndexEq = (response.arrIndexEq).replace(/ /g,'');
-    var rarr = (response.rarr).replace(/ /g,'');
-    var priv = (response.priv).replace(/ /g,'');
+    var conditioni = (response.conditioni).replace(/ /g,'');
+    var conditionj1 = (response.conditionj1).replace(/ /g,'');
+    var conditionj2 = (response.conditionj2).replace(/ /g,'');
+    var rowVal = (response.rowVal).replace(/ /g,'');
+    var colVal = (response.colVal).replace(/ /g,'');
+    console.log(rowVal);
+    console.log(colVal);
+    var equality = (response.equality).replace(/ /g,'');
+    var returnVal1 = (response.returnVal1).replace(/ /g,'');
     var returnVal2 = (response.returnVal2).replace(/ /g,'');
-    
-    var names = ["fillPublic", "IS", "Tvoid", "topVal", "arrIndex", "arrIndexEq", "rarr", "priv"];
-    var vals = [fillPublic, IS, Tvoid, topVal, arrIndex, arrIndexEq, rarr, priv];
-    var correct = ["public", "intstack", "void", "maxsize", "top++", "pushval", "--top", "int"];
+
+    var names = ["conditioni", "conditionj1", "conditionj2", "rowVal", "colVal", "equality", "returnVal1", "returnVal2"];
+    var vals = [conditioni, conditionj1, conditionj2, rowVal, colVal, equality, returnVal1, returnVal2];
+    var correct = [10, 0, 10, "i", "j", "findval", "i", -1];
     var numCorrect = 0;
     
     for (var i = 0; i < names.length; i++){

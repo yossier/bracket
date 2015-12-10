@@ -23,15 +23,16 @@ exports.loaded = function(args) {
 
 
 exports.print = function() {
-    var constr = response.constr;
+    var constr = (response.constr).replace(/ /g,'');
     console.log(constr);
-    var type1 = (response.type1);
-    var type2 = (response.type2);
-    var rname = (response.rname);
-    var type3 = response.type3;
-    var nl = response.nl;
-    var nr = response.nr;
-    var priv = response.priv;
+    var type1 = (response.type1).replace(/ /g,'');
+    var type2 = (response.type2).replace(/ /g,'');
+    var rname = (response.rname).replace(/ /g,'');
+    var type3 = (response.type3).replace(/ /g,'');
+    var nl = (response.nl).replace(/ /g,'');
+    var nr = (response.nr).replace(/ /g,'');
+    var priv = (response.priv).replace(/ /g,'');
+
     var names = ["constr", "type1", "type2", "rname", "type3", "nl", "nr", "priv"];
     var vals = [constr, type1, type2, rname, type3, nl, nr, priv];
     var correct = ["person", "string", "string", "name", "string", "name", "name_in", "private"];

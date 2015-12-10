@@ -2,14 +2,12 @@ var observableModule = require("data/observable");
 
 // inside brackets of text fields - data binding
 var response = new observableModule.Observable({
-    fillPublic: "",
-    IS: "",
-    Tvoid: "",
-    topVal: "",
-    arrIndex: "",
-    arrIndexEq: "",
-    rarr: "",
-    priv: ""
+    whileCondition: "",
+    ifCondition: "",
+    baseFirstParam: "",
+    elseFirstParam: "",
+    elseSecondParam: "",
+    returnFunc: "",
 });
 
 var frameModule = require("ui/frame");
@@ -23,21 +21,18 @@ exports.loaded = function(args) {
 
 
 exports.print = function() {
-    var fillPublic = (response.fillPublic).replace(/ /g,'');
-    var IS = (response.IS).replace(/ /g,'');
-    var Tvoid = (response.Tvoid).replace(/ /g,'');
-    var topVal = (response.topVal).replace(/ /g,'');
-    var arrIndex = (response.arrIndex).replace(/ /g,'');
-    var arrIndexEq = (response.arrIndexEq).replace(/ /g,'');
-    var rarr = (response.rarr).replace(/ /g,'');
-    var priv = (response.priv).replace(/ /g,'');
-    var returnVal2 = (response.returnVal2).replace(/ /g,'');
-    
-    var names = ["fillPublic", "IS", "Tvoid", "topVal", "arrIndex", "arrIndexEq", "rarr", "priv"];
-    var vals = [fillPublic, IS, Tvoid, topVal, arrIndex, arrIndexEq, rarr, priv];
-    var correct = ["public", "intstack", "void", "maxsize", "top++", "pushval", "--top", "int"];
+    var whileCondition = (response.whileCondition).replace(/ /g,'');
+    var ifCondition = (response.ifCondition).replace(/ /g,'');
+    var baseFirstParam = (response.baseFirstParam).replace(/ /g,'');
+    var elseFirstParam = (response.elseFirstParam).replace(/ /g,'');
+    var elseSecondParam = (response.elseSecondParam).replace(/ /g,'');
+    var returnFunc = (response.returnFunc).replace(/ /g,'');
+
+    var names = ["whileCondition", "ifCondition", "baseFirstParam", "elseFirstParam", "elseSecondParam", "returnFunc"];
+    var vals = [whileCondition, ifCondition, baseFirstParam, elseFirstParam, elseSecondParam, returnFunc];
+    var correct = ["x!=y", ">", "x-y", "x", "y-x", "x"];
     var numCorrect = 0;
-    
+
     for (var i = 0; i < names.length; i++){
     	if (vals[i].toLowerCase() != correct[i] || vals[i].length == 0){
     		page.addCss("#" + names[i] + " {border-color: red; background-color: #ffcccc}");

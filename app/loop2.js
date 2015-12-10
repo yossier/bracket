@@ -2,14 +2,12 @@ var observableModule = require("data/observable");
 
 // inside brackets of text fields - data binding
 var response = new observableModule.Observable({
-    fillPublic: "",
-    IS: "",
-    Tvoid: "",
-    topVal: "",
-    arrIndex: "",
-    arrIndexEq: "",
-    rarr: "",
-    priv: ""
+    TC: "",
+    conditioni: "",
+    conditionj: "",
+    ifval: "",
+    increment: "",
+    returnVal: ""
 });
 
 var frameModule = require("ui/frame");
@@ -23,19 +21,16 @@ exports.loaded = function(args) {
 
 
 exports.print = function() {
-    var fillPublic = (response.fillPublic).replace(/ /g,'');
-    var IS = (response.IS).replace(/ /g,'');
-    var Tvoid = (response.Tvoid).replace(/ /g,'');
-    var topVal = (response.topVal).replace(/ /g,'');
-    var arrIndex = (response.arrIndex).replace(/ /g,'');
-    var arrIndexEq = (response.arrIndexEq).replace(/ /g,'');
-    var rarr = (response.rarr).replace(/ /g,'');
-    var priv = (response.priv).replace(/ /g,'');
-    var returnVal2 = (response.returnVal2).replace(/ /g,'');
-    
-    var names = ["fillPublic", "IS", "Tvoid", "topVal", "arrIndex", "arrIndexEq", "rarr", "priv"];
-    var vals = [fillPublic, IS, Tvoid, topVal, arrIndex, arrIndexEq, rarr, priv];
-    var correct = ["public", "intstack", "void", "maxsize", "top++", "pushval", "--top", "int"];
+    var TC = (response.TC).replace(/ /g,'');
+    var conditioni = (response.conditioni).replace(/ /g,'');
+    var conditionj = (response.conditionj).replace(/ /g,'');
+    var ifval = (response.ifval).replace(/ /g,'');
+    var increment = (response.increment).replace(/ /g,'');
+    var returnVal = (response.returnVal).replace(/ /g,'');
+
+    var names = ["TC", "conditioni", "conditionj", "ifval", "increment", "returnVal"];
+    var vals = [TC, conditioni, conditionj, ifval, increment, returnVal];
+    var correct = [0, 15, 8, "array[i][j]", "totalcount", "totalcount"];
     var numCorrect = 0;
     
     for (var i = 0; i < names.length; i++){

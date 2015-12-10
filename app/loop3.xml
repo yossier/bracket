@@ -1,0 +1,76 @@
+<Page loaded="loaded">
+	<StackLayout orientation="vertical">
+		<WrapLayout>
+            <Label cssClass="description1 indent0" text="/* GOAL: search array for increasing pods."/>
+        </WrapLayout>
+        <WrapLayout> 
+            <Label cssClass="description2 indent0" text="* A increasing pod is a group of 3 ints, "/>
+        </WrapLayout>
+        <WrapLayout>
+            <Label cssClass="description2 indent0" text="* 	where x < y < z."/>
+        </WrapLayout>
+        <WrapLayout>
+            <Label cssClass="description2 indent0" text="* Return the middle elt of the last pod."/>
+        </WrapLayout>
+        <WrapLayout>
+            <Label cssClass="description3 indent0" text="*/"/>
+        </WrapLayout>
+		<!-- Line 1 - Function Declaration -->
+		<WrapLayout>
+			<Label cssClass= "type" text="int " />
+			<Label cssClass= "functionTitle" text="lastIncreasing"/>
+			<Label cssClass= "plain" text="("/>
+			<Label cssClass="type" text="int"/>
+			<Label cssClass="plain" text=" array[], "/>
+			<Label cssClass="type" text="int "/>
+			<Label cssClass="plain" text="size){"/>
+		</WrapLayout>
+		<WrapLayout>
+			<Label cssClass= "type indent1" text="int " />
+			<Label cssClass="plain" text="lastIndexNum = "/>
+			<TextField id="lastIndexNum" cssClass="oneChar" hint="??" text="{{ lastIndexNum }}"/>
+			<Label cssClass="plain" text=";"/>
+		</WrapLayout>
+		<WrapLayout>
+			<Label cssClass="statement indent1" text="for"/>
+			<Label cssClass="plain" text=" ("/>
+			<Label cssClass="type" text="int "/>
+			<Label cssClass="plain" text="i = "/>
+			<Label cssClass="number" text="0"/>
+			<Label cssClass="plain" text="; i < "/>
+			<TextField id="condition" cssClass="big" hint="?????" text="{{ condition }}"/>
+			<Label cssClass="plain" text="; ++i){"/>
+		</WrapLayout>
+		<WrapLayout>
+			<Label cssClass="statement indent2" text="if "/>
+			<Label cssClass="plain" text="(array[i - "/>
+			<Label cssClass="number" text="1"/>
+			<Label cssClass="plain" text="] < "/>
+			<TextField id="arri" cssClass="big" hint="???????" text = "{{ arri }}"/>
+		</WrapLayout>
+		<WrapLayout>
+			<Label cssClass="plain indent2" text="&amp;&amp; array[i] < "/>
+			<TextField id="arrip1" cssClass="big" hint="???????" text= "{{ arrip1 }}"/>
+			<Label cssClass="plain" text="){"/>
+		</WrapLayout>
+		<WrapLayout>
+			<TextField id="equalTo" cssClass="big indent3" hint="???????" text= "{{ equalTo }}"/>
+			<Label cssClass="plain" text=" = i;"/>
+		</WrapLayout>
+		<WrapLayout>
+			<Label cssClass="plain indent2" text="}"/>
+		</WrapLayout>
+		<WrapLayout>
+			<Label cssClass="plain indent1" text="}"/>
+		</WrapLayout>
+		<WrapLayout>
+			<Label cssClass="statement indent1" text= "return "/>
+			<TextField id="returnVal" cssClass="big" hint="?????" text="{{ returnVal }}"/>
+			<Label class="plain" text=";"/>
+		</WrapLayout>
+		<WrapLayout>
+			<Label cssClass="plain" text="}"/>
+		</WrapLayout>
+		<Button text="Print!" tap="print"/>
+	</StackLayout>
+</Page>

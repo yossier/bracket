@@ -2,14 +2,12 @@ var observableModule = require("data/observable");
 
 // inside brackets of text fields - data binding
 var response = new observableModule.Observable({
-    fillPublic: "",
-    IS: "",
-    Tvoid: "",
-    topVal: "",
-    arrIndex: "",
-    arrIndexEq: "",
-    rarr: "",
-    priv: ""
+    lastIndexNum: "",
+    condition: "",
+    arri: "",
+    arrip1: "",
+    equalTo: "",
+    returnVal: ""
 });
 
 var frameModule = require("ui/frame");
@@ -23,19 +21,16 @@ exports.loaded = function(args) {
 
 
 exports.print = function() {
-    var fillPublic = (response.fillPublic).replace(/ /g,'');
-    var IS = (response.IS).replace(/ /g,'');
-    var Tvoid = (response.Tvoid).replace(/ /g,'');
-    var topVal = (response.topVal).replace(/ /g,'');
-    var arrIndex = (response.arrIndex).replace(/ /g,'');
-    var arrIndexEq = (response.arrIndexEq).replace(/ /g,'');
-    var rarr = (response.rarr).replace(/ /g,'');
-    var priv = (response.priv).replace(/ /g,'');
-    var returnVal2 = (response.returnVal2).replace(/ /g,'');
-    
-    var names = ["fillPublic", "IS", "Tvoid", "topVal", "arrIndex", "arrIndexEq", "rarr", "priv"];
-    var vals = [fillPublic, IS, Tvoid, topVal, arrIndex, arrIndexEq, rarr, priv];
-    var correct = ["public", "intstack", "void", "maxsize", "top++", "pushval", "--top", "int"];
+    var lastIndexNum = (response.lastIndexNum).replace(/ /g,'');
+    var condition = (response.condition).replace(/ /g,'');
+    var arri = (response.arri).replace(/ /g,'');
+    var arrip1 = (response.arrip1).replace(/ /g,'');
+    var equalTo = (response.equalTo).replace(/ /g,'');
+    var returnVal = (response.returnVal).replace(/ /g,'');
+
+    var names = ["lastIndexNum", "condition", "arri", "arrip1", "equalTo", "returnVal"];
+    var vals = [lastIndexNum, condition, arri, arrip1, equalTo, returnVal];
+    var correct = [-1, "size-1", "array[i]", "array[i+1]", "lastindex", "lastindex"];
     var numCorrect = 0;
     
     for (var i = 0; i < names.length; i++){

@@ -1,5 +1,14 @@
 <Page loaded="loaded">
 	<StackLayout orientation="vertical">
+		<WrapLayout>
+            <Label cssClass="description1 indent0" text="/* GOAL: Implement the Person class."/>
+        </WrapLayout>
+        <WrapLayout> 
+            <Label cssClass="description2 indent0" text="* name is a private member variable."/>
+        </WrapLayout>
+        <WrapLayout>
+            <Label cssClass="description3 indent0" text="*/"/>
+        </WrapLayout>
 		<!-- Line 1 - Function Declaration -->
 		<WrapLayout>
 			<Label cssClass= "type" text="class " />
@@ -15,11 +24,6 @@
 		<WrapLayout>
 			<Label cssClass="plain indent2" text="name = "/>
 			<Label cssClass="str" text='"Jane Doe"'/>
-			<Label cssClass="plain" text=";"/>		
-		</WrapLayout>
-		<WrapLayout>
-			<Label cssClass="plain indent2" text="age = "/>
-			<Label cssClass="number" text='0'/>
 			<Label cssClass="plain" text=";"/>		
 		</WrapLayout>
 		<WrapLayout>

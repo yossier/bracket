@@ -2,14 +2,12 @@ var observableModule = require("data/observable");
 
 // inside brackets of text fields - data binding
 var response = new observableModule.Observable({
-    fillPublic: "",
-    IS: "",
-    Tvoid: "",
-    topVal: "",
-    arrIndex: "",
-    arrIndexEq: "",
-    rarr: "",
-    priv: ""
+    lessThanEqual: "",
+    lowForMid: "",
+    highForMid: "",
+    arrayMid: "",
+    highSet: "",
+    lowSet: "",
 });
 
 var frameModule = require("ui/frame");
@@ -23,21 +21,18 @@ exports.loaded = function(args) {
 
 
 exports.print = function() {
-    var fillPublic = (response.fillPublic).replace(/ /g,'');
-    var IS = (response.IS).replace(/ /g,'');
-    var Tvoid = (response.Tvoid).replace(/ /g,'');
-    var topVal = (response.topVal).replace(/ /g,'');
-    var arrIndex = (response.arrIndex).replace(/ /g,'');
-    var arrIndexEq = (response.arrIndexEq).replace(/ /g,'');
-    var rarr = (response.rarr).replace(/ /g,'');
-    var priv = (response.priv).replace(/ /g,'');
-    var returnVal2 = (response.returnVal2).replace(/ /g,'');
-    
-    var names = ["fillPublic", "IS", "Tvoid", "topVal", "arrIndex", "arrIndexEq", "rarr", "priv"];
-    var vals = [fillPublic, IS, Tvoid, topVal, arrIndex, arrIndexEq, rarr, priv];
-    var correct = ["public", "intstack", "void", "maxsize", "top++", "pushval", "--top", "int"];
+    var lessThanEqual = (response.lessThanEqual).replace(/ /g,'');
+    var lowForMid = (response.lowForMid).replace(/ /g,'');
+    var highForMid = (response.highForMid).replace(/ /g,'');
+    var arrayMid = (response.arrayMid).replace(/ /g,'');
+    var highSet = (response.highSet).replace(/ /g,'');
+    var lowSet = (response.lowSet).replace(/ /g,'');
+
+    var names = ["lessThanEqual", "lowForMid", "highForMid", "arrayMid", "highSet", "lowSet"];
+    var vals = [lessThanEqual, lowForMid, highForMid, arrayMid, highSet, lowSet];
+    var correct = ["<=", "low", "high", "array[mid]", "mid-1", "low"];
     var numCorrect = 0;
-    
+
     for (var i = 0; i < names.length; i++){
     	if (vals[i].toLowerCase() != correct[i] || vals[i].length == 0){
     		page.addCss("#" + names[i] + " {border-color: red; background-color: #ffcccc}");
