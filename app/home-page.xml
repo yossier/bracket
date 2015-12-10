@@ -11,7 +11,7 @@
 				         <Border cssClass="listElts" row="1" col="0" rowSpan="2" colSpan="4"></Border>
 	    			     <Label tap="recursion" row="1" cssClass="boxHeader" colSpan="3" text="Recursion"/>
 	    			     <Button row="1" colSpan="1" rowSpan="2" col="4" text="&#62;" cssClass="collapseButton" verticalAlignment="center" tap="recursion"/>
-                 
+	    			     
 				         <Border cssClass="spacer" row="3" col="0" rowSpan="1" colSpan="4"></Border>
 					       <Label text=" " cssClass="spacer" row="3" col="0" colSpan="4"/>
                  
