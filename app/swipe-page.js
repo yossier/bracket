@@ -37,29 +37,29 @@ function pageLoaded(args) {
     absoluteLayoutModule.AbsoluteLayout.setTop(swipeCard, middleCardTop);
     absoluteLayoutModule.AbsoluteLayout.setTop(swipeCardNext, middleCardTop + 25);
 
- //    var loopDescList = ["loop 1", "loop 2", "loop 3", "loop 4", "loop 5"];
-	// var loopList = ["loop1", "loop2", "loop3", "loop4", "loop5"];
+    var loopDescList = ["loop 1", "loop 2", "loop 3", "loop 4", "loop 5"];
+	var loopList = ["loop1", "loop2", "loop3", "loop4", "loop5"];
 
 	var context = "loops";
 
 	//You can access a challenge like this:
 	//challenges["loopChallenges"]["loop1"]
-	loops={ 
-     "loop1":"Find the smallest element using a loop.", 
-     "loop2":"Return the number of times a value occurs.", 
-     "loop3":"Find the last increasing pod of 3 elts.",
-     "loop4":"Return the row the value is found in." 
-	};
+	// loops={ 
+ //     "loop1":"Find the smallest element using a loop.", 
+ //     "loop2":"Return the number of times a value occurs.", 
+ //     "loop3":"Find the last increasing pod of 3 elts.",
+ //     "loop4":"Return the row the value is found in." 
+	// };
 
-	dataStructures={
-		"dataStructures1":"Implement an IntStack class",
-	  "dataStructures2":"Finish implementing the Person class."
-	};
+	// dataStructures={
+	// 	"dataStructures1":"Implement an IntStack class",
+	//   "dataStructures2":"Finish implementing the Person class."
+	// };
 
-	challenges={
-		"loopChallenges":loops,
-	  "dataStructureChallenges": dataStructures
-	};
+	// challenges={
+	// 	"loopChallenges":loops,
+	//   "dataStructureChallenges": dataStructures
+	// };
 
 	code.previous = loopDescList[cardIndex - 1];
 	code.current = loopDescList[cardIndex];
