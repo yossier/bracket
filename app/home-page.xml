@@ -43,17 +43,12 @@
                 
                 <Label horizontalAlignment="stretch" cssClass="spacer"/>
                 
-                <DockLayout tap="sorts" stretchLastChild="false">
-	    	          <Label dock="left" cssClass="boxHeader" verticalAlignment="center" text="Scalability"/>
-	    			      <Button text="&#62;" dock="right" cssClass="collapseButton" verticalAlignment="center" tap="sorts"/>
+                <DockLayout tap="big0" stretchLastChild="false">
+	    	          <Label dock="left" cssClass="boxHeader" verticalAlignment="center" text="Complexity"/>
+	    			      <Button text="&#62;" dock="right" cssClass="collapseButton" verticalAlignment="center" tap="big0"/>
 			          </DockLayout>
 
                 <Label horizontalAlignment="stretch" cssClass="spacer"/>
-                
-                <DockLayout tap="sorts" stretchLastChild="false">
-	    	          <Label dock="left" cssClass="boxHeader" verticalAlignment="center" text="Selection"/>
-	    			      <Button text="&#62;" dock="right" cssClass="collapseButton" verticalAlignment="center" tap="sorts"/>
-			          </DockLayout>
                 
               </StackLayout>
             </ScrollView>

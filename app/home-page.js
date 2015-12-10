@@ -43,3 +43,8 @@ exports.sorts = function(){
     navigationEntry.context = {info: "sorts"};
     frameModule.topmost().navigate(navigationEntry);
 };
+
+exports.big0 = function() {
+    navigationEntry.context = {info: "big0"};
+    frameModule.topmost().navigate(navigationEntry);
+};
