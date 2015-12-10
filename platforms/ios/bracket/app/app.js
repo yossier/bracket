@@ -1,5 +1,5 @@
 var application = require("application");
-application.mainModule = "challenge";
+application.mainModule = "home-page";
 application.cssFile = "./app.css";
 
 application.on(application.launchEvent, function (args) {
