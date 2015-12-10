@@ -12,7 +12,9 @@ var actionBarModule = require("ui/action-bar");
 var indexes={ 
      "loops": 0, 
      "dataStructures": 0,
-     "recursion":0
+     "recursion": 0,
+     "algorithms": 0,
+     "bigO": 0
 };
 var context = "loops";
 
@@ -67,7 +69,12 @@ function pageLoaded(args) {
 
 	var dataStructures = ["Implement an IntStack class", "Finish implementing the Person class."]
 
-	var recursion = ["recursion 1", "recursion 2", "recursion 3", "recursion 4"];
+	var recursion = ["Compute the nth fibonacci number.", "Compute the factorial.", "Find the greatest common divisor.", 
+	"Determine if a string is a palindrome."];
+
+	var algorithms = ["implement a binary search."];
+
+	var bigO = ["Complexity 1", "Complexity 2", "Complexity 3"];
 
 	// var challenges={
 	// 	"loopChallenges":loops,
@@ -80,6 +87,10 @@ function pageLoaded(args) {
 		var challengeDescriptions = dataStructures;
 	} else if  (context === "recursion") {
 		var challengeDescriptions = recursion;
+	} else if (context === "algorithms") {
+		var challengeDescriptions = algorithms;
+	} else if (context === "bigO") {
+		var challengeDescriptions = bigO;
 	}
 
 	cardIndex = indexes[context];
