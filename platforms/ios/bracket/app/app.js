@@ -1,5 +1,5 @@
 var application = require("application");
-application.mainModule = "home-page";
+application.mainModule = "swipe-page";
 application.cssFile = "./app.css";
 
 application.on(application.launchEvent, function (args) {
