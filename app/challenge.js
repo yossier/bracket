@@ -14,7 +14,7 @@ var navigationEntry = {
     animated: false
 };
 
-exports.loaded = function(args) {
+/*exports.loaded = function(args) {
   var page = args.object;
   
   if (page.ios) {
@@ -34,33 +34,29 @@ exports.loaded = function(args) {
   	page: page
   }
 };
+*/
 
 exports.recursion = function(){
-	  alert('Recursion Clicked');
     navigationEntry.context = {info: 'recursion'};
     frameModule.topmost().navigate(navigationEntry);
 };
 
 exports.dataStructures = function(){
-	  alert('Data Structures Clicked');
     navigationEntry.context = {info: "dataStructures"};
     frameModule.topmost().navigate(navigationEntry);
 };
 
 exports.loops = function(){
-	  alert('Loops Clicked');
     navigationEntry.context = {info: "loops"};
     frameModule.topmost().navigate(navigationEntry);
 };
 
 exports.algorithms = function(){
-	  alert('Algorithms Clicked');
     navigationEntry.context = {info: "algorithms"};
     frameModule.topmost().navigate(navigationEntry);
 };
 
 exports.sorts = function(){
-	  alert('Sorts Clicked');
     navigationEntry.context = {info: "sorts"};
     frameModule.topmost().navigate(navigationEntry);
 };
