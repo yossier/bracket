@@ -113,7 +113,7 @@
 			<Label cssClass="plain" text="indexFound;"/>
 		</WrapLayout>
 
-		<Button text="Print!" tap="print"/>
+		<Button text="Submit" cssClass="submitButton" tap="print"/>
 	</StackLayout>
 
 </Page>
