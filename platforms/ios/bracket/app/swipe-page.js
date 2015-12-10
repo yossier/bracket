@@ -7,12 +7,20 @@ var platformModule = require("platform");
 var scrollViewModule = require("ui/scroll-view");
 var builder = require("ui/builder");
 var frameModule = require("ui/frame");
+var observableModule = require("data/observable");
 var cardIndex = 2;
+
+var code = new observableModule.Observable({
+	previous: "previous",
+	current: "current",
+	next: "next"
+});
 
 function pageLoaded(args) {
     var page = args.object;
     var absoluteLayout = new absoluteLayoutModule.AbsoluteLayout();
-    page.bindingContext = sModule.swipeViewModel;
+    // page.bindingContext = sModule.swipeViewModel;
+    page.bindingContext = code;
     var swipeCard = view.getViewById(page, "swipeCard");
     var swipeCardPrevious = view.getViewById(page, "swipeCardPrevious");
     var swipeCardNext = view.getViewById(page, "swipeCardNext");
@@ -32,14 +40,30 @@ function pageLoaded(args) {
     var loopDescList = ["loop 1", "loop 2", "loop 3", "loop 4", "loop 5"];
 	var loopList = ["loop1", "loop2", "loop3", "loop4", "loop5"];
 
-	swipeCardPrevious.text = loopDescList[cardIndex - 1];
-	swipeCard.text = loopDescList[cardIndex];
-	swipeCardNext.text = loopDescList[cardIndex + 1];
+	code.previous = loopDescList[cardIndex - 1];
+	code.current = loopDescList[cardIndex];
+	code.next = loopDescList[cardIndex + 1];
 
 	// if (this.loopCurIndex === 0) {
 	// 	page.css = "cardPrevious { visibility: collapsed }";
 	// }
 
+	// swipeCard.on(gestures.GestureTypes.swipe, function (args) {
+	// 	console.log("inside swipe");
+	// 	if(args.direction === 1) {
+	// 		cardIndex -= 1;
+	//    		code.current = loopDescList[cardIndex];
+	//       	code.previous = loopDescList[cardIndex - 1];
+	//       	code.next = loopDescList[cardIndex + 1];
+	//       	console.log("previous: " + code.previous + ", current: " + code.current + ", next: " + code.next);
+	// 	} else if (args.direction === 2) {
+	// 		cardIndex += 1;
+	//       	code.current = loopDescList[cardIndex];
+	//       	code.previous = loopDescList[cardIndex - 1];
+	//       	code.next = loopDescList[cardIndex + 1];
+	//       	console.log("previous: " + code.previous + ", current: " + code.current + ", next: " + code.next);
+	// 	}
+	// });
 
 
     swipeCard.on(gestures.GestureTypes.pan, function (args) {
@@ -50,47 +74,41 @@ function pageLoaded(args) {
 	        this.oldLeftNext = swipeCardNext._oldLeft;
 	    }
 
-	    console.log("deltaX: " + args.deltaX);
-	   	if (args.deltaX > 200) {
-	   		//NEED TO UPDATE FOR EDGE CASES
-	   		cardIndex -= 1;
-	      	swipeCard.text = loopDescList[cardIndex];
-	      	swipeCardPrevious.text = loopDescList[cardIndex - 1];
-	      	swipeCardNext.text = loopDescList[cardIndex + 1];
-	      	absoluteLayoutModule.AbsoluteLayout.setLeft(swipeCard, this.oldLeftMiddle);
-		    absoluteLayoutModule.AbsoluteLayout.setLeft(swipeCardPrevious, this.oldLeftPrevious);
-		    absoluteLayoutModule.AbsoluteLayout.setLeft(swipeCardNext, this.oldLeftNext);
-	      	return;
-	    } else if (args.deltaX < -200) {
-	      	cardIndex += 1;
-	      	var tempSwipCardText = swipeCard.text;
-	      	swipeCard.text = loopDescList[cardIndex];
-	      	swipeCardPrevious.text = loopDescList[cardIndex - 1];
-	      	swipeCardNext.text = loopDescList[cardIndex + 1];
-	      	absoluteLayoutModule.AbsoluteLayout.setLeft(swipeCard, this.oldLeftMiddle);
-		    absoluteLayoutModule.AbsoluteLayout.setLeft(swipeCardPrevious, this.oldLeftPrevious);
-		    absoluteLayoutModule.AbsoluteLayout.setLeft(swipeCardNext, this.oldLeftNext);
-	      	return;
-	    } 
+	    // console.log("deltaX: " + args.deltaX);
 
 	    if(args.state === gestures.GestureStateTypes.began) {
-	    	console.log("began");
+	    	// console.log("began");
 	    	absoluteLayoutModule.AbsoluteLayout.setLeft(swipeCardPrevious, this.oldLeftPrevious + args.deltaX);
 	    	absoluteLayoutModule.AbsoluteLayout.setLeft(swipeCard, this.oldLeftMiddle + args.deltaX);
 	    	absoluteLayoutModule.AbsoluteLayout.setLeft(swipeCardNext, this.oldLeftNext + args.deltaX);
 	    } else if(args.state === gestures.GestureStateTypes.changed) {
-	    	console.log("changed");
+	    	// console.log("changed");
 	    	absoluteLayoutModule.AbsoluteLayout.setLeft(swipeCardPrevious, this.oldLeftPrevious + args.deltaX);
 	    	absoluteLayoutModule.AbsoluteLayout.setLeft(swipeCard, this.oldLeftMiddle + args.deltaX);
 	    	absoluteLayoutModule.AbsoluteLayout.setLeft(swipeCardNext, this.oldLeftNext + args.deltaX);
 	    } else if(args.state === gestures.GestureStateTypes.ended) {
-	    	console.log("ended");
+	    	// console.log("ended");
 	    	absoluteLayoutModule.AbsoluteLayout.setLeft(swipeCard, this.oldLeftMiddle);
 		    absoluteLayoutModule.AbsoluteLayout.setLeft(swipeCardPrevious, this.oldLeftPrevious);
 		    absoluteLayoutModule.AbsoluteLayout.setLeft(swipeCardNext, this.oldLeftNext);
-	      	return;
+		   	if (args.deltaX > 200) {
+		   		console.log("swipe left");
+		   		//NEED TO UPDATE FOR EDGE CASES
+		   		cardIndex -= 1;
+		   		code.current = loopDescList[cardIndex];
+		      	code.previous = loopDescList[cardIndex - 1];
+		      	code.next = loopDescList[cardIndex + 1];
+		      	console.log("previous: " + code.previous + ", current: " + code.current + ", next: " + code.next);
+		    } else if (args.deltaX < -200) {
+		    	console.log("swipe right");
+		      	cardIndex += 1;
+		      	code.current = loopDescList[cardIndex];
+		      	code.previous = loopDescList[cardIndex - 1];
+		      	code.next = loopDescList[cardIndex + 1];
+		      	console.log("previous: " + code.previous + ", current: " + code.current + ", next: " + code.next);
+		    } 
 	    } else if(args.state === gestures.GestureStateTypes.cancelled) {
-	    	console.log("cancelled");
+	    	// console.log("cancelled");
 		    absoluteLayoutModule.AbsoluteLayout.setLeft(swipeCard, this.oldLeftMiddle);
 		    absoluteLayoutModule.AbsoluteLayout.setLeft(swipeCardPrevious, this.oldLeftPrevious);
 		    absoluteLayoutModule.AbsoluteLayout.setLeft(swipeCardNext, this.oldLeftNext);
@@ -101,8 +119,8 @@ function pageLoaded(args) {
 	swipeCard.on(gestures.GestureTypes.tap, function (args) {
     	console.log("Tap");
     	var topmost = frameModule.topmost();
-    	console.log("this.loopCurIndex:" + cardIndex);
-    	console.log("loopList[this.loopCurIndex]: " + loopList[cardIndex]);
+    	console.log("this.cardIndex:" + cardIndex);
+    	console.log("loopList[cardIndex]: " + loopList[cardIndex]);
 		topmost.navigate(loopList[cardIndex]);
 
 	});
