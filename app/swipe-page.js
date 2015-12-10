@@ -11,7 +11,8 @@ var observableModule = require("data/observable");
 var actionBarModule = require("ui/action-bar");
 var indexes={ 
      "loops": 0, 
-     "dataStructures": 0
+     "dataStructures": 0,
+     "recursion":0
 };
 var context = "loops";
 
@@ -66,6 +67,8 @@ function pageLoaded(args) {
 
 	var dataStructures = ["Implement an IntStack class", "Finish implementing the Person class."]
 
+	var recursion = ["recursion 1", "recursion 2", "recursion 3", "recursion 4"];
+
 	// var challenges={
 	// 	"loopChallenges":loops,
 	//   "dataStructureChallenges": dataStructures
@@ -75,6 +78,8 @@ function pageLoaded(args) {
 		var challengeDescriptions = loops;
 	} else if (context === "dataStructures") {
 		var challengeDescriptions = dataStructures;
+	} else if  (context === "recursion") {
+		var challengeDescriptions = recursion;
 	}
 
 	cardIndex = indexes[context];

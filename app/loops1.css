@@ -26,6 +26,14 @@ Page{
 	color: #fb3374;
 }
 
+.str{
+	color: #e5e07f;
+}
+
+.indent0{
+	margin-left: 5;
+}
+
 .indent1{
 	margin-left: 20;
 }
@@ -38,8 +46,17 @@ Page{
 	margin-left: 60;
 }
 
+.indent4{
+	margin-left: 80;
+}
+
 .oneChar{
 	width: 18;
+	text-align: center;
+}
+
+.twoChar{
+	width: 30;
 	text-align: center;
 }
 
@@ -50,6 +67,29 @@ Page{
 
 .big{
 	width: 90;
+	text-align: center;
+}
+
+.description1{
+	padding-top: 12;
+	color: #9bc4e3;
+	text-align: center;
+}
+
+.description2{
+	color: #9bc4e3;
+	text-align: center;
+}
+
+.description3{
+	padding-bottom: 36;
+	color: #9bc4e3;
+	text-align: center;
+}
+.descriptionSingle{
+	padding-top: 12;
+	padding-bottom: 36;
+	color: #9bc4e3;
 	text-align: center;
 }
 
@@ -67,4 +107,3 @@ TextField{
 WrapLayout{
 	margin-top: 4;
 }
-

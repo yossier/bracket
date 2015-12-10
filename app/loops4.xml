@@ -1,11 +1,23 @@
 <Page loaded="loaded">
   <ScrollView>
 	<StackLayout orientation="vertical">
+		<WrapLayout>
+            <Label cssClass="description1 indent0" text="/* GOAL: search the 2-D array for val"/>
+        </WrapLayout>
+        <WrapLayout>
+            <Label cssClass="description2 indent0" text="* If found, return 1st row elt was found."/>
+        </WrapLayout>
+        <WrapLayout>
+            <Label cssClass="description2 indent0" text="* If not found, return -1."/>
+        </WrapLayout>
+        <WrapLayout>
+            <Label cssClass="description3 indent0" text="*/"/>
+        </WrapLayout>
 		<!-- Line 1 - Function Declaration -->
 		<WrapLayout>
-			<Label cssClass= "type" text="int " />
-			<Label cssClass= "functionTitle" text="findIdx"/>
-			<Label cssClass= "plain" text="("/>
+			<Label cssClass="type" text="int " />
+			<Label cssClass="functionTitle" text="findIdx"/>
+			<Label cssClass="plain" text="("/>
 			<Label cssClass="type" text="int"/>
 			<Label cssClass="plain" text=" array["/>
 			<Label cssClass="number" text="10"/>

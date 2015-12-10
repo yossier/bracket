@@ -23,16 +23,16 @@ exports.loaded = function(args) {
 
 
 exports.print = function() {
-    var conditioni = response.conditioni;
-    var conditionj1 = (response.conditionj1);
-    var conditionj2 = (response.conditionj2);
-    var rowVal = (response.rowVal);
-    var colVal = response.colVal;
+    var conditioni = (response.conditioni).replace(/ /g,'');
+    var conditionj1 = (response.conditionj1).replace(/ /g,'');
+    var conditionj2 = (response.conditionj2).replace(/ /g,'');
+    var rowVal = (response.rowVal).replace(/ /g,'');
+    var colVal = (response.colVal).replace(/ /g,'');
     console.log(rowVal);
     console.log(colVal);
-    var equality = response.equality;
-    var returnVal1 = response.returnVal1;
-    var returnVal2 = response.returnVal2;
+    var equality = (response.equality).replace(/ /g,'');
+    var returnVal1 = (response.returnVal1).replace(/ /g,'');
+    var returnVal2 = (response.returnVal2).replace(/ /g,'');
 
     var names = ["conditioni", "conditionj1", "conditionj2", "rowVal", "colVal", "equality", "returnVal1", "returnVal2"];
     var vals = [conditioni, conditionj1, conditionj2, rowVal, colVal, equality, returnVal1, returnVal2];
