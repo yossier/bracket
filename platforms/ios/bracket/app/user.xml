@@ -1,10 +1,10 @@
 <Page>
 	<StackLayout verticalAlignment="center" horizontalAlignment="center" orientation="vertical">
 		<!-- <Image src="~/Downloads/download.jpeg" stretch ="none" / >  -->
-		<Label id="nameVal" text="Becca Lesser"/>
-		<Label id="emailAddr" text="raless&#64;umich.edu"/>
+		<Label id="nameVal" text="{{ nameVal }}"/>
+		<Label id="emailAddr" text="{{ emailAddr }}"/>
 		<Label cssClass="points" text="Points:"/>
-		<Label cssClass="points" id="pointNum" text="110"/>
+		<Label cssClass="points" id="pointNum" text="{{ numPoints }}"/>
 		<WrapLayout>
 			<Label cssClass="challenges" text="Challenges Attempted: "/>
 			<Label id="attemptedBox" cssClass="challenges" text="{{ attempted }}"/>

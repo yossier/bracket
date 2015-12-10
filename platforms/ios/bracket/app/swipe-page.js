@@ -1,84 +1,142 @@
 var sModule = require("./swipe-view-model");
 var dialogs = require("ui/dialogs");
 var gestures = require("ui/gestures");
-var absoluteLayout = require("ui/layouts/absolute-layout");
+var absoluteLayoutModule = require("ui/layouts/absolute-layout");
 var view = require("ui/core/view");
+var platformModule = require("platform");
+var scrollViewModule = require("ui/scroll-view");
+var builder = require("ui/builder");
+var frameModule = require("ui/frame");
+var observableModule = require("data/observable");
+var actionBarModule = require("ui/action-bar");
+var cardIndex = 0;
+var loopIndex = 0;
+var dataStructuresIndex = 0;
+var context = "loops";
+
+var code = new observableModule.Observable({
+	previous: "previous",
+	current: "current",
+	next: "next"
+});
+
+var titleInfo = new observableModule.Observable({
+	title: "context"
+});
+
 function pageLoaded(args) {
+	// console.log("pageLoaded");
     var page = args.object;
-    page.bindingContext = sModule.swipeViewModel;
+
+    context = page.navigationContext.info;
+
+    titleTemp = context.charAt(0).toUpperCase() + context.slice(1);
+    titleInfo.title = titleTemp;
+
+    // page.bindingContext = sModule.swipeViewModel;
+    page.bindingContext = code;
+
+
     var swipeCard = view.getViewById(page, "swipeCard");
+    var swipeCardPrevious = view.getViewById(page, "swipeCardPrevious");
+    var swipeCardNext = view.getViewById(page, "swipeCardNext");
+
+    var screenWidth = platformModule.screen.mainScreen.widthPixels / platformModule.screen.mainScreen.scale;
+    var screenHeight = platformModule.screen.mainScreen.heightPixels / platformModule.screen.mainScreen.scale;
+    var absoluteLayout = new absoluteLayoutModule.AbsoluteLayout();
+    absoluteLayout.width = screenWidth;
+	absoluteLayout.height = screenHeight;
+	var middleCardLeft = (screenWidth - 250) / 2;
+	var middleCardTop = (screenHeight/5);
+	absoluteLayoutModule.AbsoluteLayout.setLeft(swipeCardPrevious,  -200 + middleCardLeft/2);
+	absoluteLayoutModule.AbsoluteLayout.setLeft(swipeCard, middleCardLeft);
+    absoluteLayoutModule.AbsoluteLayout.setLeft(swipeCardNext, 250 + middleCardLeft + middleCardLeft/2);
+    absoluteLayoutModule.AbsoluteLayout.setTop(swipeCardPrevious, middleCardTop + 25);
+    absoluteLayoutModule.AbsoluteLayout.setTop(swipeCard, middleCardTop);
+    absoluteLayoutModule.AbsoluteLayout.setTop(swipeCardNext, middleCardTop + 25);
+
+ //    var loopDescList = ["loop 1", "loop 2", "loop 3", "loop 4", "loop 5"];
+	// var loopList = ["loop1", "loop2", "loop3", "loop4", "loop5"];
+
+	//You can access a challenge like this:
+	//challenges["loopChallenges"]["loop1"]
+	var loops= ["Find the smallest element using a loop.", "Return the number of times a value occurs.", 
+	"Find the last increasing pod of 3 elts.", "Return the row the value is found in."];
+
+	var dataStructures = ["Implement an IntStack class", "Finish implementing the Person class."]
+
+	// var challenges={
+	// 	"loopChallenges":loops,
+	//   "dataStructureChallenges": dataStructures
+	// };
+
+	if (context === "loops") {
+		var challengeDescriptions = loops;
+		cardIndex = loopIndex;
+	} else if (context === 'dataStructures') {
+		var challengeDescriptions = dataStructures;
+		cardIndex = dataStructuresIndex;
+	}
+
+	code.previous = challengeDescriptions[cardIndex - 1];
+	code.current = challengeDescriptions[cardIndex];
+	code.next = challengeDescriptions[cardIndex + 1];
+
+	// if (this.loopCurIndex === 0) {
+	// 	page.css = "cardPrevious { visibility: collapsed }";
+	// }
+
+
 
     swipeCard.on(gestures.GestureTypes.pan, function (args) {
-		// console.log("Pan deltaX:" + args.deltaX + "; deltaY:" + args.deltaY + ";");
-		if ( typeof this.oldTop === 'undefined' ) {
-	        this.oldTop = swipeCard._oldTop;
-	        this.oldLeft = swipeCard._oldLeft;
-	       	this.panDuration = 0;
+		if ( typeof this.oldLeftMiddle === 'undefined' ) {
+	        this.oldLeftMiddle = swipeCard._oldLeft;
+	        this.oldLeftPrevious = swipeCardPrevious._oldLeft;
+	        this.oldLeftNext = swipeCardNext._oldLeft;
 	    }
 
-	    //if the pan is starting from origin then we need to add oldTop and oldLeft
-	    if (panDuration === 0) {
-	    	absoluteLayout.AbsoluteLayout.setTop(swipeCard, this.oldTop + args.deltaY);
-	    	absoluteLayout.AbsoluteLayout.setLeft(swipeCard, this.oldLeft + args.deltaX);
-	    }
-	    //this means we are mid-swipe so just use deltaY and deltaX by themselves 
-	    else {
-	    	absoluteLayout.AbsoluteLayout.setTop(swipeCard, args.deltaY);
-	    	absoluteLayout.AbsoluteLayout.setLeft(swipeCard, args.deltaX);
-	    	panDuration++;
-	    }
-
-	    //trying to figure out how to have the card rotate slightly in the swipe direction
-	 	//    swipeCard.animate({
-		//     rotate: args.deltaX/360,
-		//     duration:10
-		// });
-
-
-	   	// if (args.deltaX > 100) {
-	    // 	dialogs.alert("swipe right");
-	    // 	absoluteLayout.AbsoluteLayout.setTop(swipeCard, this.oldTop);
-	    //   	absoluteLayout.AbsoluteLayout.setLeft(swipeCard, this.oldLeft);
-	    //   	panDuration = 0;
-	    //   	return;
-	    // } else if (args.deltaX < -90) {
-	    // 	dialogs.alert("swipe left");
-	    // 	absoluteLayout.AbsoluteLayout.setTop(swipeCard, this.oldTop);
-	    //   	absoluteLayout.AbsoluteLayout.setLeft(swipeCard, this.oldLeft);
-	    //   	panDuration = 0;
-	    //   	return;
-	    // } 
-
-	    //args.state is undefined for some reason??
 	    if(args.state === gestures.GestureStateTypes.began) {
-	      // Pan began.
-	      // absoluteLayout.AbsoluteLayout.setTop(swipeCard, this.oldTop + args.deltaY);
-	      // absoluteLayout.AbsoluteLayout.setLeft(swipeCard, this.oldLeft + args.deltaX);
+	    	// console.log("began");
+	    	absoluteLayoutModule.AbsoluteLayout.setLeft(swipeCardPrevious, this.oldLeftPrevious + args.deltaX);
+	    	absoluteLayoutModule.AbsoluteLayout.setLeft(swipeCard, this.oldLeftMiddle + args.deltaX);
+	    	absoluteLayoutModule.AbsoluteLayout.setLeft(swipeCardNext, this.oldLeftNext + args.deltaX);
 	    } else if(args.state === gestures.GestureStateTypes.changed) {
-	      // Pan changed.
-	      // absoluteLayout.AbsoluteLayout.setTop(swipeCard, args.deltaY);
-	      // absoluteLayout.AbsoluteLayout.setLeft(swipeCard, args.deltaX);
+	    	// console.log("changed");
+	    	absoluteLayoutModule.AbsoluteLayout.setLeft(swipeCardPrevious, this.oldLeftPrevious + args.deltaX);
+	    	absoluteLayoutModule.AbsoluteLayout.setLeft(swipeCard, this.oldLeftMiddle + args.deltaX);
+	    	absoluteLayoutModule.AbsoluteLayout.setLeft(swipeCardNext, this.oldLeftNext + args.deltaX);
 	    } else if(args.state === gestures.GestureStateTypes.ended) {
-	      // Pan ended.
-	      // absoluteLayout.AbsoluteLayout.setTop(swipeCard, this.oldTop);
-	      // absoluteLayout.AbsoluteLayout.setLeft(swipeCard, this.oldLeft);
-	      console.log("inside ended");
-	      swipeCard.animate({
-		    translate: { x: -args.deltaX, y: -args.deltaY },
-		    duration: 400
-		  });
-	      return;
+	    	// console.log("ended");
+	    	absoluteLayoutModule.AbsoluteLayout.setLeft(swipeCard, this.oldLeftMiddle);
+		    absoluteLayoutModule.AbsoluteLayout.setLeft(swipeCardPrevious, this.oldLeftPrevious);
+		    absoluteLayoutModule.AbsoluteLayout.setLeft(swipeCardNext, this.oldLeftNext);
+		   	if (args.deltaX > 175) {
+		   		//NEED TO UPDATE FOR EDGE CASES
+		   		cardIndex -= 1;
+		   		code.current = challengeDescriptions[cardIndex];
+		      	code.previous = challengeDescriptions[cardIndex - 1];
+		      	code.next = challengeDescriptions[cardIndex + 1];
+		    } else if (args.deltaX < -175) {
+		      	cardIndex += 1;
+		      	code.current = challengeDescriptions[cardIndex];
+		      	code.previous = challengeDescriptions[cardIndex - 1];
+		      	code.next = challengeDescriptions[cardIndex + 1];
+		      	// console.log("previous: " + code.previous + ", current: " + code.current + ", next: " + code.next);
+		    } 
 	    } else if(args.state === gestures.GestureStateTypes.cancelled) {
-	      // Pan cancelled.
-	      // absoluteLayout.AbsoluteLayout.setTop(swipeCard, this.oldTop);
-	      // absoluteLayout.AbsoluteLayout.setLeft(swipeCard, this.oldLeft);
-	      console.log("inside cancelled");
-	      swipeCard.animate({
-		    translate: { x: -args.deltaX, y: -args.deltaY },
-		    duration: 400
-		  });
-	      return;
+	    	// console.log("cancelled");
+		    absoluteLayoutModule.AbsoluteLayout.setLeft(swipeCard, this.oldLeftMiddle);
+		    absoluteLayoutModule.AbsoluteLayout.setLeft(swipeCardPrevious, this.oldLeftPrevious);
+		    absoluteLayoutModule.AbsoluteLayout.setLeft(swipeCardNext, this.oldLeftNext);
+		    return;
 	    }
 	});
+
+	swipeCard.on(gestures.GestureTypes.tap, function (args) {
+    	var key = context + (cardIndex + 1);
+    	var topmost = frameModule.topmost();
+		topmost.navigate(key);
+	});
+
 }
 exports.pageLoaded = pageLoaded;
