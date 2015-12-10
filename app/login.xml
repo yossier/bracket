@@ -1,9 +1,13 @@
  <Page xmlns="http://www.nativescript.org/tns.xsd" loaded="loaded" actionBarHidden="true">
   <StackLayout orientation="vertical">
-    <Label text="&lt;bracket&gt;" cssClass="title"/>
+    <WrapLayout horizontalAlignment="center">
+    	<Label text="&lt;" cssClass="nums"/>
+    	<Label id="words" text="bracket" />
+    	<Label cssClass="nums" text="&gt;"/>
+    </WrapLayout>
     <TextField id="email" hint="Email Address" keyboardType="email" text="{{ email }}"/>
     <TextField id="password" hint="Password" secure="true" text="{{ password }}"/>
-    <Button text="Sign in" cssClass="link" tap="signIn" />
-    <Button text="Register" cssClass="link" tap="register" />
+    <Button text="Sign in" cssClass="link" tap="signIn"/>
+    <Button text="Register" cssClass="link" tap="register"/>
   </StackLayout>
 </Page>

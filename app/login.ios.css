@@ -1,0 +1,61 @@
+@import { url('~/platform.css') };
+
+Page {
+    background-color: #dadada;
+    font-size: 17;
+}
+TextField {
+    margin: 10;
+    padding: 10;
+    border-color: #a6a6a6;
+    border-width: 1;
+    border-radius: 6;
+    background-color: white;
+}
+Image {
+    margin-top: 12;
+    margin-left: 0;
+    margin-right: 0;
+    margin-bottom: 80;
+}
+Button {
+    margin: 8;
+    padding: 3;
+    border-width: 2;
+    border-color: black;
+}
+
+.nums{
+    text-align: center;
+    margin-top: 112;
+    color: #808285;
+    font-size:30;
+}
+
+#words{
+    color: #0177e8;
+    margin-top: 112;
+    text-align: center;
+    font-size: 30;
+}
+
+.link{
+    border-color: transparent;
+    background-color: #0177e8;
+    /*border-width: 2;*/
+    border-radius: 4;
+    height: 35;
+    width: 90;
+    color: white;
+}
+
+#title{
+    /*border: black;*/
+    /*border-width: 4;*/
+    /*width: 150;*/
+    
+}
+
+#registerPrompt{
+    font-size: 10;
+}
