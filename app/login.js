@@ -1,4 +1,6 @@
 var observableModule = require("data/observable");
+var appSettings = require("application-settings");
+var frameModule = require("ui/frame")
 
 var user = new observableModule.Observable({
     email: "",
@@ -16,8 +18,8 @@ exports.loaded = function(args) {
 };
 
 exports.signIn = function() {
-    alert("Signing in");
-    console.log(user.email);
+    appSettings.setBoolean("logged-in", true);
+    frameModule.topmost().navigate("main-page")
 }
 
 exports.register = function() {
