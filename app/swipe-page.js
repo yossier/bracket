@@ -34,7 +34,6 @@ function pageLoaded(args) {
     var page = args.object;
 
     context = page.navigationContext.info;
-    console.log("context: " + context);
 
     titleTemp = context.charAt(0).toUpperCase() + context.slice(1);
     titleInfo.title = titleTemp;
