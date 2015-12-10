@@ -1,0 +1,143 @@
+Page{
+    background-color: #f4f4f4;
+}
+
+#navHeader{
+	  /*border-width: 2;*/
+	  /*border-color: blue;*/
+	  border-color: #b1b4b4;
+	  background-color: #d8dada;
+	  padding: 12;
+	  font-weight: bold;
+	  font-size: 20;
+    border: black;
+    border-width: 2;
+    text-align: center;
+    /*margin-bottom: 15;*/
+    color:#0177e8;
+    /*margin-top: 20;*/
+}
+
+.elts{
+	  margin-top: 15;
+    background-color: white;
+    border-color: #a6a6a6;
+    border-width: 1;
+    /*margin-bottom: 15;*/
+}
+
+.rank{
+	  /*border-width:3;*/
+	  margin-top: 15;
+	  padding: 10;
+	  font-weight: bold;
+	  font-size: 35;
+	  text-align: left;
+	  padding-left: 20;
+	  color: #0177e8;
+}
+
+.pts{
+	  margin-top: 5;
+	  font-size: 15;
+	  color: #a6a6a6;
+}
+
+
+.lname{
+	  margin-top: 20;
+	  font-weight: bold;
+	  font-size: 20;
+}
+
+.boxHeader {
+	padding-left: 30;
+/*	border-bottom: #ECF0F1;
+    border-width: 1;*/
+}
+
+.spacer {
+    border-color: #b1b4b4;
+	  background-color: #d8dada;;
+    border-width: 2;
+    color:#0177e8;
+}
+
+TextField {
+    margin: 10;
+    padding: 10;
+    border-color: #a6a6a6;
+    border-width: 1;
+    border-radius: 6;
+    background-color: white;
+}
+Image {
+    margin-top: 12;
+    margin-left: 0;
+    margin-right: 0;
+    margin-bottom: 80;
+}
+
+#nameVal{
+    color: #0177e8;
+    font-size: 30;
+    font-weight: bold;
+    text-align: center;
+    vertical-align: center;
+}
+
+#emailAddr{
+    text-align: center;
+    margin-bottom: 35;
+}
+
+.challenges{
+    text-align: center;
+    border: none;
+    background-color: transparent;
+    border-color: transparent;
+    padding: 2;
+}
+
+.points{
+    font-weight: bold;
+    color: #0177e8;
+    font-size: 20;
+    text-align: center;
+}
+
+#pointNum{
+    padding: 6;
+    border-width: 4;
+    background-color: white;
+    color: #0177e8;
+    font-size: 20;
+    border-color: #0177e8;
+    font-weight: bold;
+    width: 95;
+    height: 95;
+    border-radius: 45;
+    margin-bottom: 35;
+}
+
+.link{
+    border-color: transparent;
+    background-color: #0177e8;
+    /*border-width: 2;*/
+    border-radius: 4;
+    height: 35;
+    width: 90;
+    color: white;
+}
+
+#title{
+    border: black;
+    border-width: 4;
+    width: 150;
+    text-align: center;
+    margin-top: 120;
+}
+
+#registerPrompt{
+    font-size: 10;
+}

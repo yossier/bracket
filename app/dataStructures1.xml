@@ -1,9 +1,25 @@
 <Page loaded="loaded">
+  <ScrollView>
 	<StackLayout orientation="vertical">
+		<WrapLayout>
+            <Label cssClass="description1 indent0" text="/* GOAL: Implement the IntStack Class."/>
+        </WrapLayout>
+        <WrapLayout> 
+            <Label cssClass="description2 indent0" text="* the class models a stack data structure."/>
+        </WrapLayout>
+        <WrapLayout>
+            <Label cssClass="description2 indent0" text="* the array can be filled up to size 10."/>
+        </WrapLayout>
+        <WrapLayout>
+            <Label cssClass="description3 indent0" text="*/"/>
+        </WrapLayout>
 		<!-- Line 1 - Function Declaration -->
 		<WrapLayout>
-			<Label cssClass= "type" text="class " />
+			<Label cssClass= "type" text="class "/>
 			<Label cssClass= "plain" text="IntStack{"/>
+		</WrapLayout>
+		<WrapLayout>
+			<TextField id="fillPublic" cssClass="big" hint="?????" text="{{ fillPublic }}"/>
 		</WrapLayout>
 		<WrapLayout>
 			<TextField id="IS" cssClass="big indent1" hint="?????" text="{{ IS }}"/>
@@ -19,8 +35,8 @@
 		</WrapLayout>
 		<WrapLayout>
 			<Label cssClass="statement indent2" text="if "/>
-			<Label cssClass="plain" text="(top &#8805; "/>
-			<TextField id="topVal" cssClass="big" hint="?????" text = "{{ topVal }}"/>
+			<Label cssClass="plain" text="(top >= "/>
+			<TextField id="topVal" cssClass="big" hint="?????" text= "{{ topVal }}"/>
 			<Label cssClass="plain" text="){"/>
 		</WrapLayout>
 		<WrapLayout>
@@ -33,9 +49,10 @@
 		</WrapLayout>
 		<WrapLayout>
 			<Label cssClass="plain indent2" text="array["/>
-			<TextField id="arrIndex" cssClass="fiveChar" hint="?????" text = "{{ arrIndex }}"/>
+			<TextField id="arrIndex" cssClass="fiveChar" hint="?????" text= "{{ arrIndex }}"/>
 			<Label cssClass="plain" text="] = "/>
-			<TextField id="arrIndexEq" cssClass="big" hint="?????" text = "{{ arrIndexEq }}"/>
+			<TextField id="arrIndexEq" cssClass="big" hint="?????" text= "{{ arrIndexEq }}"/>
+			<Label cssClass="plain" text=";"/>
 		</WrapLayout>
 		<WrapLayout>
 			<Label cssClass="plain indent1" text="}"/>
@@ -47,7 +64,7 @@
 		</WrapLayout>
 		<WrapLayout>
 			<Label cssClass="statement indent2" text="if "/>
-			<Label cssClass="plain" text="(top &#61;&#61; "/>
+			<Label cssClass="plain" text="(top == "/>
 			<Label cssClass="number" text="0"/>
 			<Label cssClass="plain" text="){"/>
 			<Label cssClass="statement" text="return "/>
@@ -71,11 +88,11 @@
 			<TextField id="priv" cssClass="fiveChar indent1" hint="?????" text="{{ priv }}"/>
 			<Label cssClass="plain" text=" array["/>
 			<Label cssClass="number" text="10"/>
-			<Label cssClass="plain" text=" ];"/>
+			<Label cssClass="plain" text="];"/>
 		</WrapLayout>
 		<WrapLayout>
 			<Label cssClass="type indent1" text="int "/>
-			<Label cssClass="plain" text="maxSize &#61; "/>
+			<Label cssClass="plain" text="maxSize = "/>
 			<label cssClass="number" text="10"/>
 			<Label cssClass="plain" text=";"/>
 		</WrapLayout>
@@ -84,5 +101,5 @@
 		</WrapLayout>
 		<Button text="Print!" tap="print"/>
 	</StackLayout>
-
+  </ScrollView>
 </Page>

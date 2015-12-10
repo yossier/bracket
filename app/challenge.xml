@@ -1,4 +1,4 @@
-<Page xmlns="http://www.nativescript.org/tns.xsd" loaded="loaded" actionBarHidden="true">
+<Page xmlns="http://www.nativescript.org/tns.xsd" actionBarHidden="true">
 	<ScrollView>
 		<StackLayout orientation ="vertical" verticalAlignment="stretch">
 			<GridLayout columns="*, *, *, *" rows="auto, auto, auto, auto, auto, auto, auto, auto, auto, auto, auto, auto, auto, auto, auto, auto" verticalAlignment="stretch" horizontalAlignment="stretch">
@@ -7,7 +7,7 @@
 				</Border>
 				<Border cssClass="listElts" row="1" col="0" rowSpan="2" colSpan="4"></Border>
 	    			<Label tap="recursion" row="1" cssClass="boxHeader" colSpan="3" text="Recursion"/>
-	    			<Button row="1" colSpan="1" rowSpan="2" col="4" text="&#62;" cssClass="collapseButton" verticalAlignment="center"/>
+	    			<Button row="1" colSpan="1" rowSpan="2" col="4" text="&#62;" cssClass="collapseButton" verticalAlignment="center" tap="recursion"/>
 	    			<Label tap="recursion" cssClass="description" text="description" row="2" colSpan="2"/>
 
 				<Border cssClass="spacer" row="3" col="0" rowSpan="1" colSpan="4"></Border>
@@ -15,7 +15,7 @@
 
 				<Border cssClass="listElts" row="4" col="0" rowSpan="2" colSpan="4"></Border>
 	    			<Label tap="dataStructures" cssClass="boxHeader" row="4" colSpan="3" text="Data Structures"/>
-	    			<Button colSpan="1" rowSpan="2" row="4" col="4" text="&#62;" cssClass="collapseButton" verticalAlignment="center"/>
+	    			<Button colSpan="1" rowSpan="2" row="4" col="4" text="&#62;" cssClass="collapseButton" verticalAlignment="center" tap="dataStructures"/>
 	    			<Label tap="dataStructures" cssClass="description" text="description" row="5" colSpan="2"/>
 				
 				<Border cssClass="listElts" row="6" col="0" colSpan="4"></Border>
@@ -23,7 +23,7 @@
 
 				<Border cssClass="listElts" row="7" col="0" rowSpan="2" colSpan="4"></Border>
 	    			<Label tap="algorithms" cssClass="boxHeader" row="7" colSpan="3" text="Algorithms"/>
-	    			<Button colSpan="1" rowSpan="2" row="7" col="4" text="&#62;" cssClass="collapseButton" verticalAlignment="center"/>
+	    			<Button colSpan="1" rowSpan="2" row="7" col="4" text="&#62;" cssClass="collapseButton" verticalAlignment="center" tap="algorithms"/>
 	    			<Label tap="algorithms" cssClass="description" text="description" row="8" colSpan="2"/>
 
 				<Border cssClass="listElts" row="9" col="0" colSpan="4"></Border>
@@ -31,7 +31,7 @@
 
 				<Border cssClass="listElts" row="10" col="0" rowSpan="2" colSpan="4"></Border>
 	    			<Label tap="loops" cssClass="boxHeader" row="10" colSpan="3" text="Loops"/>
-	    			<Button colSpan="1" rowSpan="2" row="10" col="4" text="&#62;" cssClass="collapseButton" verticalAlignment="center"/>
+	    			<Button colSpan="1" rowSpan="2" row="10" col="4" text="&#62;" cssClass="collapseButton" verticalAlignment="center" tap="loops"/>
 	    			<Label tap="loops" cssClass="description" text="description" row="11" colSpan="2"/>
 
 				<Border cssClass="listElts" row="12" col="0" colSpan="4"></Border>
@@ -39,7 +39,7 @@
 
 				<Border cssClass="listElts" row="13" col="0" rowSpan="2" colSpan="4"></Border>
 	    			<Label tap="sorts" cssClass="boxHeader" row="13" colSpan="3" text="Sorts"/>
-	    			<Button colSpan="1" rowSpan="2" row="13" col="4" text="&#62;" cssClass="collapseButton" verticalAlignment="center"/>
+	    			<Button colSpan="1" rowSpan="2" row="13" col="4" text="&#62;" cssClass="collapseButton" verticalAlignment="center" tap="sorts"/>
 	    			<Label tap="sorts" cssClass="description" text="description" row="14" colSpan="2"/>
 				
 				<Border row="15" col="0" colSpan="4"></Border>

@@ -1,0 +1,84 @@
+<Page loaded="loaded">
+  <ScrollView>
+	<StackLayout orientation="vertical">
+		<!-- Line 1 - Function Declaration -->
+		<WrapLayout>
+			<Label cssClass= "type" text="int " />
+			<Label cssClass= "functionTitle" text="findVal"/>
+			<Label cssClass= "plain" text="("/>
+			<Label cssClass="type" text="int"/>
+			<Label cssClass="plain" text=" array["/>
+			<Label cssClass="number" text="15"/>
+			<Label cssClass="plain" text="]["/>
+			<Label cssClass="number" text="8"/>
+			<Label cssClass="plain" text="],"/>
+			<Label cssClass="type" text="int "/>
+			<Label cssClass="plain" text="val){"/>
+		</WrapLayout>
+		<WrapLayout>
+			<Label cssClass= "type indent1" text="int " />
+			<Label cssClass="plain" text="countPerRow = "/>
+			<TextField id="CPR" cssClass="oneChar" hint="??" text="{{ CPR }}"/>
+			<Label cssClass="plain" text=";"/>
+		</WrapLayout>
+		<WrapLayout>
+			<Label cssClass= "type indent1" text="int " />
+			<Label cssClass="plain" text="totalCount = "/>
+			<TextField id="TC" cssClass="oneChar" hint="??" text="{{ TC }}"/>
+			<Label cssClass="plain" text=";"/>
+		</WrapLayout>
+		<WrapLayout>
+			<Label cssClass="statement indent1" text="for"/>
+			<Label cssClass="plain" text=" ("/>
+			<Label cssClass="type" text="int "/>
+			<Label cssClass="plain" text="i = "/>
+			<Label cssClass="number" text="0"/>
+			<Label cssClass="plain" text="; i < "/>
+			<TextField id="conditioni" cssClass="oneChar" hint="??" text="{{ conditioni }}"/>
+			<Label cssClass="plain" text="; ++i){"/>
+		</WrapLayout>
+		<WrapLayout>
+			<Label cssClass="statement indent2" text="for"/>
+			<Label cssClass="plain" text=" ("/>
+			<Label cssClass="type" text="int "/>
+			<Label cssClass="plain" text="j = "/>
+			<Label cssClass="number" text="0"/>
+			<Label cssClass="plain" text="; j < "/>
+			<TextField id="conditionj" cssClass="oneChar" hint="??" text="{{ conditionj }}"/>
+			<Label cssClass="plain" text="; ++j){"/>
+		</WrapLayout>
+		<WrapLayout>
+			<Label cssClass="statement indent3" text="if "/>
+			<Label cssClass="plain" text="("/>
+			<TextField id="ifval" cssClass="big" hint="???????" text = "{{ ifval }}"/>
+			<Label cssClass="plain" text=" == val){"/>
+		</WrapLayout>
+		<WrapLayout>
+			<Label cssClass="plain indent4" text="++countPerRow;"/>
+		</WrapLayout>
+		<WrapLayout>
+			<Label cssClass="plain indent4" text="++"/>
+			<TextField id="increment" cssClass="big" hint="???????" text = "{{ increment }}"/>
+			<Label cssClass="plain" text=";"/>
+		</WrapLayout>
+		<WrapLayout>
+			<Label cssClass="plain indent3" text="}"/>
+		</WrapLayout>
+		<WrapLayout>
+			<Label cssClass="plain indent2" text="}"/>
+		</WrapLayout>
+		<WrapLayout>
+			<Label cssClass="plain indent1" text="}"/>
+		</WrapLayout>
+		<WrapLayout>
+			<Label cssClass="statement indent1" text= "return "/>
+			<TextField id="returnVal" cssClass="big" hint="?????" text="{{ returnVal }}"/>
+			<Label class="plain" text=";"/>
+		</WrapLayout>
+		<WrapLayout>
+			<Label cssClass="plain" text="}"/>
+		</WrapLayout>
+		<Button text="Print!" tap="print"/>
+	</StackLayout>
+</ScrollView>
+</Page>
