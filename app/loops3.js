@@ -21,12 +21,12 @@ exports.loaded = function(args) {
 
 
 exports.print = function() {
-    var lastIndexNum = response.lastIndexNum;
+    var lastIndexNum = (response.lastIndexNum).replace(/ /g,'');
     var condition = (response.condition).replace(/ /g,'');
     var arri = (response.arri).replace(/ /g,'');
     var arrip1 = (response.arrip1).replace(/ /g,'');
-    var equalTo = response.equalTo;
-    var returnVal = response.returnVal;
+    var equalTo = (response.equalTo).replace(/ /g,'');
+    var returnVal = (response.returnVal).replace(/ /g,'');
 
     var names = ["lastIndexNum", "condition", "arri", "arrip1", "equalTo", "returnVal"];
     var vals = [lastIndexNum, condition, arri, arrip1, equalTo, returnVal];

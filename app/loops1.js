@@ -21,12 +21,12 @@ exports.loaded = function(args) {
 
 
 exports.print = function() {
-    var i = response.i;
-    var condition = response.condition;
-    var arr = response.arr;
-    var arrLessThan = response.arrLessThan;
-    var setSE = response.setSE;
-    var returnVal = response.returnVal;
+    var i = (response.i).replace(/ /g,'');
+    var condition = (response.condition).replace(/ /g,'');
+    var arr = (response.arr).replace(/ /g,'');
+    var arrLessThan = (response.arrLessThan).replace(/ /g,'');
+    var setSE = (response.setSE).replace(/ /g,'');
+    var returnVal = (response.returnVal).replace(/ /g,'');
 
 
     var names = ["i", "condition", "arr", "arrLessThan", "setSE", "returnVal"];

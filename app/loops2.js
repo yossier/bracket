@@ -2,7 +2,6 @@ var observableModule = require("data/observable");
 
 // inside brackets of text fields - data binding
 var response = new observableModule.Observable({
-    CPR: "",
     TC: "",
     conditioni: "",
     conditionj: "",
@@ -22,17 +21,16 @@ exports.loaded = function(args) {
 
 
 exports.print = function() {
-    var CPR = response.CPR;
-    var TC = response.TC;
-    var conditioni = response.conditioni;
-    var conditionj = response.conditionj;
-    var ifval = response.ifval;
-    var increment = response.increment;
-    var returnVal = response.returnVal;
+    var TC = (response.TC).replace(/ /g,'');
+    var conditioni = (response.conditioni).replace(/ /g,'');
+    var conditionj = (response.conditionj).replace(/ /g,'');
+    var ifval = (response.ifval).replace(/ /g,'');
+    var increment = (response.increment).replace(/ /g,'');
+    var returnVal = (response.returnVal).replace(/ /g,'');
 
-    var names = ["CPR", "TC", "conditioni", "conditionj", "ifval", "increment", "returnVal"];
-    var vals = [CPR, TC, conditioni, conditionj, ifval, increment, returnVal];
-    var correct = [0, 0, 15, 8, "totalcount", "array[i][j]", "totalcount"];
+    var names = ["TC", "conditioni", "conditionj", "ifval", "increment", "returnVal"];
+    var vals = [TC, conditioni, conditionj, ifval, increment, returnVal];
+    var correct = [0, 15, 8, "array[i][j]", "totalcount", "totalcount"];
     var numCorrect = 0;
     
     for (var i = 0; i < names.length; i++){
