@@ -7,7 +7,8 @@
     </WrapLayout>
     <TextField id="email" hint="Email Address" keyboardType="email" text="{{ email }}"/>
     <TextField id="password" hint="Password" secure="true" text="{{ password }}"/>
-    <Button text="Sign in" cssClass="link" tap="signIn"/>
+    <activity-indicator busy="{{ authenticating }}" />
+    <Button text="Sign in" cssClass="link" tap="signIn" id="sign-in-button" />
     <Button text="Register" cssClass="link" tap="register"/>
   </StackLayout>
 </Page>

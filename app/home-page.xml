@@ -125,6 +125,7 @@
 			        <Label cssClass="challenges" text="Challenges Completed: "/>
 			        <Label id="completedBox" cssClass="challenges" text="{{ completed }}"/>
 		        </WrapLayout>
+            <Button if="sign-out-button" text="Sign Out" tap="signOut"/>
 	        </StackLayout>
         </TabViewItem.view>
       </TabViewItem>

@@ -2,6 +2,7 @@ var tabViewModule = require("ui/tab-view");
 var view = require("ui/core/view");
 var stackLayoutModule = require("ui/layouts/stack-layout");
 var labelModule = require("ui/label");
+var navigation = require("./shared/navigation")
 var frameModule = require("ui/frame");
 
 function pageLoaded(args) {
@@ -48,3 +49,5 @@ exports.bigO = function() {
     navigationEntry.context = {info: "bigO"};
     frameModule.topmost().navigate(navigationEntry);
 };
+
+exports.signOut = navigation.signOut;
