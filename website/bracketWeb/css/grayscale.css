@@ -17,6 +17,10 @@ html {
     height: 100%;
 }
 
+h4{
+    color: black;
+}
+
 h1,
 h2,
 h3,
@@ -286,6 +290,16 @@ a:focus {
     color: #808285;
 }
 
+#contact li{
+    color: black;
+    font-size: 23px;
+    text-align: center;
+}
+
+#contact ol{
+    text-align: center; 
+    list-style-position:inside;
+}
 
 
 .content-section {
@@ -325,6 +339,7 @@ a:focus {
         margin-top: 250px;
     }
 }
+
 
 .btn {
     border-radius: 0;
