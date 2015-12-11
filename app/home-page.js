@@ -11,6 +11,21 @@ var user = new UserViewModel({loading: false});
 function pageLoaded(args) {
 	  var page = args.object;
     page.bindingContext = user;
+
+    user.getUserInfo()
+        .catch(function(error) {
+            dialogs.alert({
+                message: "Unable to fetch user info. Please sign out and try again : " + error,
+                okButtonText: "OK"
+            });
+            navigation.signOut();
+        });
+    
+}
+
+function pageNavigatedTo(args) {
+    var page = args.object;
+    page.bindingContext = user;
     
     user.getUserInfo()
         .catch(function(error) {
@@ -26,6 +41,8 @@ var navigationEntry = {
     moduleName: "swipe-page",
     animated: false
 }
+
+exports.pageNavigatedTo = pageNavigatedTo;
 
 exports.pageLoaded = pageLoaded;
 
