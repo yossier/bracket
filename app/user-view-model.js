@@ -7,12 +7,29 @@ function User(info) {
 
     // You can add properties to observables on creation
     var viewModel = new Observable({
+        id: config.user_id || "",
         email: info.email || "",
         password: info.password || "",
         first_name: info.first_name || "",
-        last_name: info.last_name || ""
+        last_name: info.last_name || "",
+        total_points: info.total_points || ""
     });
 
+    //Method to get basic user info 
+    viewModel.getUserInfo = function() {
+        return fetch(config.apiUrl + "users/" + viewModel.get("id"))
+            .then(handleErrors)
+            .then(function (response) {
+                return response.json();
+            })
+            .then(function (data) {
+                viewModel.set("email", data.email);
+                viewModel.set("first_name", data.first_name);
+                viewModel.set("last_name", data.last_name);
+                viewModel.set("total_points", data.total_points);
+            });
+    };
+    
     viewModel.login = function() {
         return fetch(config.apiUrl + "users/authenticate", {
             method: "POST",

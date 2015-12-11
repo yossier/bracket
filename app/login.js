@@ -1,7 +1,4 @@
-var observableModule = require("data/observable");
-
 var navigation = require("./shared/navigation");
-
 var UserViewModel = require("./user-view-model");
 var dialogs = require("ui/dialogs");
 
