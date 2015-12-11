@@ -1,10 +1,13 @@
-<Page xmlns="http://www.nativescript.org/tns.xsd" loaded="loaded" actionBarHidden="true">
-  <StackLayout orientation="vertical">
-    <Label text="&lt;bracket&gt;" horizontalAlignment="center" cssClass="title logoText"/>
-    <TextField hint="Email Address" keyboardType="email"/>
-    <TextField hint="First Name" />
-    <TextField hint="Last Name" />
-    <TextField hint="Password" secure="true" />
-    <Button text="Sign Up"/>
-  </StackLayout>
+<Page xmlns="http://schemas.nativescript.org/tns.xsd" loaded="loaded" actionBarHidden="true">
+  <ScrollView>
+    <StackLayout orientation="vertical">
+      <Label text="&lt;bracket&gt;" horizontalAlignment="center" cssClass="title logoText"/>
+      <TextField hint="Email Address" id="email" text="{{ email }}" keyboardType="email"/>
+      <TextField hint="First Name" id="first_name" text="{{ first_name }}"/>
+      <TextField hint="Last Name" id="last_name" text="{{ last_name }}"/>
+      <TextField hint="Password" secure="true" id="password" text="{{ password }}" />
+      <activity-indicator busy="{{ authenticating }}" />
+      <Button text="Sign Up" id="sign-up-button" tap="register" />
+    </StackLayout>
+  </ScrollView>
 </Page>

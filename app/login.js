@@ -49,6 +49,7 @@ function enableForm() {
 exports.signIn = function() {
     disableForm();
     user.login()
+        .then(enableForm)
         .then(navigation.goToHomePage)
         .catch(function(error) {
             dialogs.alert({
