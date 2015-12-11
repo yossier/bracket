@@ -1,5 +1,7 @@
 var application = require("application");
-application.mainModule = "main-page";
+var navigation = require("./shared/navigation")
+
+application.mainModule = navigation.startingPage();;
 application.cssFile = "./app.css";
 
 application.on(application.launchEvent, function (args) {

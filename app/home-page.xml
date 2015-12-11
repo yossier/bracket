@@ -113,10 +113,11 @@
         <TabViewItem.view>
           <StackLayout verticalAlignment="center" horizontalAlignment="center" orientation="vertical">
 		        <!-- <Image src="~/Downloads/download.jpeg" stretch ="none" / >  -->
-		        <Label id="nameVal" text="{{ nameVal }}"/>
-		        <Label id="emailAddr" text="{{ emailAddr }}"/>
+		        <Label id="nameVal" text="{{ first_name }}"/>
+            <Label id="nameVal" text="{{ last_name }}"/>
+		        <Label id="emailAddr" text="{{ email }}"/>
 		        <Label cssClass="points" text="Points:"/>
-		        <Label cssClass="points" id="pointNum" text="{{ numPoints }}"/>
+		        <Label cssClass="points" id="pointNum" text="{{ total_points }}"/>
 		        <WrapLayout>
 			        <Label cssClass="challenges" text="Challenges Attempted: "/>
 			        <Label id="attemptedBox" cssClass="challenges" text="{{ attempted }}"/>
@@ -125,6 +126,7 @@
 			        <Label cssClass="challenges" text="Challenges Completed: "/>
 			        <Label id="completedBox" cssClass="challenges" text="{{ completed }}"/>
 		        </WrapLayout>
+            <Button if="sign-out-button" text="Sign Out" tap="signOut"/>
 	        </StackLayout>
         </TabViewItem.view>
       </TabViewItem>
