@@ -12,7 +12,8 @@ function User(info) {
         password: info.password || "",
         first_name: info.first_name || "",
         last_name: info.last_name || "",
-        total_points: info.total_points || ""
+        total_points: info.total_points || "",
+        completed_challenges : info.completed_challenges || ""
     });
 
     //Method to get basic user info 
@@ -78,6 +79,20 @@ function User(info) {
         })
             .then(handleErrors);
     };
+
+    viewModel.getChallenges = function(){
+        return fetch(config.apiUrl + "users/" + viewModel.get("id")+"/completed-challenges")
+            .then(handleErrors)
+            .then(function (response) {
+                return response.json();
+            })
+            .then(function (data) {
+                console.log('getting data');
+                var length = Object.keys(data).length;
+                viewModel.set("completed_challenges", length);
+            });
+
+    }
 
     viewModel.isValidEmail = function() {
         var email = this.get("email");
