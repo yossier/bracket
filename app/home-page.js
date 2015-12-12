@@ -80,8 +80,8 @@ exports.sorts = function(){
     frameModule.topmost().navigate(navigationEntry);
 };
 
-exports.bigO = function() {
-    navigationEntry.context = {info: "bigO"};
+exports.complexity = function() {
+    navigationEntry.context = {info: "complexity"};
     frameModule.topmost().navigate(navigationEntry);
 };
 

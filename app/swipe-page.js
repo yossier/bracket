@@ -11,11 +11,11 @@ var observableModule = require("data/observable");
 var actionBarModule = require("ui/action-bar");
 var animation = require("ui/animation");
 var indexes={ 
-     "loops": 0, 
-     "dataStructures": 0,
-     "recursion": 0,
      "algorithms": 0,
-     "bigO": 0
+     "complexity": 0,
+     "dataStructures": 0,
+     "loops": 0, 
+     "recursion": 0          
 };
 var context = "loops";
 
@@ -41,7 +41,6 @@ function pageLoaded(args) {
     // page.bindingContext = sModule.swipeViewModel;
     page.bindingContext = code;
 
-
     var swipeCard = view.getViewById(page, "swipeCard");
     var swipeCardPrevious = view.getViewById(page, "swipeCardPrevious");
     var swipeCardNext = view.getViewById(page, "swipeCardNext");
@@ -63,38 +62,31 @@ function pageLoaded(args) {
     absoluteLayoutModule.AbsoluteLayout.setTop(swipeCardNext, middleCardTop + 25);
     // absoluteLayout.AbsoluteLayout.setTop(labelTitleView, middleCardTop / 2);
 
- //    var loopDescList = ["loop 1", "loop 2", "loop 3", "loop 4", "loop 5"];
-	// var loopList = ["loop1", "loop2", "loop3", "loop4", "loop5"];
+    //Challenge description lists -- ADDING A DESCRIPTION HERE "ADDS" THE CHALLENGE TO THE APP -- assuming the XML file exists
+    var algorithms = ["implement a binary search.", "Perform an insertion sort.", "Perform a selection sort."];
 
-	//You can access a challenge like this:
-	//challenges["loopChallenges"]["loop1"]
+    var complexity = ["(1) Determine the BigO of the code snippet", "(2) Determine the BigO of the code snippet", 
+	"(3) Determine the BigO of the code snippet", "(4) Determine the BigO of the code snippet"];
+
+	// var dataStructures = ["Implement an IntStack class", "Finish implementing the Person class.", "Declare and use an array."];
+	var dataStructures = ["Implement an IntStack class", "Finish implementing the Person class."];
+
 	var loops= ["Find the smallest element using a loop.", "Return the number of times a value occurs.", 
 	"Find the last increasing pod of 3 elts.", "Return the row the value is found in."];
-
-	var dataStructures = ["Implement an IntStack class", "Finish implementing the Person class."]
 
 	var recursion = ["Compute the nth fibonacci number.", "Compute the factorial.", "Find the greatest common divisor.", 
 	"Determine if a string is a palindrome."];
 
-	var algorithms = ["implement a binary search."];
-
-	var bigO = ["Complexity 1", "Complexity 2", "Complexity 3"];
-
-	// var challenges={
-	// 	"loopChallenges":loops,
-	//   "dataStructureChallenges": dataStructures
-	// };
-
-	if (context === "loops") {
-		var challengeDescriptions = loops;
-	} else if (context === "dataStructures") {
-		var challengeDescriptions = dataStructures;
-	} else if  (context === "recursion") {
-		var challengeDescriptions = recursion;
-	} else if (context === "algorithms") {
+	if (context === "algorithms") {
 		var challengeDescriptions = algorithms;
-	} else if (context === "bigO") {
-		var challengeDescriptions = bigO;
+	} else if (context === "complexity") {
+		var challengeDescriptions = complexity;
+	} else if  (context === "dataStructures") {
+		var challengeDescriptions = dataStructures;
+	} else if (context === "loops") {
+		var challengeDescriptions = loops;
+	} else if (context === "recursion") {
+		var challengeDescriptions = recursion;
 	}
 
 	cardIndex = indexes[context];
@@ -105,8 +97,6 @@ function pageLoaded(args) {
 	// if (this.loopCurIndex === 0) {
 	// 	page.css = "cardPrevious { visibility: collapsed }";
 	// }
-
-
 
     swipeCard.on(gestures.GestureTypes.pan, function (args) {
 		if ( typeof this.oldLeftMiddle === 'undefined' ) {
@@ -143,14 +133,14 @@ function pageLoaded(args) {
 			//     .catch(function (e) {
 			//     console.log(e.message);
 			// });
-		   	if (args.deltaX > 175) {
+		   	if (args.deltaX > 150) {
 		   		//NEED TO UPDATE FOR EDGE CASES
 		   		indexes[context] -= 1;
 		   		cardIndex = indexes[context];
 		   		code.current = challengeDescriptions[cardIndex];
 		      	code.previous = challengeDescriptions[cardIndex - 1];
 		      	code.next = challengeDescriptions[cardIndex + 1];
-		    } else if (args.deltaX < -175) {
+		    } else if (args.deltaX < -150) {
 		      	indexes[context] += 1;
 		   		cardIndex = indexes[context];
 		      	code.current = challengeDescriptions[cardIndex];
@@ -169,9 +159,9 @@ function pageLoaded(args) {
 
 	swipeCard.on(gestures.GestureTypes.tap, function (args) {
     	cardIndex = indexes[context];
-    	var key = context + (cardIndex + 1);
+    	var path = "./challenges/" + context + "/" + context + (cardIndex + 1);
     	var topmost = frameModule.topmost();
-		topmost.navigate(key);
+		topmost.navigate(path);
 	});
 
 }

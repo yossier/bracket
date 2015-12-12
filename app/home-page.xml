@@ -43,9 +43,9 @@
                 
                 <Label horizontalAlignment="stretch" cssClass="spacer"/> -->
                 
-                <DockLayout tap="bigO" stretchLastChild="false">
+                <DockLayout tap="complexity" stretchLastChild="false">
 	    	          <Label dock="left" cssClass="boxHeader" verticalAlignment="center" text="Complexity"/>
-	    			      <Button text="&#62;" dock="right" cssClass="collapseButton" verticalAlignment="center" tap="bigO"/>
+	    			      <Button text="&#62;" dock="right" cssClass="collapseButton" verticalAlignment="center" tap="complexity"/>
 			          </DockLayout>
 
                 <Label horizontalAlignment="stretch" cssClass="spacer"/>
