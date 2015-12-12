@@ -1,13 +1,16 @@
- <Page xmlns="http://www.nativescript.org/tns.xsd" loaded="loaded" actionBarHidden="true">
-  <StackLayout orientation="vertical">
-    <WrapLayout horizontalAlignment="center">
-    	<Label text="&lt;" cssClass="nums"/>
-    	<Label id="words" text="bracket" />
-    	<Label cssClass="nums" text="&gt;"/>
-    </WrapLayout>
-    <TextField id="email" hint="Email Address" keyboardType="email" text="{{ email }}"/>
-    <TextField id="password" hint="Password" secure="true" text="{{ password }}"/>
-    <Button text="Sign in" cssClass="link" tap="signIn"/>
-    <Button text="Register" cssClass="link" tap="register"/>
-  </StackLayout>
+<Page xmlns="http://www.nativescript.org/tns.xsd" loaded="loaded" actionBarHidden="true">
+  <ScrollView>
+    <StackLayout orientation="vertical">
+      <WrapLayout horizontalAlignment="center">
+    	  <Label text="&lt;" cssClass="nums"/>
+    	  <Label id="words" text="bracket" />
+    	  <Label cssClass="nums" text="&gt;"/>
+      </WrapLayout>
+      <TextField id="email" hint="Email Address" keyboardType="email" text="{{ email }}"/>
+      <TextField id="password" hint="Password" secure="true" text="{{ password }}"/>
+      <activity-indicator busy="{{ authenticating }}" />
+      <Button text="Sign in" cssClass="link" tap="signIn" id="sign-in-button" />
+      <Button text="Register" cssClass="link" tap="register"/>
+    </StackLayout>
+  </ScrollView>
 </Page>

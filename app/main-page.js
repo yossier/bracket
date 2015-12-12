@@ -12,6 +12,7 @@ function pageLoaded(args) {
         topmost.navigate("home-page");
     } else {
         var topmost = frameModule.topmost();
+        console.log("to navigate")
         topmost.navigate("login");
     }
     
