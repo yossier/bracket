@@ -1,0 +1,92 @@
+<Page loaded="loaded">
+	<StackLayout orientation="vertical">
+		<WrapLayout>
+            <Label cssClass="descriptionSingle indent0" text="/* GOAL: Determine the BigO of this function */"/>
+        </WrapLayout>
+		<!-- Line 1 - Function Declaration -->
+		<WrapLayout>
+			<Label cssClass="type" text="void "/>
+			<Label cssClass="functionTitle" text="whatCouldItBe"/>
+			<Label cssClass="type" text="int"/>
+			<Label cssClass="plain" text=" array[], "/>
+			<Label cssClass="type" text="int"/>
+			<Label cssClass="plain" text=" size){"/>
+		</WrapLayout>
+		<WrapLayout>
+			<Label cssClass="type indent1" text="int"/>
+			<Label cssClass="plain" text=" min_pos, temp;"/>
+		</WrapLayout>
+		<!-- Line 3 - declare others -->
+		<WrapLayout>
+			<Label cssClass="statement indent1" text="for"/>
+			<Label cssClass="plain" text=" ("/>
+			<Label cssClass="plain" text="i = "/>
+			<Label cssClass="number" text="0"/>
+			<Label cssClass="plain" text="; i < size - "/>
+			<Label cssClass="number" text="1"/>
+			<Label cssClass="plain" text="; ++i){"/>
+		</WrapLayout>
+		<WrapLayout>
+			<Label cssClass="plain indent2" text="min_pos = i;"/>
+			<Label cssClass="comment" text="//i is current index"/>
+		</WrapLayout>
+		<WrapLayout>
+			<Label cssClass="statement indent2" text="for"/>
+			<Label cssClass="plain" text=" (j = i + 1; j < size; ++j){"/>
+		</WrapLayout>
+		<!-- Line 2 - while loop -->
+		<WrapLayout>
+			<Label cssClass="statement indent3" text="if "/>
+			<Label cssClass="plain" text="(array[j] < array[min]){"/>
+		</WrapLayout>
+		<WrapLayout>
+			<Label cssClass="plain indent4" text="min = j;"/>
+		</WrapLayout>
+		<!-- Line 3 - If statement 1 -->
+		<WrapLayout>
+			<Label cssClass="plain indent3" text="}"/>
+		</WrapLayout>
+		<WrapLayout>
+			<Label cssClass="plain indent2" text="}"/>
+		</WrapLayout>
+		<!-- Line 6 - else statement-->
+		<WrapLayout>
+			<Label cssClass="statement indent2" text="if "/>
+			<Label cssClass="plain" text="( min != i){"/>
+		</WrapLayout>
+		<WrapLayout>
+			<Label cssClass="comment indent3" text="//smaller val was found"/>
+		</WrapLayout>
+		<WrapLayout>
+			<Label cssClass="plain indent3" text="temp = array[i];"/>
+		</WrapLayout>
+		<WrapLayout>
+			<Label cssClass="plain indent3" text="array[i] = array[min];"/>
+		</WrapLayout>
+		<WrapLayout>
+			<Label cssClass="plain indent3" text="array[min] = temp;"/>
+		</WrapLayout>
+		<!-- Line 8 close paren else --> 
+ 		<WrapLayout>
+			<Label cssClass="plain indent2" text="}"/>
+		</WrapLayout>
+		<!-- Line 9 close paren while --> 
+ 		<WrapLayout>
+			<Label cssClass="plain indent1" text="}"/>
+		</WrapLayout>
+		<!-- Line 10 - Return for findGCD -->
+		<WrapLayout>
+			<Label cssClass="plain" text="}"/>
+		</WrapLayout>
+		<WrapLayout>
+			<Label cssClass="plain bigOQuestion" text= "What is the complexity of this function?"/>
+		</WrapLayout>
+		<WrapLayout>
+			<Label cssClass="plain indent4" text= "O( "/>
+			<TextField id="bigO4" cssClass="fiveChar" hint="???" text="{{ bigO4 }}"/>
+			<Label class="plain" text=" )"/>
+		</WrapLayout>
+		<Button text="Submit" cssClass="submitButton" tap="print"/>
+	</StackLayout>
+
+</Page>

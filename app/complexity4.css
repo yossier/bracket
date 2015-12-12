@@ -30,10 +30,6 @@ Page{
 	color: #e5e07f;
 }
 
-.indent0{
-	margin-left: 5;
-}
-
 .indent1{
 	margin-left: 20;
 }
@@ -55,11 +51,6 @@ Page{
 	text-align: center;
 }
 
-.twoChar{
-	width: 30;
-	text-align: center;
-}
-
 .fiveChar{
 	width: 55;
 	text-align: center;
@@ -68,6 +59,15 @@ Page{
 .big{
 	width: 90;
 	text-align: center;
+}
+
+.comment{
+	color: #989581
+}
+
+.bigOQuestion{
+	margin-left: 20;
+	padding-top: 36;
 }
 
 .description1{
@@ -82,7 +82,7 @@ Page{
 }
 
 .description3{
-	padding-bottom: 28;
+	padding-bottom: 36;
 	color: #9bc4e3;
 	text-align: center;
 }

@@ -30,6 +30,10 @@ Page{
 	color: #e5e07f;
 }
 
+.comment{
+	color: #989581
+}
+
 .indent0{
 	margin-left: 5;
 }
@@ -82,7 +86,7 @@ Page{
 }
 
 .description3{
-	padding-bottom: 28;
+	padding-bottom: 36;
 	color: #9bc4e3;
 	text-align: center;
 }

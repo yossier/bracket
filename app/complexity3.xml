@@ -4,10 +4,10 @@
             <Label cssClass="description1 indent0" text="/* GOAL: Determine the BigO of this function"/>
         </WrapLayout>
         <WrapLayout> 
-            <Label cssClass="description2 indent0" text="* BigO is time complexity,"/>
+            <Label cssClass="description2 indent0" text="* BigO is time complexity"/>
         </WrapLayout>
         <WrapLayout>
-            <Label cssClass="description2 indent0" text="* example solution format: n^3, n, nlogn"/>
+            <Label cssClass="description2 indent0" text="* Example solution format: n^3, n, nlogn"/>
         </WrapLayout>
         <WrapLayout>
             <Label cssClass="description3 indent0" text="*/"/>
@@ -53,16 +53,16 @@
 		<WrapLayout>
 			<Label cssClass="plain indent1" text="}"/>
 		</WrapLayout>
+				<WrapLayout>
+			<Label cssClass="plain" text="}"/>
+		</WrapLayout>
 		<WrapLayout>
 			<Label cssClass="plain bigOQuestion" text= "What is the complexity of this function?"/>
 		</WrapLayout>
 		<WrapLayout>
-			<Label cssClass="plain indent1" text= "O( "/>
-			<TextField id="bigO" cssClass="fiveChar" hint="???" text="{{ bigO }}"/>
+			<Label cssClass="plain indent4" text= "O( "/>
+			<TextField id="bigO3" cssClass="fiveChar" hint="???" text="{{ bigO3 }}"/>
 			<Label class="plain" text=" )"/>
-		</WrapLayout>
-		<WrapLayout>
-			<Label cssClass="plain" text="}"/>
 		</WrapLayout>
 		<Button text="Submit" cssClass="submitButton" tap="print"/>
 	</StackLayout>

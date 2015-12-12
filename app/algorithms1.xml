@@ -112,6 +112,9 @@
 			<Label cssClass="statement indent1" text= "return "/>
 			<Label cssClass="plain" text="indexFound;"/>
 		</WrapLayout>
+		<WrapLayout>
+			<Label cssClass="plain" text="}"/>
+		</WrapLayout>
 
 		<Button text="Submit" cssClass="submitButton" tap="print"/>
 	</StackLayout>
