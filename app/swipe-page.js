@@ -45,6 +45,7 @@ function pageLoaded(args) {
     var swipeCard = view.getViewById(page, "swipeCard");
     var swipeCardPrevious = view.getViewById(page, "swipeCardPrevious");
     var swipeCardNext = view.getViewById(page, "swipeCardNext");
+    // var labelTitleView = view.getViewById(page, "labelTitle");
 
     var screenWidth = platformModule.screen.mainScreen.widthPixels / platformModule.screen.mainScreen.scale;
     var screenHeight = platformModule.screen.mainScreen.heightPixels / platformModule.screen.mainScreen.scale;
@@ -56,9 +57,11 @@ function pageLoaded(args) {
 	absoluteLayoutModule.AbsoluteLayout.setLeft(swipeCardPrevious,  -200 + middleCardLeft/2);
 	absoluteLayoutModule.AbsoluteLayout.setLeft(swipeCard, middleCardLeft);
     absoluteLayoutModule.AbsoluteLayout.setLeft(swipeCardNext, 250 + middleCardLeft + middleCardLeft/2);
+    // absoluteLayout.AbsoluteLayout.setLeft(labelTitleView, middleCardLeft + 25);
     absoluteLayoutModule.AbsoluteLayout.setTop(swipeCardPrevious, middleCardTop + 25);
     absoluteLayoutModule.AbsoluteLayout.setTop(swipeCard, middleCardTop);
     absoluteLayoutModule.AbsoluteLayout.setTop(swipeCardNext, middleCardTop + 25);
+    // absoluteLayout.AbsoluteLayout.setTop(labelTitleView, middleCardTop / 2);
 
  //    var loopDescList = ["loop 1", "loop 2", "loop 3", "loop 4", "loop 5"];
 	// var loopList = ["loop1", "loop2", "loop3", "loop4", "loop5"];

@@ -3,7 +3,7 @@
     <ActionBar title="{{ title }}"/>
   </Page.actionBar>
     	<AbsoluteLayout class="cardContainer" top="0" left="0">
-        <Label text="{{ title }}"/>
+        <Label id="labelTitle" text="{{ title }}"/>
     		<TextView editable="false" id="swipeCardPrevious" class="card cardPrevious" left="-165" top="127.5"  text="{{previous}}" height="200" width="200" />
     		<TextView editable="false" id="swipeCard" class="card" left="62.5" top="102.5"  text="{{current}}" height="250" width="250" />
     		<TextView editable="false" id="swipeCardNext" class="card cardNext" left="340" top="127.5"  text="{{next}}" height="200" width="200" />
