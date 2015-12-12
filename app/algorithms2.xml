@@ -1,0 +1,96 @@
+<Page loaded="loaded">
+	<StackLayout orientation="vertical">
+		<WrapLayout>
+            <Label cssClass="description1 indent0" text="/* GOAL: perform an insertion sort"/>
+        </WrapLayout>
+        <WrapLayout> 
+            <Label cssClass="description2 indent0" text="* on the following 1-D array."/>
+        </WrapLayout>
+        <WrapLayout>
+            <Label cssClass="description3 indent0" text="*/"/>
+        </WrapLayout>
+		<!-- Line 1 - Function Declaration -->
+		<WrapLayout>
+			<Label cssClass="type" text="void "/>
+			<Label cssClass="functionTitle" text="insertionSort"/>
+			<Label cssClass="type" text="int"/>
+			<Label cssClass="plain" text=" array[], "/>
+			<Label cssClass="type" text="int"/>
+			<Label cssClass="plain" text=" size){"/>
+		</WrapLayout>
+		<!-- Line 2 - declare indexFound -->
+		<WrapLayout><Label cssClass="plain" text=""/></WrapLayout>
+		<WrapLayout>
+			<Label cssClass="type indent1" text="int"/>
+			<Label cssClass="plain" text=" i, j, value;"/>
+		</WrapLayout>
+		<!-- Line 3 - declare others -->
+		<WrapLayout></WrapLayout>
+		<WrapLayout>
+			<Label cssClass="statement indent1" text="for"/>
+			<Label cssClass="plain" text=" ("/>
+			<Label cssClass="plain" text="i = "/>
+			<Label cssClass="number" text="1"/>
+			<Label cssClass="plain" text="; i < "/>
+			<TextField id="conditioni1" cssClass="fiveChar" hint="????" text="{{ conditioni1 }}"/>
+			<Label cssClass="plain" text="; ++i){"/>
+		</WrapLayout>
+		<WrapLayout>
+			<Label cssClass="plain indent2" text="value = "/>
+			<TextField id="setValue" cssClass="big" hint="????????" text="{{ setValue }}"/>
+			<Label cssClass="plain" text=";"/>
+		</WrapLayout>
+		<WrapLayout></WrapLayout>
+		<!-- Line 2 - while loop -->
+		<WrapLayout>
+			<Label cssClass="plain indent2" text="j = "/>
+			<TextField id="setJ" cssClass="big" hint="????????" text="{{ setJ }}"/>
+			<Label cssClass="plain" text=";"/>
+		</WrapLayout>
+		<WrapLayout>
+			<Label cssClass="statement indent2" text="while "/>
+			<Label cssClass="plain" text="(j >= "/>
+			<Label cssClass="number" text="0"/>
+			<Label cssClass="plain" text=" && array[j] "/>
+			<TextField id="greaterThan" cssClass="twoChar" hint="??" text= "{{ greaterThan }}"/>
+			<Label cssClass="plain" text=" value){"/>
+		</WrapLayout>
+		<WrapLayout></WrapLayout>
+		<WrapLayout>
+			<Label cssClass="plain indent3" text="array[ "/>
+			<TextField id="arrayIndex1" cssClass="fiveChar" hint="????" text= "{{ arrayIndex1 }}"/>
+			<Label cssClass="plain" text=" ] = array[j];"/>
+		</WrapLayout>
+		<WrapLayout>
+			<Label cssClass="plain indent3" text="--j;"/>
+		</WrapLayout>
+		<!-- Line 3 - If statement 1 -->
+		<WrapLayout>
+			<Label cssClass="plain indent2" text="}"/>
+		</WrapLayout>
+		<!-- Line 6 - else statement-->
+		<WrapLayout>
+			<Label cssClass="plain indent2" text="array[ "/>
+			<TextField id="arrayIndex2" cssClass="fiveChar" hint="????" text= "{{ arrayIndex2 }}"/>
+			<Label cssClass="plain" text=" ] = value;"/>
+		</WrapLayout>
+		<!-- Line 8 close paren else --> 
+ 		<WrapLayout>
+			<Label cssClass="plain indent2" text="}"/>
+		</WrapLayout>
+		<!-- Line 9 close paren while --> 
+ 		<WrapLayout>
+			<Label cssClass="plain indent1" text="}"/>
+		</WrapLayout>
+		<!-- Line 10 - Return for findGCD -->
+		<WrapLayout>
+			<Label cssClass="statement indent1" text= "return "/>
+			<Label cssClass="plain" text="indexFound;"/>
+		</WrapLayout>
+		<WrapLayout>
+			<Label cssClass="plain" text="}"/>
+		</WrapLayout>
+		<Button text="Submit" cssClass="submitButton" tap="print"/>
+	</StackLayout>
+
+</Page>

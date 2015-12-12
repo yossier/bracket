@@ -124,7 +124,7 @@
 		        </WrapLayout>
 		        <WrapLayout>
 			        <Label cssClass="challenges" text="Challenges Completed: "/>
-			        <Label id="completedBox" cssClass="challenges" text="{{ completed }}"/>
+			        <Label id="completedBox" cssClass="challenges" text="{{ completed_challenges }}"/>
 		        </WrapLayout>
             <Button if="sign-out-button" text="Sign Out" tap="signOut"/>
 	        </StackLayout>

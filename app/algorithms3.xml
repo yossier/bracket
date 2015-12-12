@@ -1,0 +1,103 @@
+<Page loaded="loaded">
+	<StackLayout orientation="vertical">
+		<WrapLayout>
+            <Label cssClass="description1 indent0" text="/* GOAL: perform a selection sort"/>
+        </WrapLayout>
+        <WrapLayout> 
+            <Label cssClass="description2 indent0" text="* on the following 1-D array."/>
+        </WrapLayout>
+        <WrapLayout>
+            <Label cssClass="description3 indent0" text="*/"/>
+        </WrapLayout>
+		<!-- Line 1 - Function Declaration -->
+		<WrapLayout>
+			<Label cssClass="type" text="void "/>
+			<Label cssClass="functionTitle" text="selectionSort"/>
+			<Label cssClass="type" text="int"/>
+			<Label cssClass="plain" text=" array[], "/>
+			<Label cssClass="type" text="int"/>
+			<Label cssClass="plain" text=" size){"/>
+		</WrapLayout>
+		<WrapLayout>
+			<Label cssClass="type indent1" text="int"/>
+			<Label cssClass="plain" text=" min_pos, temp;"/>
+		</WrapLayout>
+		<!-- Line 3 - declare others -->
+		<WrapLayout>
+			<Label cssClass="statement indent1" text="for"/>
+			<Label cssClass="plain" text=" ("/>
+			<Label cssClass="plain" text="i = "/>
+			<Label cssClass="number" text="0"/>
+			<Label cssClass="plain" text="; i < size - "/>
+			<Label cssClass="number" text="1"/>
+			<Label cssClass="plain" text="; ++i){"/>
+		</WrapLayout>
+		<WrapLayout>
+			<Label cssClass="plain indent2" text="min_pos = i;"/>
+			<Label cssClass="comment" text="//i is current index"/>
+		</WrapLayout>
+		<WrapLayout>
+			<Label cssClass="statement indent2" text="for"/>
+			<Label cssClass="plain" text=" ("/>
+			<Label cssClass="plain" text="j = "/>
+			<TextField id="setJcounter" cssClass="big" hint="????????" text="{{ setJcounter }}"/>
+			<Label cssClass="plain" text="; j < "/>
+			<TextField id="Jcondition" cssClass="big" hint="????????" text="{{ Jcondition }}"/>
+			<Label cssClass="plain" text="; ++j){"/>
+		</WrapLayout>
+		<!-- Line 2 - while loop -->
+		<WrapLayout>
+			<Label cssClass="statement indent3" text="if "/>
+			<Label cssClass="plain" text="(array[j] < "/>
+			<TextField id="arrayMin" cssClass="big" hint="????????" text= "{{ arrayMin }}"/>
+			<Label cssClass="plain" text="){"/>
+		</WrapLayout>
+		<WrapLayout>
+			<Label cssClass="plain indent4" text="min = "/>
+			<TextField id="minToJ" cssClass="twoChar" hint="??" text="{{ minToJ }}"/>
+			<Label cssClass="plain" text=";"/>
+		</WrapLayout>
+		<!-- Line 3 - If statement 1 -->
+		<WrapLayout>
+			<Label cssClass="plain indent3" text="}"/>
+		</WrapLayout>
+		<WrapLayout>
+			<Label cssClass="plain indent2" text="}"/>
+		</WrapLayout>
+		<!-- Line 6 - else statement-->
+		<WrapLayout>
+			<Label cssClass="statement indent2" text="if "/>
+			<Label cssClass="plain" text="( "/>
+			<TextField id="minCheck" cssClass="fiveChar" hint="???" text="{{ minCheck }}"/>
+			<Label cssClass="plain" text=" != i){"/>
+		</WrapLayout>
+		<WrapLayout>
+			<Label cssClass="comment indent3" text="//smaller val was found"/>
+		</WrapLayout>
+		<WrapLayout>
+			<TextField id="setTemp" cssClass="fiveChar indent3" hint="????" text= "{{ setTemp }}"/>
+			<Label cssClass="plain" text=" = array[i];"/>
+		</WrapLayout>
+		<WrapLayout>
+			<TextField id="setArrayi" cssClass="big indent3" hint="????????" text= "{{ setArrayi }}"/>
+			<Label cssClass="plain" text=" = array[min];"/>
+		</WrapLayout>
+		<WrapLayout>
+			<Label cssClass="plain indent3" text="array[min] = temp;"/>
+		</WrapLayout>
+		<!-- Line 8 close paren else --> 
+ 		<WrapLayout>
+			<Label cssClass="plain indent2" text="}"/>
+		</WrapLayout>
+		<!-- Line 9 close paren while --> 
+ 		<WrapLayout>
+			<Label cssClass="plain indent1" text="}"/>
+		</WrapLayout>
+		<!-- Line 10 - Return for findGCD -->
+		<WrapLayout>
+			<Label cssClass="plain" text="}"/>
+		</WrapLayout>
+		<Button text="Submit" cssClass="submitButton" tap="print"/>
+	</StackLayout>
+
+</Page>
