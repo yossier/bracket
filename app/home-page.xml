@@ -1,13 +1,17 @@
-<Page xmlns="http://www.nativescript.org/tns.xsd" loaded="pageLoaded" actionBarHidden="true">
+<Page xmlns="http://www.nativescript.org/tns.xsd" loaded="pageLoaded" actionBarHidden="false">
+	<Page.actionBar>
+		<ActionBar title="{{ title }}"/>
+	 </Page.actionBar>
   <TabView id="homeTabView">
     <TabView.items>
       <TabViewItem title="Home">
         <TabViewItem.view>
-		      <StackLayout orientation ="vertical" verticalAlignment="stretch">
+	      		<StackLayout orientation ="vertical" verticalAlignment="stretch" style="background-color: #b1b4b4">
 					  <Label id="navHeader" text="&#60; Choose A Challenge &#62;" horizontalAlignment="stretch" cssId="banner"/>
             
             <ScrollView>
               <StackLayout orientation ="vertical" verticalAlignment="stretch" style="background-color: #f4f4f4;">
+              	<Label horizontalAlignment="stretch" cssClass="spacer"/>
                 <DockLayout tap="recursion" stretchLastChild="false">
 	    			      <Label  dock="left" cssClass="boxHeader" verticalAlignment="center" text="Recursion"/>
 	    			      <Button text="&#62;" dock="right" cssClass="collapseButton" verticalAlignment="center" tap="recursion"/>
@@ -48,7 +52,7 @@
 	    			      <Button text="&#62;" dock="right" cssClass="collapseButton" verticalAlignment="center" tap="complexity"/>
 			          </DockLayout>
 
-                <Label horizontalAlignment="stretch" cssClass="spacer"/>
+                <Label horizontalAlignment="stretch" verticalAlignment="stretch" cssClass="spacer"/>
                 
               </StackLayout>
             </ScrollView>
@@ -58,6 +62,7 @@
       
       <TabViewItem title="Leaderboard">
         <TabViewItem.view>
+        	<ScrollView>
 	        <StackLayout orientation="vertical">
 			      <Label horizontalAlignment="stretch" id="navHeader" text="&#60; Leader Board &#62;"/>
 	    	    <GridLayout columns="*, *" rows="*, *" verticalAlignment="left" horizontalAlignment="stretch">
@@ -106,6 +111,7 @@
 	    			  </WrapLayout>
 			      </GridLayout>
 	        </StackLayout>
+	    </ScrollView>
         </TabViewItem.view>
       </TabViewItem>
      
