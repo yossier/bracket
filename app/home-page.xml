@@ -12,11 +12,13 @@
               <ListView id="category-list" items="{{ categoryList }}" >
                 <ListView.itemTemplate>
                   <GridLayout columns="auto, *" tap="{{ handler }}">
-                    <StackLayout col="0" colSpan="1">
-                      <Label text="{{ name }}" textWrap="true" verticalAlignment="center" />
+                    <StackLayout col="1" orientation="horizontal" verticalAlignment="center" >
+                      <Image src="res://icon" stretch="none" verticalAlignment="center" cssClass="list-image"/>
+                      <Label cssClass="categoryTitle" text="{{ name }}" verticalAlignment="center" />
+                      <Label text="&#62;" textWrap="true" verticalAlignment="center" cssClass=".arrow" />
                     </StackLayout>
-                    <StackLayout col="1" colSpan="1">
-                      <Label text="&#62;" textWrap="true" verticalAlignment="center" />
+                    <StackLayout>
+
                     </StackLayout>
                   </GridLayout>
                 </ListView.itemTemplate>
