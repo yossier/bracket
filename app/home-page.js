@@ -3,15 +3,24 @@ var view = require("ui/core/view");
 //var stackLayoutModule = require("ui/layouts/stack-layout");
 //var labelModule = require("ui/label");
 var observableModule = require("data/observable");
+var observableArrayModule = require("data/observable-array");
 var navigation = require("./shared/navigation");
 var UserViewModel = require("./user-view-model");
 var frameModule = require("ui/frame");
 
 var user = new UserViewModel({loading: false});
+var categoryList = new observableArrayModule.ObservableArray([
+    { name: "Recursion", handler: () => { navigation.goToSwipePage("recursion"); }},
+    { name: "Data Structures", handler: () => { navigation.goToSwipePage("dataStructures"); }},
+    { name: "Algorithms", handler: () => { navigation.goToSwipePage("algorithms"); }} ,
+    { name: "Loops", handler: () => { navigation.goToSwipePage("loops"); }},
+    { name: "Complexity", handler: () => { navigation.goToSwipePage("complexity"); } }
+]);
 
 var pageData = new observableModule.Observable({
     title: "< Choose a Challenge >",
-    user: user
+    user: user,
+    categoryList: categoryList
 });
 
 var actionBarTitleList = ["< Choose a Challenge >", "< Leaderboard >", "< Profile >"];
@@ -64,27 +73,27 @@ exports.onNavigatedTo = pageNavigatedTo;
 
 exports.pageLoaded = pageLoaded;
 
-exports.recursion = function(){
+exports.recursion_cb = function(){
     navigation.goToSwipePage("recursion");
 };
 
-exports.dataStructures = function(){
+exports.dataStructures_cb = function(){
     navigation.goToSwipePage("dataStructures");
 };
 
-exports.loops = function(){
+exports.loops_cb = function(){
     navigation.goToSwipePage("loops");
 };
 
-exports.algorithms = function(){
+exports.algorithms_cb = function(){
     navigation.goToSwipePage("algorithms");
 };
 
-exports.sorts = function(){
+exports.sorts_cb = function(){
     navigationgoToSwipePage("sorts");
 };
 
-exports.complexity = function() {
+exports.complexity_cb = function() {
     navigation.goToSwipePage("complexity");
 };
 
