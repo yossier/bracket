@@ -13,7 +13,8 @@ function User(info) {
         first_name: info.first_name || "",
         last_name: info.last_name || "",
         total_points: info.total_points || "",
-        completed_challenges : info.completed_challenges || ""
+        completed_challenges : info.completed_challenges || "",
+        attempted : info.attempted || ""
     });
 
     //Method to get basic user info 
@@ -94,8 +95,13 @@ function User(info) {
             })
             .then(function (data) {
                 console.log('getting data');
-                var length = Object.keys(data).length;
+                console.log(data.challenges);
+                console.log(data.attempted_challenges);
+                var challengeArr = data.challenges;
+                var length = challengeArr.length;
                 viewModel.set("completed_challenges", length);
+                viewModel.set("attempted", data.attempted_challenges)
+
             });
 
     }
