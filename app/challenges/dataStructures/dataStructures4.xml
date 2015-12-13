@@ -1,0 +1,80 @@
+<Page loaded="loaded">
+<ScrollView>
+	<StackLayout orientation="vertical">
+		<WrapLayout>
+            <Label cssClass="description1 indent0" text="/* GOAL: Implement the GroceryItem struct."/>
+        </WrapLayout>
+        <WrapLayout> 
+            <Label cssClass="description2 indent0" text="* A GroceryItem has name, weight, price."/>
+        </WrapLayout>
+        <WrapLayout> 
+            <Label cssClass="description2 indent0" text="* Declare an instance GroceryItem melon,"/>
+        </WrapLayout>
+        <WrapLayout> 
+            <Label cssClass="description2 indent0" text="* and set weight = 110.3 and price = 4.60."/>
+        </WrapLayout>
+        <WrapLayout>
+            <Label cssClass="description3 indent0" text="*/"/>
+        </WrapLayout>
+		<!-- Line 1 - Function Declaration -->
+		<WrapLayout>
+			<Label cssClass= "type" text="struct " />
+			<Label cssClass= "plain" text="GroceryItem{"/>
+		</WrapLayout>
+		<WrapLayout>
+			<TextField id="string" cssClass="fiveChar indent1" hint="????" text="{{ string }}"/>
+			<Label cssClass="plain" text=" name;"/>	
+		</WrapLayout>
+		<WrapLayout>
+			<Label cssClass="type indent1" text="double " />
+			<Label cssClass="plain" text="weight;"/>
+		</WrapLayout>
+		<WrapLayout>
+			<TextField id="doubleP" cssClass="fiveChar indent1" hint="?????" text="{{ doubleP }}"/>
+			<Label cssClass="plain" text=" price;"/>	
+		</WrapLayout>
+		<WrapLayout>
+			<Label class="plain" text="};"/>
+		</WrapLayout>
+		<WrapLayout></WrapLayout>
+		<WrapLayout></WrapLayout>
+		<WrapLayout></WrapLayout>
+		<WrapLayout>
+			<Label cssClass="type" text="int " />
+			<Label cssClass="functionTitle" text="main"/>
+			<Label cssClass="plain" text="(){"/>
+		</WrapLayout>
+
+		<WrapLayout>
+			<TextField id="grocery" cssClass="big indent1" hint="??????????" text="{{ grocery }}"/>
+			<Label cssClass="plain" text=" myMelon;"/>
+		</WrapLayout>
+		<WrapLayout>
+			<Label cssClass="plain indent1" text="myMelon."/>
+			<Label cssClass="memberVar" text="name"/>
+			<Label cssClass="plain" text=" = "/>
+			<Label cssClass="plain" text="&quot;melon&quot;"/>
+			<Label cssClass="plain" text=";"/>
+		</WrapLayout>
+		<WrapLayout>
+			<Label cssClass="plain indent1" text="myMelon."/>
+			<TextField id="weight" cssClass="fiveChar" hint="??????" text="{{ weight }}"/>
+			<Label cssClass="plain" text=" = "/>
+			<Label cssClass="number" text="110.3"/>
+			<Label cssClass="plain" text=";"/>
+		</WrapLayout>
+		<WrapLayout>
+			<Label cssClass="plain indent1" text="myMelon."/>
+			<Label cssClass="memberVar" text="price"/>
+			<Label cssClass="plain" text=" = "/>
+			<TextField id="price" cssClass="fiveChar" hint="????" text="{{ price }}"/>
+			<Label cssClass="plain" text=";"/>
+		</WrapLayout>
+		<WrapLayout>
+			<Label class="plain" text="}"/>
+		</WrapLayout>
+		
+		<Button text="Submit" cssClass="submitButton" tap="print"/>
+	</StackLayout>
+</ScrollView>
+</Page>
