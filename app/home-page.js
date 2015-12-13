@@ -1,17 +1,37 @@
-//var tabViewModule = require("ui/tab-view");
-//var view = require("ui/core/view");
+var tabViewModule = require("ui/tab-view");
+var view = require("ui/core/view");
 //var stackLayoutModule = require("ui/layouts/stack-layout");
 //var labelModule = require("ui/label");
+var observableModule = require("data/observable");
 var navigation = require("./shared/navigation");
 var UserViewModel = require("./user-view-model");
 var frameModule = require("ui/frame");
 
 var user = new UserViewModel({loading: false});
 
+var pageData = new observableModule.Observable({
+    title: "Default",
+    user: user
+});
+
 function pageLoaded(args) {
 	  var page = args.object;
-    page.bindingContext = user;
+    page.bindingContext = pageData;
 
+    var tabView  = view.getViewById(page, "homeTabView");
+    
+    tabView.on(tabViewModule.SelectedIndexChangedEventData, function(eventData){
+        oldIndex = eventData.oldIndex;
+        newIndex = eventData.newIndex;
+        console.log("Switching from index " + oldIndx + " to " + newIndex);
+
+        newTabViewItem = tabView.selectedIndex(newIndex);
+
+        console.log("Tab ", + newTabViewItem.title);
+        
+        pageData.set("title", newTabViewItem.title);
+    });
+    
     user.getUserInfo()
         .catch(function(error) {
             dialogs.alert({
