@@ -15,7 +15,8 @@
 		<!-- Line 1 - Function Declaration -->
 		<WrapLayout>
 			<Label cssClass="type" text="int "/>
-			<Label cssClass="functionTitle" text="binarySearch"/>
+			<Label cssClass="functionTitle" text="binS"/>
+			<Label cssClass="plain" text="("/>
 			<Label cssClass="type" text="int"/>
 			<Label cssClass="plain" text=" arr[], "/>
 			<Label cssClass="type" text="int"/>
@@ -76,7 +77,7 @@
 		<!-- Line 6 - else statement-->
 		<WrapLayout>
 			<Label cssClass="statement indent2" text="else if"/>
-			<Label cssClass="plain" text="(val < array[mid]){"/>
+			<Label cssClass="plain" text="(val &lt; array[mid]){"/>
 		</WrapLayout>
 
 		<WrapLayout>

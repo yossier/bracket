@@ -62,7 +62,7 @@
 		<WrapLayout>
 			<Label cssClass="plain indent4" text= "O( "/>
 			<TextField id="bigO2" cssClass="fiveChar" hint="???" text="{{ bigO2 }}"/>
-			<Label class="plain" text=" )"/>
+			<Label cssClass="plain" text=" )"/>
 		</WrapLayout>
 		<Button text="Submit" cssClass="submitButton" tap="print"/>
 	</StackLayout>

@@ -34,7 +34,7 @@
 		</WrapLayout>
 		<WrapLayout>
 			<Label cssClass="statement indent2" text="if "/>
-			<Label cssClass="plain" text="(top >= "/>
+			<Label cssClass="plain" text="(top &gt;= "/>
 			<TextField id="topVal" cssClass="big" hint="?????" text= "{{ topVal }}"/>
 			<Label cssClass="plain" text="){"/>
 		</WrapLayout>

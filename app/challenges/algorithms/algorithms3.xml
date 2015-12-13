@@ -40,9 +40,9 @@
 			<Label cssClass="statement indent2" text="for"/>
 			<Label cssClass="plain" text=" ("/>
 			<Label cssClass="plain" text="j = "/>
-			<TextField id="setJcounter" cssClass="big" hint="????????" text="{{ setJcounter }}"/>
+			<TextField id="setJcounter" cssClass="fiveChar" hint="????" text="{{ setJcounter }}"/>
 			<Label cssClass="plain" text="; j < "/>
-			<TextField id="Jcondition" cssClass="big" hint="????????" text="{{ Jcondition }}"/>
+			<TextField id="Jcondition" cssClass="fiveChar" hint="????" text="{{ Jcondition }}"/>
 			<Label cssClass="plain" text="; ++j){"/>
 		</WrapLayout>
 		<!-- Line 2 - while loop -->

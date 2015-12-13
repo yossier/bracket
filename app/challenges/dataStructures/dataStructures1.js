@@ -31,11 +31,10 @@ exports.print = function() {
     var arrIndexEq = (response.arrIndexEq).replace(/ /g,'');
     var rarr = (response.rarr).replace(/ /g,'');
     var priv = (response.priv).replace(/ /g,'');
-    var returnVal2 = (response.returnVal2).replace(/ /g,'');
     
     var names = ["fillPublic", "IS", "Tvoid", "topVal", "arrIndex", "arrIndexEq", "rarr", "priv"];
     var vals = [fillPublic, IS, Tvoid, topVal, arrIndex, arrIndexEq, rarr, priv];
-    var correct = ["public", "intstack", "void", "maxsize", "top++", "pushval", "--top", "int"];
+    var correct = ["public:", "intstack", "void", "maxsize", "top++", "pushval", "--top", "int"];
     var numCorrect = 0;
     
     for (var i = 0; i < names.length; i++){

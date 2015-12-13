@@ -67,7 +67,11 @@ Page{
 
 .bigOQuestion{
 	margin-left: 20;
-	padding-top: 36;
+	padding-top: 24;
+}
+
+.closeBigO{
+	padding-bottom: 18;
 }
 
 .description1{
