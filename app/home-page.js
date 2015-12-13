@@ -51,38 +51,32 @@ var navigationEntry = {
     animated: false
 }
 
-exports.pageNavigatedTo = pageNavigatedTo;
+exports.onNavigatedTo = pageNavigatedTo;
 
 exports.pageLoaded = pageLoaded;
 
 exports.recursion = function(){
-    navigationEntry.context = {info: 'recursion'};
-    frameModule.topmost().navigate(navigationEntry);
+    navigation.goToSwipePage("recursion");
 };
 
 exports.dataStructures = function(){
-    navigationEntry.context = {info: "dataStructures"};
-    frameModule.topmost().navigate(navigationEntry);
+    navigation.goToSwipePage("dataStructures");
 };
 
 exports.loops = function(){
-    navigationEntry.context = {info: "loops"};
-    frameModule.topmost().navigate(navigationEntry);
+    navigation.goToSwipePage("loops");
 };
 
 exports.algorithms = function(){
-    navigationEntry.context = {info: "algorithms"};
-    frameModule.topmost().navigate(navigationEntry);
+    navigation.goToSwipePage("algorithms");
 };
 
 exports.sorts = function(){
-    navigationEntry.context = {info: "sorts"};
-    frameModule.topmost().navigate(navigationEntry);
+    navigationgoToSwipePage("sorts");
 };
 
 exports.complexity = function() {
-    navigationEntry.context = {info: "complexity"};
-    frameModule.topmost().navigate(navigationEntry);
+    navigation.goToSwipePage("complexity");
 };
 
 exports.signOut = navigation.signOut;
