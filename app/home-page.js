@@ -20,16 +20,6 @@ function pageLoaded(args) {
             });
             navigation.signOut();
         });
-
-        user.getChallenges()
-        .catch(function(error) {
-            dialogs.alert({
-                message: "Unable to fetch user challenge info. Please sign out and try again : " + error,
-                okButtonText: "OK"
-            });
-            navigation.signOut();
-        });
-    
 }
 
 function pageNavigatedTo(args) {

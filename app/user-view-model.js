@@ -15,9 +15,8 @@ function User(info) {
         last_name: info.last_name || "",
         total_points: info.total_points || "",
         completed_challenges: info.completed_challenges || "",
-        attempted_chellenges: info.attempted_challenges || "",
+        attempted_challenges: info.attempted_challenges || "",
         challenges: new ObservableArray([])
-        
     });
 
     //Method to get basic user info 
@@ -32,6 +31,8 @@ function User(info) {
                 viewModel.set("first_name", data.first_name);
                 viewModel.set("last_name", data.last_name);
                 viewModel.set("total_points", data.total_points);
+                viewModel.set("attempted_challenges", data.attempted_challenges);
+                viewModel.set("completed_challenges", data.completed_challenges);
             });
     };
     
