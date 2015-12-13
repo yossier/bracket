@@ -59,7 +59,7 @@
       <TabViewItem title="Leaderboard">
         <TabViewItem.view>
 	        <StackLayout orientation="vertical">
-			      <Label horizontalAlignment="stretch" id="navHeader" text="&#60; Leader Board &#62;"/>
+			      <Label horizontalAlignment="stretch" id="navHeader" text="&#60; Leaderboard &#62;"/>
 	    	    <GridLayout columns="*, *" rows="*, *" verticalAlignment="left" horizontalAlignment="stretch">
 	    		    <Border cssClass="elts" row="0" col="0" rowSpan="2" colSpan="2"></Border>
 	    			  <Label cssClass="rank" text="&#35;1" row="0" rowSpan="2" col="0"/>

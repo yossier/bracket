@@ -20,9 +20,9 @@ var indexes={
 var context = "loops";
 
 var code = new observableModule.Observable({
-	previous: "previous",
-	current: "current",
-	next: "next"
+	previous: "",
+	current: "",
+	next: ""
 });
 
 var titleInfo = new observableModule.Observable({
@@ -63,7 +63,7 @@ function pageLoaded(args) {
     // absoluteLayout.AbsoluteLayout.setTop(labelTitleView, middleCardTop / 2);
 
     //Challenge description lists -- ADDING A DESCRIPTION HERE "ADDS" THE CHALLENGE TO THE APP -- assuming the XML file exists
-    var algorithms = ["implement a binary search.", "Perform an insertion sort.", "Perform a selection sort."];
+    var algorithms = ["Implement a binary search.", "Perform an insertion sort.", "Perform a selection sort."];
 
     var complexity = ["(1) Determine the BigO of the code snippet", "(2) Determine the BigO of the code snippet", 
 	"(3) Determine the BigO of the code snippet", "(4) Determine the BigO of the code snippet"];
@@ -89,14 +89,20 @@ function pageLoaded(args) {
 		var challengeDescriptions = recursion;
 	}
 
-	cardIndex = indexes[context];
-	code.previous = challengeDescriptions[cardIndex - 1];
-	code.current = challengeDescriptions[cardIndex];
-	code.next = challengeDescriptions[cardIndex + 1];
+	handleEdges();
 
-	// if (this.loopCurIndex === 0) {
-	// 	page.css = "cardPrevious { visibility: collapsed }";
-	// }
+	cardIndex = indexes[context];
+	if (cardIndex - 1 > 0) {
+		code.previous = challengeDescriptions[cardIndex - 1];
+	} else {
+		code.previous = "";
+	}
+	code.current = challengeDescriptions[cardIndex];
+	if (cardIndex + 1 < challengeDescriptions.length) {
+		code.next = challengeDescriptions[cardIndex + 1];
+	} else {
+		code.next = "";
+	}
 
     swipeCard.on(gestures.GestureTypes.pan, function (args) {
 		if ( typeof this.oldLeftMiddle === 'undefined' ) {
@@ -134,19 +140,23 @@ function pageLoaded(args) {
 			//     console.log(e.message);
 			// });
 		   	if (args.deltaX > 150) {
-		   		//NEED TO UPDATE FOR EDGE CASES
-		   		indexes[context] -= 1;
-		   		cardIndex = indexes[context];
-		   		code.current = challengeDescriptions[cardIndex];
-		      	code.previous = challengeDescriptions[cardIndex - 1];
-		      	code.next = challengeDescriptions[cardIndex + 1];
+		   		if (canSwipe("previous")) {
+		   			indexes[context] -= 1;
+		   			handleEdges();
+			   		cardIndex = indexes[context];
+			   		code.current = challengeDescriptions[cardIndex];
+			      	code.previous = challengeDescriptions[cardIndex - 1];
+			      	code.next = challengeDescriptions[cardIndex + 1];	
+		   		}
 		    } else if (args.deltaX < -150) {
-		      	indexes[context] += 1;
-		   		cardIndex = indexes[context];
-		      	code.current = challengeDescriptions[cardIndex];
-		      	code.previous = challengeDescriptions[cardIndex - 1];
-		      	code.next = challengeDescriptions[cardIndex + 1];
-		      	// console.log("previous: " + code.previous + ", current: " + code.current + ", next: " + code.next);
+		    	if (canSwipe("next")) {
+		    		indexes[context] += 1;
+		    		handleEdges();
+			   		cardIndex = indexes[context];
+			      	code.current = challengeDescriptions[cardIndex];
+			      	code.previous = challengeDescriptions[cardIndex - 1];
+			      	code.next = challengeDescriptions[cardIndex + 1];
+		    	}	
 		    } 
 	    } else if(args.state === gestures.GestureStateTypes.cancelled) {
 	    	// console.log("cancelled");
@@ -163,6 +173,31 @@ function pageLoaded(args) {
     	var topmost = frameModule.topmost();
 		topmost.navigate(path);
 	});
+
+	function handleEdges() {
+		console.log("index: " + indexes[context] + " in handleEdges");
+		if(indexes[context] === 0) {
+			swipeCardPrevious.style.visibility = "collapse";
+			swipeCardNext.style.visibility = "visible";
+		} else if (indexes[context] === challengeDescriptions.length - 1) {
+			swipeCardPrevious.style.visibility = "visible";
+			swipeCardNext.style.visibility = "collapse";
+		} else {
+			swipeCardPrevious.style.visibility = "visible";
+			swipeCardNext.style.visibility = "visible";
+		}
+	};
+
+	function canSwipe(direction) {
+		if((indexes[context] === 0) && (direction === "previous")) {
+			return false;
+		} else if ((indexes[context] === challengeDescriptions.length - 1) 
+			&& (direction === "next")) {
+			return false;
+		} else {
+			return true;
+		}
+	};
 
 }
 exports.pageLoaded = pageLoaded;
