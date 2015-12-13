@@ -1,8 +1,8 @@
 #NativeScript
-#**/platforms
+**/platforms
 **/node_modules
 
-#**/platforms/*
+**/platforms/*
 
 # OSX
 #
