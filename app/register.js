@@ -49,7 +49,7 @@ function completeRegistration() {
         .then(function() {
             dialogsModule
                 .alert("Your account was successfully created.")
-                .then(navigation.goToLoginPage);
+                .then(navigation.goToHomePage);
         }).catch(function() {
             dialogsModule
                 .alert({

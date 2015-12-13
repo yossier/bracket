@@ -64,7 +64,13 @@ function User(info) {
                 "Content-Type": "application/json"
             }
         })
-            .then(handleErrors);
+            .then(handleErrors)
+            .then(function(response) {
+                return response.json();
+            }).then( function(data) {
+                config.logged_in = true;
+                config.user_id = data.user_id;
+            });
     };
 
     viewModel.resetPassword = function() {

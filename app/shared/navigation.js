@@ -11,6 +11,13 @@ module.exports = {
     goToLoginPage: function() {
         frameModule.topmost().navigate("login");
     },
+    goToSwipePage: function(contextInfo) {
+        frameModule.topmost().navigate({
+            moduleName: "swipe-page",
+            animated: false,
+            context: { info: contextInfo }
+        });
+    },
     goToRegisterPage: function() {
         frameModule.topmost().navigate("register");
     },
