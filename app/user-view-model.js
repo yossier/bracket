@@ -1,5 +1,6 @@
 var config = require("./shared/config")
 var Observable = require("data/observable").Observable;
+var ObservableArray = require("data/observable-array").ObservableArray;
 var validator = require("email-validator");
 
 function User(info) {
@@ -13,7 +14,10 @@ function User(info) {
         first_name: info.first_name || "",
         last_name: info.last_name || "",
         total_points: info.total_points || "",
-        completed_challenges : info.completed_challenges || ""
+        completed_challenges: info.completed_challenges || "",
+        attempted_chellenges: info.attempted_challenges || "",
+        challenges: new ObservableArray([])
+        
     });
 
     //Method to get basic user info 
@@ -74,8 +78,8 @@ function User(info) {
     };
 
     viewModel.resetPassword = function() {
-        return fetch(config.apiUrl + "Users/resetpassword", {
-            method: "POST",
+        return fetch(config.apiUrl + "Users/"+ viewModel.get("id") +"/password", {
+            method: "PUT",
             body: JSON.stringify({
                 email: viewModel.get("email"),
             }),
@@ -86,7 +90,7 @@ function User(info) {
             .then(handleErrors);
     };
 
-    viewModel.getChallenges = function(){
+    viewModel.getCompletedChallenges = function(){
         return fetch(config.apiUrl + "users/" + viewModel.get("id")+"/completed-challenges")
             .then(handleErrors)
             .then(function (response) {
@@ -94,12 +98,12 @@ function User(info) {
             })
             .then(function (data) {
                 console.log('getting data');
-                var length = Object.keys(data).length;
-                viewModel.set("completed_challenges", length);
+                viewModel.get("challenges").push(data.challenges);
+                viewModel.set("attempted_challenges", data.attempted_challenges);
+                viewModel.set("completed_challenges", data.completed_challenges);
             });
-
     }
-
+    
     viewModel.isValidEmail = function() {
         var email = this.get("email");
         return validator.validate(email);
