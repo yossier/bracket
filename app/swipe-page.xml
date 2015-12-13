@@ -1,4 +1,4 @@
-<Page class="swipe-page" xmlns="http://www.nativescript.org/tns.xsd" loaded="pageLoaded" >
+<Page class="swipe-page" xmlns="http://www.nativescript.org/tns.xsd" loaded="pageLoaded">
   <Page.actionBar>
     <ActionBar title="{{ title }}"/>
   </Page.actionBar>
