@@ -48,7 +48,7 @@ function completeRegistration() {
     user.register()
         .then(function() {
             dialogsModule
-                .alert("Your account was successfully created.")
+                .alert("Your account was successfully created!")
                 .then(navigation.goToHomePage);
         }).catch(function() {
             dialogsModule

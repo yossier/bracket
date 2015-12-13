@@ -69,7 +69,7 @@ function pageLoaded(args) {
 	"(3) Determine the BigO of the code snippet", "(4) Determine the BigO of the code snippet"];
 
 	// var dataStructures = ["Implement an IntStack class", "Finish implementing the Person class.", "Declare and use an array."];
-	var dataStructures = ["Implement an IntStack class", "Finish implementing the Person class."];
+	var dataStructures = ["Implement an IntStack class", "Finish implementing the Person class.", "Declare and modify an array.", "Create and use a struct."];
 
 	var loops= ["Find the smallest element using a loop.", "Return the number of times a value occurs.", 
 	"Find the last increasing pod of 3 elts.", "Return the row the value is found in."];
