@@ -56,19 +56,16 @@ function pageLoaded(args) {
     absoluteLayout.width = screenWidth;
 	absoluteLayout.height = screenHeight;
 	var middleCardLeft = (screenWidth - 250) / 2;
-	var middleCardTop = (screenHeight/5);
-	absoluteLayoutModule.AbsoluteLayout.setLeft(swipeCardPrevious, -200 + middleCardLeft/2);
+	var middleCardTop = (screenHeight/6);
+	var otherCardTop = middleCardTop + 25;
+	var previousCardLeft = -200 + middleCardLeft/2;
+	var nextCardLeft = 250 + middleCardLeft + middleCardLeft/2;
+	absoluteLayoutModule.AbsoluteLayout.setLeft(swipeCardPrevious, previousCardLeft);
 	absoluteLayoutModule.AbsoluteLayout.setLeft(swipeCard, middleCardLeft);
-    absoluteLayoutModule.AbsoluteLayout.setLeft(swipeCardNext, 250 + middleCardLeft + middleCardLeft/2);
-    absoluteLayoutModule.AbsoluteLayout.setTop(swipeCardPrevious, middleCardTop + 25);
+    absoluteLayoutModule.AbsoluteLayout.setLeft(swipeCardNext, nextCardLeft);
+    absoluteLayoutModule.AbsoluteLayout.setTop(swipeCardPrevious, otherCardTop);
     absoluteLayoutModule.AbsoluteLayout.setTop(swipeCard, middleCardTop);
-    absoluteLayoutModule.AbsoluteLayout.setTop(swipeCardNext, middleCardTop + 25);
-
-    // console.log("[swipCardPrevious] left: " +  (-200 + middleCardLeft/2)
-    // + " top: " + (middleCardTop + 25) + "\n");
-    // console.log("[swipCardMiddle] left: " +  middleCardLeft + " top: " + middleCardTop + "\n");
-    // console.log("[swipCardNext] left: " +  (250 + middleCardLeft + middleCardLeft/2)
-    // + " top: " + (middleCardTop + 25) + "\n");
+    absoluteLayoutModule.AbsoluteLayout.setTop(swipeCardNext, otherCardTop);
 
     //Challenge description lists -- ADDING A DESCRIPTION HERE "ADDS" THE CHALLENGE TO THE APP -- assuming the XML file exists
     var algorithms = ["Implement a binary search.", "Perform an insertion sort.", "Perform a selection sort."];
@@ -100,7 +97,7 @@ function pageLoaded(args) {
 	handleEdges();
 
 	cardIndex = indexes[context];
-	if (cardIndex - 1 > 0) {
+	if (cardIndex - 1 > -1) {
 		code.previous = challengeDescriptions[cardIndex - 1];
 	} else {
 		code.previous = "";
@@ -113,25 +110,26 @@ function pageLoaded(args) {
 	}
 
     swipeCard.on(gestures.GestureTypes.pan, function (args) {
-		if ( typeof this.oldLeftMiddle === 'undefined' ) {
-	        this.oldLeftMiddle = swipeCard._oldLeft;
-	        this.oldLeftPrevious = swipeCardPrevious._oldLeft;
-	        this.oldLeftNext = swipeCardNext._oldLeft;
-	    }
+		// if ( typeof this.oldLeftMiddle === 'undefined' ) {
+	 //        this.oldLeftMiddle = swipeCard._oldLeft;
+	 //        this.oldLeftPrevious = swipeCardPrevious._oldLeft;
+	 //        this.oldLeftNext = swipeCardNext._oldLeft;
+	 //    }
 
 	    if(args.state === gestures.GestureStateTypes.began) {
-	    	absoluteLayoutModule.AbsoluteLayout.setLeft(swipeCardPrevious, this.oldLeftPrevious + args.deltaX);
-	    	absoluteLayoutModule.AbsoluteLayout.setLeft(swipeCard, this.oldLeftMiddle + args.deltaX);
-	    	absoluteLayoutModule.AbsoluteLayout.setLeft(swipeCardNext, this.oldLeftNext + args.deltaX);
+	    	absoluteLayoutModule.AbsoluteLayout.setLeft(swipeCardPrevious, previousCardLeft + args.deltaX);
+	    	absoluteLayoutModule.AbsoluteLayout.setLeft(swipeCard, middleCardLeft + args.deltaX);
+	    	absoluteLayoutModule.AbsoluteLayout.setLeft(swipeCardNext, nextCardLeft + args.deltaX);
 	    } else if(args.state === gestures.GestureStateTypes.changed) {
-	    	absoluteLayoutModule.AbsoluteLayout.setLeft(swipeCardPrevious, this.oldLeftPrevious + args.deltaX);
-	    	absoluteLayoutModule.AbsoluteLayout.setLeft(swipeCard, this.oldLeftMiddle + args.deltaX);
-	    	absoluteLayoutModule.AbsoluteLayout.setLeft(swipeCardNext, this.oldLeftNext + args.deltaX);
+	    	absoluteLayoutModule.AbsoluteLayout.setLeft(swipeCardPrevious, previousCardLeft + args.deltaX);
+	    	absoluteLayoutModule.AbsoluteLayout.setLeft(swipeCard, middleCardLeft + args.deltaX);
+	    	absoluteLayoutModule.AbsoluteLayout.setLeft(swipeCardNext, nextCardLeft + args.deltaX);
 	    } else if(args.state === gestures.GestureStateTypes.ended) {
 	    	// console.log("ended with deltaX: " + args.deltaX);
-	    	absoluteLayoutModule.AbsoluteLayout.setLeft(swipeCard, this.oldLeftMiddle);
-		    absoluteLayoutModule.AbsoluteLayout.setLeft(swipeCardPrevious, this.oldLeftPrevious);
-		    absoluteLayoutModule.AbsoluteLayout.setLeft(swipeCardNext, this.oldLeftNext);
+	    	absoluteLayoutModule.AbsoluteLayout.setLeft(swipeCard, middleCardLeft);
+		    absoluteLayoutModule.AbsoluteLayout.setLeft(swipeCardPrevious, previousCardLeft);
+		    absoluteLayoutModule.AbsoluteLayout.setLeft(swipeCardNext, nextCardLeft);
+
 		 //    var animations = [
 			//     { target: swipeCardPrevious, translate: { x: -args.deltaX, y:0 }, duration: 300, delay: 0 },
 			//     { target: swipeCard, translate: { x: -args.deltaX, y:0 }, duration: 300, delay: 0 },
@@ -165,9 +163,9 @@ function pageLoaded(args) {
 		    	}	
 		    } 
 	    } else if(args.state === gestures.GestureStateTypes.cancelled) {
-		    absoluteLayoutModule.AbsoluteLayout.setLeft(swipeCard, this.oldLeftMiddle);
-		    absoluteLayoutModule.AbsoluteLayout.setLeft(swipeCardPrevious, this.oldLeftPrevious);
-		    absoluteLayoutModule.AbsoluteLayout.setLeft(swipeCardNext, this.oldLeftNext);
+		    absoluteLayoutModule.AbsoluteLayout.setLeft(swipeCard, middleCardLeft);
+		    absoluteLayoutModule.AbsoluteLayout.setLeft(swipeCardPrevious, previousCardLeft);
+		    absoluteLayoutModule.AbsoluteLayout.setLeft(swipeCardNext, nextCardLeft);
 		    return;
 	    }
 	});
@@ -180,7 +178,7 @@ function pageLoaded(args) {
 	});
 
 	function handleEdges() {
-		// console.log("index: " + indexes[context] + " in handleEdges");
+		console.log("index: " + indexes[context] + " in handleEdges");
 		if(indexes[context] === 0) {
 			swipeCardPrevious.style.visibility = "collapse";
 			swipeCardNext.style.visibility = "visible";
@@ -207,7 +205,7 @@ function pageLoaded(args) {
 	page.on(pageModule.Page.navigatingFromEvent, function (isBackNavigation) {
     	if(isBackNavigation) {
     		console.log("in isBackNavigation");
-    		swipeCardPrevious.style.visibility = "collapse";
+    		// page.css = "cardPrevious { visibility: collapse }";
     	}
 	});
 
