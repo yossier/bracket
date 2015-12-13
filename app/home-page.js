@@ -25,8 +25,12 @@ function pageLoaded(args) {
     tabView.on(tabViewModule.TabView.selectedIndexChangedEvent, function(eventData){
         newIndex = eventData.newIndex;
         pageData.set("title", actionBarTitleList[newIndex]);
+        if (newIndex === 2)
+            getUserInfo();
     });
-    
+}
+
+function getUserInfo() {
     user.getUserInfo()
         .catch(function(error) {
             dialogs.alert({
