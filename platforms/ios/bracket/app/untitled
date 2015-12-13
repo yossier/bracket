@@ -1,0 +1,5 @@
+<Page xmlns="http://www.nativescript.org/tns.xsd" loaded="loaded" actionBarHidden="true">
+  <StackLayout horizontalAlignment="center" orientation="vertical">
+    
+  </StackLayout>
+</Page>

@@ -1,0 +1,50 @@
+Page{
+    background-color: #f4f4f4;
+}
+
+#navHeader{
+	/*border-width: 2;*/
+	/*border-color: blue;*/
+	border-color: #b1b4b4;
+	background-color: #d8dada;
+	padding: 12;
+	font-weight: bold;
+	font-size: 20;
+    border: black;
+    border-width: 2;
+    text-align: center;
+    /*margin-bottom: 15;*/
+    color:#0177e8;
+    /*margin-top: 20;*/
+}
+
+.elts{
+	margin-top: 15;
+    background-color: white;
+    border-color: #a6a6a6;
+    border-width: 1;
+    /*margin-bottom: 15;*/
+}
+
+.rank{
+	/*border-width:3;*/
+	margin-top: 15;
+	padding: 10;
+	font-weight: bold;
+	font-size: 35;
+	text-align: left;
+	padding-left: 20;
+	color: #0177e8;
+}
+
+.pts{
+	margin-top: 5;
+	font-size: 15;
+	color: #a6a6a6;
+}
+
+.lname{
+	margin-top: 20;
+	font-weight: bold;
+	font-size: 20;
+}

@@ -1,0 +1,11 @@
+<Page class="swipe-page" xmlns="http://www.nativescript.org/tns.xsd" loaded="pageLoaded" >
+  <Page.actionBar>
+    <ActionBar title="{{ title }}"/>
+  </Page.actionBar>
+    	<AbsoluteLayout class="cardContainer" top="0" left="0">
+        <Label id="labelTitle" text="{{ title }}"/>
+    		<TextView editable="false" id="swipeCardPrevious" cssClass="cardPrevious"  left="-165" top="127.5"  text="{{previous}}" height="200" width="200" />
+    		<TextView editable="false" id="swipeCard" cssClass="cardCurrent"  left="62.5" top="102.5"  text="{{current}}" height="250" width="250" />
+    		<TextView editable="false" id="swipeCardNext" cssClass="cardNext" left="340" top="127.5"  text="{{next}}" height="200" width="200" />
+    	</AbsoluteLayout>
+</Page>

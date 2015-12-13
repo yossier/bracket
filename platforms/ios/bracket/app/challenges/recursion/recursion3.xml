@@ -1,0 +1,88 @@
+<Page loaded="loaded">
+  <ScrollView>
+	<StackLayout orientation="vertical">
+		<WrapLayout>
+            <Label cssClass="description1 indent0" text="/* GOAL: Find greatest common divisor"/>
+        </WrapLayout>
+        <WrapLayout> 
+            <Label cssClass="description2 indent0" text="* between int x and int y."/>
+        </WrapLayout>
+        <WrapLayout>
+            <Label cssClass="description2 indent0" text="* the GCD is the largest positive int"/>
+        </WrapLayout>
+        <WrapLayout>
+            <Label cssClass="description2 indent0" text="* that divides the ints w/o a remainder."/>
+        </WrapLayout>
+        <WrapLayout>
+            <Label cssClass="description3 indent0" text="*/"/>
+        </WrapLayout>
+		<!-- Line 1 - Function Declaration -->
+		<WrapLayout>
+			<Label cssClass="type" text="int " />
+			<Label cssClass="functionTitle" text="findGCD"/>
+			<Label cssClass="plain" text="(int x, int y){"/>
+		</WrapLayout>
+		<!-- Line 2 - while loop -->
+		<WrapLayout>
+			<Label cssClass="statement indent1" text="while"/>
+			<Label cssClass="plain" text="("/>
+			<TextField id="whileCondition" cssClass="fiveChar" hint="?????" text= "{{ whileCondition }}"/>
+			<Label cssClass="plain" text="){"/>
+		</WrapLayout>
+		<!-- Line 3 - If statement 1 -->
+		<WrapLayout>
+			<Label cssClass="statement indent2" text="if "/>
+			<Label cssClass="plain" text="(x "/>
+			<TextField id="ifCondition" cssClass="twoChar" hint="??" text= "{{ ifCondition }}"/>
+			<Label cssClass="plain" text=" y){"/>
+		</WrapLayout> -->
+		<!-- Line 4 - return for base case 1 -->
+		<WrapLayout>
+			<Label cssClass="statement indent3" text= "return "/>
+			<Label cssClass="functionTitle" text="findGCD"/>
+			<Label class="plain" text="("/>
+			<TextField id="baseFirstParam" cssClass="fiveChar" hint="?????" text= "{{ baseFirstParam }}"/>
+			<Label class="plain" text=" , y);"/>
+		</WrapLayout>
+		<!-- Line 5 - End Bracket If1 -->
+		<WrapLayout>
+			<Label cssClass="plain indent2" text="}"/>
+		</WrapLayout>
+		<!-- Line 6 - else statement-->
+		<WrapLayout>
+			<Label cssClass="statement indent2" text="else"/>
+			<Label cssClass="plain" text="{"/>
+		</WrapLayout>
+		<!-- Line 7 - Return for else-->
+		<WrapLayout>
+			<Label cssClass="statement indent3" text= "return "/>
+			<Label cssClass="functionTitle" text="findGCD"/>
+			<Label class="plain" text="("/>
+			<TextField id="elseFirstParam" cssClass="fiveChar" hint="?????" text= "{{ elseFirstParam }}"/>
+			<Label class="plain" text=" , "/>
+			<TextField id="elseSecondParam" cssClass="fiveChar" hint="?????" text= "{{ elseSecondParam }}"/>
+			<Label class="plain" text=");"/>
+		</WrapLayout>
+		<!-- Line 8 close paren else --> 
+ 		<WrapLayout>
+			<Label cssClass="plain indent2" text="}"/>
+		</WrapLayout>
+		<!-- Line 9 close paren while --> 
+ 		<WrapLayout>
+			<Label cssClass="plain indent1" text="}"/>
+		</WrapLayout>
+		<!-- Line 10 - Return for findGCD -->
+		<WrapLayout>
+			<Label cssClass="statement indent1" text= "return "/>
+			<TextField id="returnFunc" cssClass="twoChar" hint="??" text= "{{ returnFunc }}"/>
+			<Label cssClass="plain" text=";"/>
+		</WrapLayout>
+		<!-- Line 11 - End Bracket Function -->
+		<WrapLayout>
+			<Label cssClass="plain" text="}"/>
+		</WrapLayout>
+		
+		<Button text="Submit" cssClass="submitButton" tap="print"/>
+	</StackLayout>
+  </ScrollView>
+</Page>

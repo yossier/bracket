@@ -1,0 +1,15 @@
+use_frameworks!
+# Begin Podfile - /Users/aaron/Repos/bracket/node_modules/nativescript-iqkeyboardmanager/platforms/ios/Podfile 
+ pod 'IQKeyboardManager' 
+ # End Podfile 
+# Begin Podfile - /Users/aaron/Repos/bracket/node_modules/nativescript-iqkeyboardmanager/platforms/ios/Podfile 
+ pod 'IQKeyboardManager' 
+ # End Podfile 
+# Begin Podfile - /Users/aaron/Repos/bracket/node_modules/nativescript-iqkeyboardmanager/platforms/ios/Podfile 
+ pod 'IQKeyboardManager' 
+ # End Podfile 
+
+workspace ‘bracket’
+# Begin Podfile - /Users/aaron/Repos/bracket/node_modules/nativescript-iqkeyboardmanager/platforms/ios/Podfile 
+ pod 'IQKeyboardManager' 
+ # End Podfile 

@@ -1,0 +1,46 @@
+﻿@import {url('~/platform.css')};
+
+.title {
+    font-size: 30;
+    horizontal-align: center;
+    margin: 20;
+    margin-bottom: 30;
+}
+.logoText {
+    color: #002FFF;
+    font-size: 60;
+}
+
+.message {
+    font-size: 20;
+    color: #284848;
+    horizontal-align: center;
+}
+
+Page {
+    background-color: white;
+    font-size: 17;
+}
+TextField {
+    margin: 10;
+    padding: 10;
+}
+Image {
+    margin-top: 20;
+    margin-left: 0;
+    margin-right: 0;
+    margin-bottom: 80;
+}
+Button {
+    margin: 10;
+    padding: 10;
+}
+
+.submitButton{
+    border-color: transparent;
+    background-color: #0177e8;
+    border-radius: 4;
+    height: 35;
+    width: 90;
+    color: white;
+}
