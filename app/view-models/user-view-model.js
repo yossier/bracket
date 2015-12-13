@@ -1,4 +1,4 @@
-var config = require("./shared/config")
+var config = require("../shared/config")
 var Observable = require("data/observable").Observable;
 var ObservableArray = require("data/observable-array").ObservableArray;
 var validator = require("email-validator");

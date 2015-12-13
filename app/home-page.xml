@@ -99,7 +99,8 @@
 			        <Label cssClass="challenges" text="Challenges Completed: "/>
 			        <Label id="completedBox" cssClass="challenges" text="{{ user.completed_challenges }}"/>
 		        </WrapLayout>
-            <Button if="sign-out-button" text="Sign Out" tap="signOut"/>
+            <Button id="sign-out-button" text="Sign Out" tap="signOut"/>
+            <Button id="completed-challenges-button" text="Completed Challenges" tap="compChallenges"/>
 	        </StackLayout>
         </TabViewItem.view>
       </TabViewItem>

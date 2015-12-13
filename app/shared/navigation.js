@@ -2,6 +2,8 @@ var config = require("./config");
 var frameModule = require("ui/frame");
 
 module.exports = {
+    goToCompletedChallengesPage: ()=> { frameModule.topmost().navigate("views/completed-challenges/completed-challenges");  },
+    
     goToHomePage: function() {
         frameModule.topmost().navigate({
             moduleName: "home-page",

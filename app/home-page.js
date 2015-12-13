@@ -5,7 +5,7 @@ var view = require("ui/core/view");
 var observableModule = require("data/observable");
 var observableArrayModule = require("data/observable-array");
 var navigation = require("./shared/navigation");
-var UserViewModel = require("./user-view-model");
+var UserViewModel = require("./view-models/user-view-model");
 var frameModule = require("ui/frame");
 
 var user = new UserViewModel({loading: false});
@@ -98,3 +98,5 @@ exports.complexity_cb = function() {
 };
 
 exports.signOut = navigation.signOut;
+
+exports.compChallenges = ()=>{ navigation.goToCompletedChallengesPage(); };
