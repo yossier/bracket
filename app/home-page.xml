@@ -4,10 +4,10 @@
 	 </Page.actionBar>
   <TabView id="homeTabView">
     <TabView.items>
-      <TabViewItem title="Home">
+      <TabViewItem title="Challenges">
         <TabViewItem.view>
 	      		<StackLayout orientation ="vertical" verticalAlignment="stretch" style="background-color: #b1b4b4">
-					  <Label id="navHeader" text="&#60; Choose A Challenge &#62;" horizontalAlignment="stretch" cssId="banner"/>
+					  <!-- <Label id="navHeader" text="&#60; Choose A Challenge &#62;" horizontalAlignment="stretch" cssId="banner"/> -->
             
             <ScrollView>
               <StackLayout orientation ="vertical" verticalAlignment="stretch" style="background-color: #f4f4f4;">
@@ -64,7 +64,7 @@
         <TabViewItem.view>
         	<ScrollView>
 	        <StackLayout orientation="vertical">
-			      <Label horizontalAlignment="stretch" id="navHeader" text="&#60; Leaderboard &#62;"/>
+			      <!-- <Label horizontalAlignment="stretch" id="navHeader" text="&#60; Leaderboard &#62;"/> -->
 	    	    <GridLayout columns="*, *" rows="*, *" verticalAlignment="left" horizontalAlignment="stretch">
 	    		    <Border cssClass="elts" row="0" col="0" rowSpan="2" colSpan="2"></Border>
 	    			  <Label cssClass="rank" text="&#35;1" row="0" rowSpan="2" col="0"/>

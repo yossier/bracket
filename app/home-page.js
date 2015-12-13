@@ -10,26 +10,21 @@ var frameModule = require("ui/frame");
 var user = new UserViewModel({loading: false});
 
 var pageData = new observableModule.Observable({
-    title: "Default",
+    title: "< Choose a Challenge >",
     user: user
 });
 
+var actionBarTitleList = ["< Choose a Challenge >", "< Leaderboard >", "< Profile >"];
+
 function pageLoaded(args) {
-	  var page = args.object;
+	var page = args.object;
     page.bindingContext = pageData;
 
     var tabView  = view.getViewById(page, "homeTabView");
     
-    tabView.on(tabViewModule.SelectedIndexChangedEventData, function(eventData){
-        oldIndex = eventData.oldIndex;
+    tabView.on(tabViewModule.TabView.selectedIndexChangedEvent, function(eventData){
         newIndex = eventData.newIndex;
-        console.log("Switching from index " + oldIndx + " to " + newIndex);
-
-        newTabViewItem = tabView.selectedIndex(newIndex);
-
-        console.log("Tab ", + newTabViewItem.title);
-        
-        pageData.set("title", newTabViewItem.title);
+        pageData.set("title", actionBarTitleList[newIndex]);
     });
     
     user.getUserInfo()

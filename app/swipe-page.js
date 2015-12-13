@@ -25,8 +25,13 @@ var code = new observableModule.Observable({
 	next: ""
 });
 
-var titleInfo = new observableModule.Observable({
-	title: "context"
+// var titleInfo = new observableModule.Observable({
+// 	title: "context"
+// });
+
+var pageData = new observableModule.Observable({
+	code: code,
+	title: ""
 });
 
 function pageLoaded(args) {
@@ -36,10 +41,10 @@ function pageLoaded(args) {
     context = page.navigationContext.info;
 
     titleTemp = context.charAt(0).toUpperCase() + context.slice(1);
-    titleInfo.title = titleTemp;
+    pageData.title = titleTemp;
 
     // page.bindingContext = sModule.swipeViewModel;
-    page.bindingContext = code;
+    page.bindingContext = pageData;
 
     var swipeCard = view.getViewById(page, "swipeCard");
     var swipeCardPrevious = view.getViewById(page, "swipeCardPrevious");
@@ -69,7 +74,7 @@ function pageLoaded(args) {
 	"(3) Determine the BigO of the code snippet", "(4) Determine the BigO of the code snippet"];
 
 	// var dataStructures = ["Implement an IntStack class", "Finish implementing the Person class.", "Declare and use an array."];
-	var dataStructures = ["Implement an IntStack class", "Finish implementing the Person class.", "Declare and modify an array.", "Create and use a struct."];
+	var dataStructures = ["Implement an IntStack class", "Finish implementing the Person class."];
 
 	var loops= ["Find the smallest element using a loop.", "Return the number of times a value occurs.", 
 	"Find the last increasing pod of 3 elts.", "Return the row the value is found in."];
