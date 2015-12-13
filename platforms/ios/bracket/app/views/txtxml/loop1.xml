@@ -1,0 +1,67 @@
+<Page loaded="loaded">
+	<StackLayout orientation="vertical">
+		<!-- Line 1 - Function Declaration -->
+		<WrapLayout>
+			<Label cssClass= "type" text="int " />
+			<Label cssClass= "functionTitle" text="findSmallestElt"/>
+			<Label cssClass= "plain" text="("/>
+			<Label cssClass="type" text="int"/>
+			<Label cssClass="plain" text=" array[], " />
+			<Label cssClass="type" text="int"/>
+			<Label cssClass="plain" text=" size){"/>
+		</WrapLayout>
+		<!-- Line 2 smallestElt declaration -->
+		<WrapLayout>
+			<Label cssClass="type indent1" text="int "/>
+			<Label cssClass="plain" text="smallestElt = array["/>
+			<Label cssClass="number" text="0"/>
+			<Label cssClass="plain" text = "];"/>
+		</WrapLayout>
+		<!-- Line 3 - For Loop Declaration -->
+		<WrapLayout>
+			<Label cssClass="statement indent1" text="for"/>
+			<Label cssClass="plain" text=" ("/>
+			<Label cssClass="type" text="int "/>
+			<Label cssClass="plain" text="i = "/>
+			<TextField id="i" cssClass="oneChar" hint="??" text="{{ i }}"/>
+			<Label cssClass="plain" text="; i < "/>
+			<TextField id="condition" cssClass="fiveChar" hint="?????" text="{{ condition }}"/>
+			<Label cssClass="plain" text="; ++i){"/>
+		</WrapLayout>
+		<!-- Line 4 - If Declaration -->
+		<WrapLayout>
+			<Label cssClass="statement indent2" text="if "/>
+			<Label cssClass="plain" text="(array["/>
+			<TextField id="arr" cssClass="oneChar" hint="??" text = "{{ arr }}"/>
+			<Label cssClass="plain" text="] < "/>
+			<TextField id="arrLessThan" cssClass="big" hint="????" text="{{ arrLessThan }}"/>
+			<Label cssClass="plain" text="){"/>
+		</WrapLayout>
+		<!-- Line 5 - Set smallestElt -->
+		<WrapLayout>
+			<Label cssClass="plain indent3" text="smallestElt = array["/>
+			<TextField id="setSE" cssClass="oneChar" hint="??" text="{{ setSE }}"/>
+			<Label cssClass="plain" text="];"/>
+		</WrapLayout>
+		<!-- Line 6 - End Bracket If -->
+		<WrapLayout>
+			<Label cssClass="plain indent2" text="}"/>
+		</WrapLayout>
+		<!-- Line 7 - End Bracket For -->
+		<WrapLayout>
+			<Label cssClass="plain indent1" text="}"/>
+		</WrapLayout>
+		<!-- Line 8 - Return -->
+		<WrapLayout>
+			<Label cssClass="statement indent1" text= "return "/>
+			<TextField id="returnVal" cssClass="big" hint="?????" text="{{ returnVal }}"/>
+			<Label class="plain" text=";"/>
+		</WrapLayout>
+		<!-- Line 9 - End Bracket Function -->
+		<WrapLayout>
+			<Label cssClass="plain" text="}"/>
+		</WrapLayout>
+		<Button text="Print!" tap="print"/>
+	</StackLayout>
+
+</Page>
