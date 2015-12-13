@@ -26,10 +26,10 @@ TextField {
     padding: 10;
 }
 Image {
-    margin-top: 20;
-    margin-left: 0;
-    margin-right: 0;
-    margin-bottom: 80;
+//    margin-top: 20;
+//    margin-left: 0;
+//    margin-right: 0;
+//    margin-bottom: 80;
 }
 Button {
     margin: 10;

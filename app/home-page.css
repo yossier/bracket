@@ -2,6 +2,10 @@ Page{
     background-color: #f4f4f4;
 }
 
+.list-image {
+    margin: 10;
+}
+
 #navHeader{
 	  /*border-width: 2;*/
 	  /*border-color: blue;*/
@@ -50,9 +54,17 @@ Page{
 	  font-size: 20;
 }
 
+.categoryTitle {
+    font-size: 13;
+}
+.arrow {
+    font-size: 15;
+}
+
 .boxHeader {
 	padding-left: 30;
 	margin-bottom: 15;
+  
 /*	border-bottom: #ECF0F1;
     border-width: 1;*/
 }
@@ -71,12 +83,6 @@ TextField {
     border-width: 1;
     border-radius: 6;
     background-color: white;
-}
-Image {
-    margin-top: 12;
-    margin-left: 0;
-    margin-right: 0;
-    margin-bottom: 80;
 }
 
 #nameVal{
