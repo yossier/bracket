@@ -96,6 +96,7 @@ Page{
 TextField{
 	background-color: white;
 	border-width: 1;
+  color: black;
 	height: 18;
 	margin-left: 0;
 	margin-right: 0;

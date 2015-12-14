@@ -4,13 +4,17 @@
   </Page.actionBar>
   <ScrollView>
     <StackLayout orientation="vertical">
-      <Label text="&lt;bracket&gt;" horizontalAlignment="center" cssClass="title logoText"/>
+      <WrapLayout horizontalAlignment="center" >
+    	  <Label text="&lt;" cssClass="nums"/>
+    	  <Label id="words" text="bracket" />
+    	  <Label cssClass="nums" text="&gt;"/>
+      </WrapLayout>
       <TextField hint="Email Address" id="email" text="{{ email }}" keyboardType="email"/>
       <TextField hint="First Name" id="first_name" text="{{ first_name }}"/>
       <TextField hint="Last Name" id="last_name" text="{{ last_name }}"/>
       <TextField hint="Password" secure="true" id="password" text="{{ password }}" />
       <activity-indicator busy="{{ authenticating }}" />
-      <Button text="Sign Up" id="sign-up-button" tap="register" />
+      <Button text="Sign Up" id="sign-up-button" tap="register" cssClass="link" />
     </StackLayout>
   </ScrollView>
 </Page>
