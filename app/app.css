@@ -24,6 +24,7 @@ Page {
 TextField {
     margin: 10;
     padding: 10;
+    color: black;
 }
 /*Image {
     margin-top: 20;
