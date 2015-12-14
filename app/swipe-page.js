@@ -76,7 +76,7 @@ function pageLoaded(args) {
     absoluteLayoutModule.AbsoluteLayout.setTop(swipeCardNext, otherCardTop);
 
     absoluteLayoutModule.AbsoluteLayout.setTop(buttonContainer, middleCardTop + 250 + 60);
-    absoluteLayoutModule.AbsoluteLayout.setLeft(buttonContainer, middleCardLeft + 12.5);
+    absoluteLayoutModule.AbsoluteLayout.setLeft(buttonContainer, middleCardLeft + 10);
 
     //Challenge description lists -- ADDING A DESCRIPTION HERE "ADDS" THE CHALLENGE TO THE APP -- assuming the XML file exists
     var algorithms = ["Implement a binary search.", "Perform an insertion sort.", "Perform a selection sort.", 
