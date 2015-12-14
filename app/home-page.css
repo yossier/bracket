@@ -3,7 +3,8 @@ Page {
 }
 
 .list-image {
-    margin: 10;
+    margin: 15;
+    margin-right: 25;
 }
 
 #navHeader{
@@ -38,7 +39,7 @@ Page {
 	  font-size: 35;
 	  text-align: left;
 	  padding-left: 20;
-	  color: #0177e8;
+	  color: #07DD07;
 }
 
 .pts{
@@ -56,9 +57,11 @@ Page {
 
 .categoryTitle {
     font-size: 18;
+    color:#414141;
 }
 .arrow {
-    font-size: 15;
+    font-size: 18;
+    color:#414141;
 }
 
 .boxHeader {
@@ -86,7 +89,7 @@ TextField {
 }
 
 #nameVal{
-    color: #0177e8;
+    color: #07DD07;
     font-size: 30;
     font-weight: bold;
     text-align: center;
@@ -108,7 +111,7 @@ TextField {
 
 .points{
     font-weight: bold;
-    color: #0177e8;
+    color: #07DD07;
     font-size: 20;
     text-align: center;
 }
@@ -117,9 +120,9 @@ TextField {
     padding: 6;
     border-width: 4;
     background-color: white;
-    color: #0177e8;
+    color: #07DD07;
     font-size: 20;
-    border-color: #0177e8;
+    border-color: #07DD07;
     font-weight: bold;
     width: 95;
     height: 95;
@@ -149,6 +152,23 @@ TextField {
     font-size: 10;
 }
 
-.tabItem {
+/*.tabItem {
     background-color: #808080;
+}*/
+
+.ios-tab-view {
+    background-color: white;
+    color: #808080; /* this keeps the tap bar the correct gray when unselected */
+}
+
+.bracketBarTitle {
+    color:#07DD07;
+    font-weight: bold;
+    font-size:19;
+}
+
+.tabViewTitle {
+    color:#414141;
+    font-weight: bold;
+    font-size:19;
 }

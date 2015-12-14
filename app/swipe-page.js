@@ -68,13 +68,14 @@ function pageLoaded(args) {
     absoluteLayoutModule.AbsoluteLayout.setTop(swipeCardNext, otherCardTop);
 
     //Challenge description lists -- ADDING A DESCRIPTION HERE "ADDS" THE CHALLENGE TO THE APP -- assuming the XML file exists
-    var algorithms = ["Implement a binary search.", "Perform an insertion sort.", "Perform a selection sort."];
+    var algorithms = ["Implement a binary search.", "Perform an insertion sort.", "Perform a selection sort.", 
+    "Find the placement of an element into a sorted array."];
 
     var complexity = ["(1) Determine the BigO of the code snippet", "(2) Determine the BigO of the code snippet", 
 	"(3) Determine the BigO of the code snippet", "(4) Determine the BigO of the code snippet"];
 
-	// var dataStructures = ["Implement an IntStack class", "Finish implementing the Person class.", "Declare and use an array."];
-	var dataStructures = ["Implement an IntStack class", "Finish implementing the Person class."];
+	var dataStructures = ["Implement an IntStack class", "Finish implementing the Person class.", 
+	"Declare and modify an array.", "Create and use a struct."];
 
 	var loops= ["Find the smallest element using a loop.", "Return the number of times a value occurs.", 
 	"Find the last increasing pod of 3 elts.", "Return the row the value is found in."];

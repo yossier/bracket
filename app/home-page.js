@@ -10,20 +10,21 @@ var frameModule = require("ui/frame");
 
 var user = new UserViewModel({loading: false});
 var categoryList = new observableArrayModule.ObservableArray([
-    { name: "Recursion", handler: () => { navigation.goToSwipePage("recursion"); }},
-    { name: "Data Structures", handler: () => { navigation.goToSwipePage("dataStructures"); }},
-    { name: "Algorithms", handler: () => { navigation.goToSwipePage("algorithms"); }} ,
-    { name: "Loops", handler: () => { navigation.goToSwipePage("loops"); }},
-    { name: "Complexity", handler: () => { navigation.goToSwipePage("complexity"); } }
+    { name: "Recursion", imgSrc:"res://recursion", handler: () => { navigation.goToSwipePage("recursion"); }},
+    { name: "Data Structures", imgSrc:"res://dataStructures", handler: () => { navigation.goToSwipePage("dataStructures"); }},
+    { name: "Algorithms", imgSrc:"res://algorithms", handler: () => { navigation.goToSwipePage("algorithms"); }} ,
+    { name: "Loops", imgSrc:"res://loops", handler: () => { navigation.goToSwipePage("loops"); }},
+    { name: "Complexity", imgSrc:"res://complexity", handler: () => { navigation.goToSwipePage("complexity"); } }
 ]);
 
 var pageData = new observableModule.Observable({
-    title: "< Choose a Challenge >",
+    title: "Choose a Challenge",
     user: user,
-    categoryList: categoryList
+    categoryList: categoryList,
+    selectedIndex: 0
 });
 
-var actionBarTitleList = ["< Choose a Challenge >", "< Leaderboard >", "< Profile >"];
+var actionBarTitleList = ["Choose a Challenge", "Leaderboard", "Profile"];
 
 function pageLoaded(args) {
 	var page = args.object;
