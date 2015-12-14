@@ -1,4 +1,9 @@
 var observableModule = require("data/observable");
+var navigation = require("../../shared/navigation");
+var dialogs = require("ui/dialogs");
+var Challenge = require("../../view-models/challenge-view-model");
+
+var challenge = new Challenge();
 
 // inside brackets of text fields - data binding
 var response = new observableModule.Observable({
@@ -17,6 +22,15 @@ var page = "";
 exports.loaded = function(args) {
     page = args.object;
     page.bindingContext = response;
+
+    challenge.getChallengeInfo(6)
+        .catch(function(error) {
+            dialogs.alert({
+                message:"Unfortunately we were unable to retrieve the requested challenge: " + error,
+                okButtonText: "OK"
+            });
+            navigation.goBack();
+        });
 };
 
 
@@ -42,6 +56,18 @@ exports.print = function() {
     		numCorrect++;
 		}
     }
+
+    challenge.set("score", numCorrect);
+    challenge.updateScore()
+        .then(function(data) {
+            alert({
+                message: data.msg + "\nHighest Score " + data.points,
+                okButtonText: "OK"
+            });
+        })
+        .catch(function(error) {
+            alert(error);
+        });
 
     console.log(numCorrect);
     if (numCorrect === (names.length)){
