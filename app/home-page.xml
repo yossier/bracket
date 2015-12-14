@@ -34,58 +34,23 @@
       <TabViewItem title="Leaderboard" ios:iconSource="{{ selectedIndex == 1 ? 'res://leaderboard-1' : 'res://leaderboard' }}" cssClass="tabItem">
         <TabViewItem.view>
         	<ScrollView>
-	        <StackLayout orientation="vertical">
-			      <!-- <Label horizontalAlignment="stretch" id="navHeader" text="&#60; Leaderboard &#62;"/> -->
-	    	    <GridLayout columns="*, *" rows="*, *" verticalAlignment="left" horizontalAlignment="stretch">
-	    		    <Border cssClass="elts" row="0" col="0" rowSpan="2" colSpan="2"></Border>
-	    			  <Label cssClass="rank" text="&#35;1" row="0" rowSpan="2" col="0"/>
-	    			  <Label horizontalAlign="left" id="n1" cssClass="lname" text="{{ n1 }}" row="0" col="1"/>
-	    			  <WrapLayout row="1" col="1">
-	    				  <Label cssClass="pts" text="Points: "/>
-	    				  <Label id="place1" cssClass="pts" text="{{ place1 }}"/>
-	    			  </WrapLayout>
-			      </GridLayout>
-			      <GridLayout columns="*, *" rows="*, *" verticalAlignment="left" horizontalAlignment="stretch">
-	    		    <Border cssClass="elts" row="0" col="0" rowSpan="2" colSpan="2"></Border>
-	    			  <Label cssClass="rank" text="&#35;2" row="0" rowSpan="2" col="0"/>
-	    			  <Label horizontalAlign="left" id="n2" cssClass="lname" text="{{ n2 }}" row="0" col="1"/>
-	    			  <WrapLayout row="1" col="1">
-	    				  <Label cssClass="pts" text="Points: "/>
-	    				  <Label id="place2" cssClass="pts" text="{{ place2 }}"/>
-	    			  </WrapLayout>
-			      </GridLayout>
-			      <GridLayout columns="*, *" rows="*, *" verticalAlignment="left" horizontalAlignment="stretch">
-	    		    <Border cssClass="elts" row="0" col="0" rowSpan="2" colSpan="2"></Border>
-	    			  <Label cssClass="rank" text="&#35;3" row="0" rowSpan="2" col="0"/>
-	    			  <Label horizontalAlign="left" id="n3" cssClass="lname" text="{{ n3 }}" row="0" col="1"/>
-	    			  <WrapLayout row="1" col="1">
-	    				  <Label cssClass="pts" text="Points: "/>
-	    				  <Label id="place3" cssClass="pts" text="{{ place3 }}"/>
-	    			 </WrapLayout>
-			      </GridLayout>
-			      <GridLayout columns="*, *" rows="*, *" verticalAlignment="left" horizontalAlignment="stretch">
-	    		     <Border cssClass="elts" row="0" col="0" rowSpan="2" colSpan="2"></Border>
-	    			   <Label cssClass="rank" text="&#35;4" row="0" rowSpan="2" col="0"/>
-	    			   <Label horizontalAlign="left" id="n4" cssClass="lname" text="{{ n4 }}" row="0" col="1"/>
-	    			   <WrapLayout row="1" col="1">
-	    				   <Label cssClass="pts" text="Points: "/>
-	    				   <Label id="place4" cssClass="pts" text="{{ place4 }}"/>
-	    			   </WrapLayout>
-			      </GridLayout>
-			      <GridLayout columns="*, *" rows="*, *" verticalAlignment="left" horizontalAlignment="stretch">
-	    		    <Border cssClass="elts" row="0" col="0" rowSpan="2" colSpan="2"></Border>
-	    			  <Label cssClass="rank" text="&#35;5" row="0" rowSpan="2" col="0"/>
-	    			  <Label horizontalAlign="left" id="n5" cssClass="lname" text="{{ n5 }}" row="0" col="1"/>
-	    			  <WrapLayout row="1" col="1">
-	    				  <Label cssClass="pts" text="Points: "/>
-	    				  <Label id="place5" cssClass="pts" text="{{ place5 }}"/>
-	    			  </WrapLayout>
-			      </GridLayout>
-	        </StackLayout>
-	    </ScrollView>
+	          <StackLayout orientation="vertical">
+              <ActivityIndicator busy="{{ topTenIsLoading }}" />
+              <Repeater items="{{ topTen }}">
+
+                <Repeater.itemsLayout>
+                  <DockLayout />
+                </Repeater.itemsLayout>
+                <Repeater.itemsTemplate>
+                  <Label text="{{ num, 'Rank: #' + num }}" dock="left" />
+                  
+                </Repeater.itemsTemplate>
+              </Repeater>
+	          </StackLayout>
+	        </ScrollView>
         </TabViewItem.view>
       </TabViewItem>
-     
+      
       <TabViewItem title="Profile" ios:iconSource="{{ selectedIndex == 2 ? 'res://profile-1' : 'res://profile' }}" cssClass="tabItem">
         <TabViewItem.view>
           <StackLayout verticalAlignment="center" horizontalAlignment="center" orientation="vertical">

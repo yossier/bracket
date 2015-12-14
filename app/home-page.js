@@ -12,7 +12,6 @@ var frameModule = require("ui/frame");
 
 var user = new UserViewModel({loading: false});
 var userList = new UserListViewModel([]);
-
 var categoryList = new observableArrayModule.ObservableArray([
     { name: "Recursion", imgSrc:"res://recursion", handler: () => { navigation.goToSwipePage("recursion"); }},
     { name: "Data Structures", imgSrc:"res://data_structures", handler: () => { navigation.goToSwipePage("dataStructures"); }},
@@ -26,6 +25,7 @@ var pageData = new observableModule.Observable({
     user: user,
     categoryList: categoryList,
     selectedIndex: 0,
+    topTenIsLoading: false,
     topTen: userList
 });
 
@@ -41,6 +41,7 @@ function pageLoaded(args) {
         pageData.set("title", actionBarTitleList[newIndex]);
         if (newIndex === 1) {
             userList.empty();
+            pageData.set("topTenIsLoading", true);
             userList.getTopTenUsers()
                 .catch(function(error) {
                     dialogs.alert({
@@ -48,6 +49,7 @@ function pageLoaded(args) {
                         okButtonText: "OK"
                     });
                 });
+            pageData.set("topTenIsLoading", false);
         }
         if (newIndex === 2)
             getUserInfo();

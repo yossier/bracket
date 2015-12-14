@@ -9,10 +9,10 @@
         <StackLayout orientation="vertical" />
       </Repeater.itemsLayout>
       <Repeater.itemTemplate>
-        <WrapLayout col="auto, *" row="auto, *" >
+        <WrapLayout>
           <Label text="{{ title }}" />
-          <Label text="{{ user_score, 'Score: ' + user_score  }}"/>
-          <Label text="{{ max_points, 'Max: ' + max_points  }}" />
+          <Label text="{{ user_score, ' Score: ' + user_score  }}"/>
+          <Label text="{{ max_points, ' Max: ' + max_points  }}" />
         </WrapLayout>
       </Repeater.itemTemplate>
     </Repeater>
