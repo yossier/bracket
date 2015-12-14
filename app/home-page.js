@@ -6,9 +6,13 @@ var observableModule = require("data/observable");
 var observableArrayModule = require("data/observable-array");
 var navigation = require("./shared/navigation");
 var UserViewModel = require("./view-models/user-view-model");
+var UserListViewModel = require("./view-models/user-list-view-model");
 var frameModule = require("ui/frame");
 
+
 var user = new UserViewModel({loading: false});
+var userList = new UserListViewModel([]);
+
 var categoryList = new observableArrayModule.ObservableArray([
     { name: "Recursion", imgSrc:"res://recursion", handler: () => { navigation.goToSwipePage("recursion"); }},
     { name: "Data Structures", imgSrc:"res://data_structures", handler: () => { navigation.goToSwipePage("dataStructures"); }},
@@ -21,7 +25,8 @@ var pageData = new observableModule.Observable({
     title: "Choose a Challenge",
     user: user,
     categoryList: categoryList,
-    selectedIndex: 0
+    selectedIndex: 0,
+    topTen: userList
 });
 
 var actionBarTitleList = ["Choose a Challenge", "Leaderboard", "Profile"];
@@ -29,12 +34,21 @@ var actionBarTitleList = ["Choose a Challenge", "Leaderboard", "Profile"];
 function pageLoaded(args) {
 	var page = args.object;
     page.bindingContext = pageData;
-
-    var tabView  = view.getViewById(page, "homeTabView");
     
+    var tabView  = view.getViewById(page, "homeTabView");    
     tabView.on(tabViewModule.TabView.selectedIndexChangedEvent, function(eventData){
         newIndex = eventData.newIndex;
         pageData.set("title", actionBarTitleList[newIndex]);
+        if (newIndex === 1) {
+            userList.empty();
+            userList.getTopTenUsers()
+                .catch(function(error) {
+                    dialogs.alert({
+                        message: "Unable to fetch top ten users. Please try again in a little while" + error,
+                        okButtonText: "OK"
+                    });
+                });
+        }
         if (newIndex === 2)
             getUserInfo();
     });
