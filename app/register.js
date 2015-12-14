@@ -1,6 +1,6 @@
 var dialogsModule = require("ui/dialogs");
 var navigation = require("./shared/navigation");
-var UserViewModel = require("./user-view-model");
+var UserViewModel = require(".view-models/user-view-model");
 
 var user = new UserViewModel({ authenticating: false});
 var email;

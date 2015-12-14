@@ -1,5 +1,5 @@
 var navigation = require("./shared/navigation");
-var UserViewModel = require("./user-view-model");
+var UserViewModel = require(".view-models/user-view-model");
 var dialogs = require("ui/dialogs");
 
 
