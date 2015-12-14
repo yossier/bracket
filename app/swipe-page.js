@@ -11,6 +11,7 @@ var observableModule = require("data/observable");
 var actionBarModule = require("ui/action-bar");
 var animation = require("ui/animation");
 var pageModule = require("ui/page");
+var buttonModule = require("ui/button");
 var indexes={ 
      "algorithms": 0,
      "complexity": 0,
@@ -41,7 +42,11 @@ function pageLoaded(args) {
     context = page.navigationContext.info;
 
     titleTemp = context.charAt(0).toUpperCase() + context.slice(1);
-    pageData.title = titleTemp;
+    if (context !== "dataStructures") {
+    	pageData.title = titleTemp;
+    } else {
+    	pageData.title = "Data Structures";
+    }
 
     // page.bindingContext = sModule.swipeViewModel;
     page.bindingContext = pageData;
@@ -49,6 +54,9 @@ function pageLoaded(args) {
     var swipeCard = view.getViewById(page, "swipeCard");
     var swipeCardPrevious = view.getViewById(page, "swipeCardPrevious");
     var swipeCardNext = view.getViewById(page, "swipeCardNext");
+    var moveBackButton = view.getViewById(page, "moveBackButton");
+    var moveForwardButton = view.getViewById(page, "moveForwardButton");
+    var buttonContainer = view.getViewById(page, "buttonContainer");
 
     var screenWidth = platformModule.screen.mainScreen.widthPixels / platformModule.screen.mainScreen.scale;
     var screenHeight = platformModule.screen.mainScreen.heightPixels / platformModule.screen.mainScreen.scale;
@@ -56,7 +64,7 @@ function pageLoaded(args) {
     absoluteLayout.width = screenWidth;
 	absoluteLayout.height = screenHeight;
 	var middleCardLeft = (screenWidth - 250) / 2;
-	var middleCardTop = (screenHeight/6);
+	var middleCardTop = (screenHeight/8);
 	var otherCardTop = middleCardTop + 25;
 	var previousCardLeft = -200 + middleCardLeft/2;
 	var nextCardLeft = 250 + middleCardLeft + middleCardLeft/2;
@@ -66,6 +74,9 @@ function pageLoaded(args) {
     absoluteLayoutModule.AbsoluteLayout.setTop(swipeCardPrevious, otherCardTop);
     absoluteLayoutModule.AbsoluteLayout.setTop(swipeCard, middleCardTop);
     absoluteLayoutModule.AbsoluteLayout.setTop(swipeCardNext, otherCardTop);
+
+    absoluteLayoutModule.AbsoluteLayout.setTop(buttonContainer, middleCardTop + 250 + 60);
+    absoluteLayoutModule.AbsoluteLayout.setLeft(buttonContainer, middleCardLeft + 12.5);
 
     //Challenge description lists -- ADDING A DESCRIPTION HERE "ADDS" THE CHALLENGE TO THE APP -- assuming the XML file exists
     var algorithms = ["Implement a binary search.", "Perform an insertion sort.", "Perform a selection sort.", 
@@ -146,21 +157,23 @@ function pageLoaded(args) {
 			// });
 		   	if (args.deltaX > 150) {
 		   		if (canSwipe("previous")) {
-		   			indexes[context] -= 1;
-		   			handleEdges();
-			   		cardIndex = indexes[context];
-			   		code.current = challengeDescriptions[cardIndex];
-			      	code.previous = challengeDescriptions[cardIndex - 1];
-			      	code.next = challengeDescriptions[cardIndex + 1];	
+		   			moveBack();
+		   			// indexes[context] -= 1;
+		   			// handleEdges();
+			   		// cardIndex = indexes[context];
+			   		// code.current = challengeDescriptions[cardIndex];
+			     //  	code.previous = challengeDescriptions[cardIndex - 1];
+			     //  	code.next = challengeDescriptions[cardIndex + 1];	
 		   		}
 		    } else if (args.deltaX < -150) {
 		    	if (canSwipe("next")) {
-		    		indexes[context] += 1;
-		    		handleEdges();
-			   		cardIndex = indexes[context];
-			      	code.current = challengeDescriptions[cardIndex];
-			      	code.previous = challengeDescriptions[cardIndex - 1];
-			      	code.next = challengeDescriptions[cardIndex + 1];
+		    		moveForward();
+		    		// indexes[context] += 1;
+		    		// handleEdges();
+			   		// cardIndex = indexes[context];
+			     //  	code.current = challengeDescriptions[cardIndex];
+			     //  	code.previous = challengeDescriptions[cardIndex - 1];
+			     //  	code.next = challengeDescriptions[cardIndex + 1];
 		    	}	
 		    } 
 	    } else if(args.state === gestures.GestureStateTypes.cancelled) {
@@ -202,6 +215,39 @@ function pageLoaded(args) {
 			return true;
 		}
 	};
+
+	function moveBack() {
+		console.log("moving back");
+		indexes[context] -= 1;
+		handleEdges();
+   		cardIndex = indexes[context];
+   		code.current = challengeDescriptions[cardIndex];
+      	code.previous = challengeDescriptions[cardIndex - 1];
+      	code.next = challengeDescriptions[cardIndex + 1];	
+     };
+     
+
+     function moveForward() {
+     	console.log("moving forward")
+     	indexes[context] += 1;
+		handleEdges();
+   		cardIndex = indexes[context];
+      	code.current = challengeDescriptions[cardIndex];
+      	code.previous = challengeDescriptions[cardIndex - 1];
+      	code.next = challengeDescriptions[cardIndex + 1];
+     };
+     
+     moveBackButton.on(buttonModule.Button.tapEvent, function (args) {
+    	if (canSwipe("previous")) {
+    		moveBack();
+    	}
+	 });
+
+	 moveForwardButton.on(buttonModule.Button.tapEvent, function (args) {
+    	if (canSwipe("next")) {
+    		moveForward();
+    	}
+	 });
 
 	// page.on(pageModule.Page.navigatingFromEvent, function (isBackNavigation) {
  //    	if(isBackNavigation) {

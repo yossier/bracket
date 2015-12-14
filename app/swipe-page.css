@@ -1,3 +1,7 @@
+.swipe-page {
+	background-color: #f4f4f4;
+}
+
 .card {
 	font-size: 18;
 	background-color: #34495e;
@@ -9,7 +13,17 @@
 	left: 0;
 }
 
-.swipe-page {
-	/*background-color: #BDC3C7;*/
+.swipePageButton {
+	font-size: 16;
 	background-color: #f4f4f4;
+	color:#414141;
+    font-weight: bold;
+	border-color: #07DD07;
+	border-width: 2;
+	border-radius: 8;
+}
+
+.swipe-page-back {
+	background-color: #07DD07;
+	color:#07DD07;
 }

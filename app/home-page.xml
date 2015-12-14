@@ -19,11 +19,12 @@
             <ScrollView>
               <ListView id="category-list" items="{{ categoryList }}" >
                 <ListView.itemTemplate>
-                    <StackLayout orientation="horizontal" tap="{{ handler }}" >
-                      <Image src="{{ imgSrc }}" stretch="none" verticalAlignment="center" cssClass="list-image"/>
+                    <DockLayout stretchLastChild="true" tap="{{ handler }}" >
+                      <Image dock="left" src="{{ imgSrc }}" stretch="none" verticalAlignment="center" cssClass="list-image"/>
+                      <!-- <Label cssClass="arrow" verticalAlignment="center" horiziontalAlignment="right" text="&gt;"/> -->
+                      <Image dock="right" src="res://arrow" stretch="none" verticalAlignment="center" horiziontalAlignment="right" cssClass="list-arrow"/>
                       <Label cssClass="categoryTitle" text="{{ name }}" verticalAlignment="center" />
-                      <Label cssClass="arrow" verticalAlignment="center" text=" &#62;"/>
-                    </StackLayout>
+                    </DockLayout>
                 </ListView.itemTemplate>
               </ListView>
             </ScrollView>

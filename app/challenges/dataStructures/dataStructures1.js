@@ -25,7 +25,7 @@ exports.loaded = function(args) {
     page = args.object;
     page.bindingContext = response;
 
-    challenge.getChallengeInfo(7)
+    challenge.getChallengeInfo(12)
         .catch(function(error) {
             dialogs.alert({
                 message:"Unfortunately we were unable to retrieve the requested challenge: " + error,

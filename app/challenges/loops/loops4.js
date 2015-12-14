@@ -63,11 +63,6 @@ exports.print = function() {
 		}
     }
 
-    console.log(numCorrect);
-    if (numCorrect === (names.length)){
-        alert("You successfully completed the challenge!");
-    }
-
     challenge.set("score", numCorrect);
     challenge.updateScore()
         .then(function(data) {
@@ -79,6 +74,13 @@ exports.print = function() {
         .catch(function(error) {
             alert(error);
         });
+
+    console.log(numCorrect);
+    if (numCorrect === (names.length)){
+        alert("You successfully completed the challenge!");
+    }
+
+    
         
     // Check condition
     // if (condition.toLowerCase() != "size"){

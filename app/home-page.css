@@ -7,6 +7,10 @@ Page {
     margin-right: 25;
 }
 
+.list-arrow {
+    margin-right: 30;
+}
+
 #navHeader{
 	  /*border-width: 2;*/
 	  /*border-color: blue;*/
@@ -161,7 +165,7 @@ TextField {
     color: #808080; /* this keeps the tap bar the correct gray when unselected */
 }
 
-.bracketBarTitle {
+/*.bracketBarTitle {
     color:#07DD07;
     font-weight: bold;
     font-size:19;
@@ -171,4 +175,4 @@ TextField {
     color:#414141;
     font-weight: bold;
     font-size:19;
-}
+}*/

@@ -45,3 +45,15 @@ Button {
     width: 90;
     color: white;
 }
+
+.bracketBarTitle {
+    color:#07DD07;
+    font-weight: bold;
+    font-size:19;
+}
+
+.tabViewTitle {
+    color:#414141;
+    font-weight: bold;
+    font-size:19;
+}
