@@ -3,8 +3,8 @@
     <ActionBar title="{{ title }}"/>
   </Page.actionBar>
     	<AbsoluteLayout class="cardContainer" top="0" left="0">
-    		<TextView editable="false" id="swipeCardPrevious" cssClass="cardPrevious"  left="-165" top="127.5"  text="{{code.previous}}" height="200" width="200" />
-    		<TextView editable="false" id="swipeCard" cssClass="cardCurrent"  left="62.5" top="102.5"  text="{{code.current}}" height="250" width="250" />
-    		<TextView editable="false" id="swipeCardNext" cssClass="cardNext" left="340" top="127.5"  text="{{code.next}}" height="200" width="200" />
+    		<TextView editable="false" id="swipeCardPrevious" cssClass="card"  left="-165" top="127.5"  text="{{code.previous}}" height="200" width="200" />
+    		<TextView editable="false" id="swipeCard" cssClass="card"  left="62.5" top="102.5"  text="{{code.current}}" height="250" width="250" />
+    		<TextView editable="false" id="swipeCardNext" cssClass="card" left="340" top="127.5"  text="{{code.next}}" height="200" width="200" />
     	</AbsoluteLayout>
 </Page>

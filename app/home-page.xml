@@ -2,9 +2,9 @@
 	<Page.actionBar>
 		<ActionBar title="{{ title }}"/>
 	 </Page.actionBar>
-  <TabView id="homeTabView">
+  <TabView id="homeTabView" selectedColor="#07DD07" selectedIndex="{{ selectedIndex }}" >
     <TabView.items>
-      <TabViewItem title="Challenges" ios:iconSource="res://challenges">
+      <TabViewItem title="Challenges" ios:iconSource="res://challenges" cssClass="tabItem">
         <TabViewItem.view>
 					  <!-- <Label id="navHeader" text="&#60; Choose A Challenge &#62;" horizontalAlignment="stretch" cssId="banner"/> -->
             
@@ -27,7 +27,7 @@
         </TabViewItem.view>
       </TabViewItem>
       
-      <TabViewItem title="Leaderboard" ios:iconSource="res://leaderboard">
+      <TabViewItem title="Leaderboard" ios:iconSource="res://leaderboard" cssClass="tabItem">
         <TabViewItem.view>
         	<ScrollView>
 	        <StackLayout orientation="vertical">
@@ -82,7 +82,7 @@
         </TabViewItem.view>
       </TabViewItem>
      
-      <TabViewItem title="Profile" ios:iconSource="res://profile">
+      <TabViewItem title="Profile" ios:iconSource="res://profile" cssClass="tabItem">
         <TabViewItem.view>
           <StackLayout verticalAlignment="center" horizontalAlignment="center" orientation="vertical">
 		        <!-- <Image src="~/Downloads/download.jpeg" stretch ="none" / >  -->

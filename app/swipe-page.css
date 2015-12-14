@@ -1,24 +1,7 @@
-/*.card {
+.card {
+	font-size: 18;
 	background-color: #34495e;
-	color: #00FF00;
-}*/
-
-.cardPrevious {
-	background-color: #34495e;
-	color: #00FF00;
-	visibility: visible;
-}
-
-.cardNext {
-	background-color: #34495e;
-	color: #00FF00;
-	visibility: visible;
-}
-
-.cardCurrent {
-	background-color: #34495e;
-	color: #00FF00;
-	visibility: visible;
+	color: #07DD07;
 }
 
 .cardContainer {

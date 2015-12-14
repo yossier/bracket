@@ -1,4 +1,4 @@
-Page{
+Page {
     background-color: #f4f4f4;
 }
 
@@ -55,7 +55,7 @@ Page{
 }
 
 .categoryTitle {
-    font-size: 13;
+    font-size: 18;
 }
 .arrow {
     font-size: 15;
@@ -147,4 +147,8 @@ TextField {
 
 #registerPrompt{
     font-size: 10;
+}
+
+.tabItem {
+    background-color: #808080;
 }
