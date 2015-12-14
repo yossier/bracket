@@ -179,7 +179,7 @@ function pageLoaded(args) {
 	});
 
 	function handleEdges() {
-		console.log("index: " + indexes[context] + " in handleEdges");
+		// console.log("index: " + indexes[context] + " in handleEdges");
 		if(indexes[context] === 0) {
 			swipeCardPrevious.style.visibility = "collapse";
 			swipeCardNext.style.visibility = "visible";
@@ -203,12 +203,13 @@ function pageLoaded(args) {
 		}
 	};
 
-	page.on(pageModule.Page.navigatingFromEvent, function (isBackNavigation) {
-    	if(isBackNavigation) {
-    		console.log("in isBackNavigation");
-    		// page.css = "cardPrevious { visibility: collapse }";
-    	}
-	});
+	// page.on(pageModule.Page.navigatingFromEvent, function (isBackNavigation) {
+ //    	if(isBackNavigation) {
+ //    		console.log("in isBackNavigation");
+ //    		// page.css = "cardPrevious { visibility: collapse }";
+ //    		page.css = "cardPrevious { opacity: 0 }";
+ //    	}
+	// });
 
 }
 exports.pageLoaded = pageLoaded;
