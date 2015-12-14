@@ -17,7 +17,6 @@ var page = "";
 exports.loaded = function(args) {
     page = args.object;
     page.bindingContext = response;
-    console.log("this changed");
 };
 
 
@@ -46,7 +45,7 @@ exports.print = function() {
 
     console.log(numCorrect);
     if (numCorrect === (names.length)){
-    	alert("ALL ARE CORRECT!");
+        alert("You successfully completed the challenge!");
     }
 
 

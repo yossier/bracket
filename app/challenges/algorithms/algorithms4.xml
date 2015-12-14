@@ -1,0 +1,76 @@
+<Page loaded="loaded">
+  <ScrollView>
+	<StackLayout orientation="vertical">
+		<WrapLayout>
+            <Label cssClass="description1 indent0" text="/* GOAL: Find elt's correct location, "/>
+        </WrapLayout>
+        <WrapLayout> 
+            <Label cssClass="description2 indent0" text="* in a sorted array."/>
+        </WrapLayout>
+         <WrapLayout>
+            <Label cssClass="description2 indent0" text="* Return index elt would be placed."/>
+        </WrapLayout>
+        <WrapLayout>
+            <Label cssClass="description2 indent0" text="* Place elt before an elt of equal value."/>
+        </WrapLayout>
+        <WrapLayout>
+            <Label cssClass="description2 indent0" text="* In [0, 1, 3, 4], return index 2."/>
+        </WrapLayout>
+        <WrapLayout>
+            <Label cssClass="description3 indent0" text="*/"/>
+        </WrapLayout>
+		<!-- Line 1 - Function Declaration -->
+		<WrapLayout>
+			<Label cssClass= "type" text="int " />
+			<Label cssClass= "functionTitle" text="eltPlacement"/>
+			<Label cssClass= "plain" text="("/>
+			<Label cssClass="type" text="int"/>
+			<Label cssClass="plain" text=" array["/>
+			<Label cssClass="number" text="10"/>
+			<Label cssClass="plain" text="], "/>
+			<Label cssClass="type" text="int"/>
+			<Label cssClass="plain" text=" elt){"/>
+		</WrapLayout>
+		<!-- Line 2 smallestElt declaration -->
+		<WrapLayout></WrapLayout>
+		<!-- Line 3 - For Loop Declaration -->
+		<WrapLayout>
+			<Label cssClass="statement indent1" text="for"/>
+			<Label cssClass="plain" text=" ("/>
+			<Label cssClass="type" text="int "/>
+			<Label cssClass="plain" text="i = "/>
+			<TextField id="iSet" cssClass="twoChar" hint="??" text="{{ iSet }}"/>
+			<Label cssClass="plain" text="; i &lt; "/>
+			<TextField id="condition10" cssClass="twoChar" hint="??" text="{{ condition10 }}"/>
+			<Label cssClass="plain" text="; ++i){"/>
+		</WrapLayout>
+		<WrapLayout></WrapLayout>
+		<!-- Line 4 - If Declaration -->
+		<WrapLayout>
+			<Label cssClass="statement indent2" text="if "/>
+			<Label cssClass="plain" text="("/>
+			<TextField id="arrI" cssClass="big" hint="????????" text= "{{ arrI }}"/>
+			<Label cssClass="plain" text=" &gt;= "/>
+			<TextField id="eltCheck" cssClass="big" hint="????" text="{{ eltCheck }}"/>
+			<Label cssClass="plain" text="){"/>
+		</WrapLayout>
+		<!-- Line 5 - Set smallestElt -->
+		<WrapLayout>
+			<TextField id="returnStatement" cssClass="big indent4" hint="??????" text="{{ returnStatement }}"/>
+			<Label cssClass="plain" text=" i;"/>
+		</WrapLayout>
+		<!-- Line 6 - End Bracket If -->
+		<WrapLayout>
+			<Label cssClass="plain indent2" text="}"/>
+		</WrapLayout>
+		<!-- Line 7 - End Bracket For -->
+		<WrapLayout>
+			<Label cssClass="plain indent1" text="}"/>
+		</WrapLayout>
+		<WrapLayout>
+			<Label cssClass="plain" text="}"/>
+		</WrapLayout>
+		<Button text="Submit" cssClass="submitButton" tap="print"/>
+	</StackLayout>
+</ScrollView>
+</Page>

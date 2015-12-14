@@ -45,7 +45,7 @@ exports.print = function() {
 
     console.log(numCorrect);
     if (numCorrect === (names.length)){
-    	alert("ALL ARE CORRECT!");
+        alert("You successfully completed the challenge!");
     }
 
 

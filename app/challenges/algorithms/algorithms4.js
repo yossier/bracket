@@ -2,7 +2,11 @@ var observableModule = require("data/observable");
 
 // inside brackets of text fields - data binding
 var response = new observableModule.Observable({
-    bigO4: "",
+    iSet: "",
+    condition10: "",
+    arrI: "",
+    eltCheck: "",
+    returnStatement: "",
 });
 
 var frameModule = require("ui/frame");
@@ -16,15 +20,20 @@ exports.loaded = function(args) {
 
 
 exports.print = function() {
-    var bigO4 = (response.bigO4).replace(/ /g,'');
+    var iSet = (response.iSet).replace(/ /g,'');
+    var condition10 = (response.condition10).replace(/ /g,'');
+    var arrI = (response.arrI).replace(/ /g,'');
+    var eltCheck = (response.eltCheck).replace(/ /g,'');
+    var returnStatement = (response.returnStatement).replace(/ /g,'');
 
-    var names = ["bigO4"];
-    var vals = [bigO4];
-    var correct = ["n^2"];
+
+    var names = ["iSet", "condition10", "arrI", "eltCheck", "returnStatement"];
+    var vals = [iSet, condition10, arrI, eltCheck, returnStatement];
+    var correct = [0, 10, "array[i]", "elt", "return"];
     var numCorrect = 0;
 
     for (var i = 0; i < names.length; i++){
-    	if (vals[i].toLowerCase() != correct[i] || vals[i].length == 0){
+    	if (vals[i].toLowerCase() != correct[i]){
     		page.addCss("#" + names[i] + " {border-color: red; background-color: #ffcccc}");
 		}
     	else{
