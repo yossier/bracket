@@ -1,33 +1,36 @@
 <Page xmlns="http://www.nativescript.org/tns.xsd" loaded="pageLoaded" actionBarHidden="false">
 	<Page.actionBar>
-		<ActionBar title="{{ title }}"/>
-	 </Page.actionBar>
-  <TabView id="homeTabView" selectedColor="#07DD07" selectedIndex="{{ selectedIndex }}" >
+		<ActionBar>
+			<ActionBar.titleView>
+		        <StackLayout orientation="horizontal">
+		          <Label cssClass="bracketBarTitle" text="&#60; " />
+		          <Label cssClass="tabViewTitle" text="{{ title }}" />
+		          <Label cssClass="bracketBarTitle" text="&#62; " />
+		        </StackLayout>
+	      	</ActionBar.titleView>
+	     </ActionBar>
+	</Page.actionBar>
+  <TabView id="homeTabView" selectedColor="#07DD07" selectedIndex="{{ selectedIndex }}" ios:cssClass="ios-tab-view">
     <TabView.items>
-      <TabViewItem title="Challenges" ios:iconSource="res://challenges" cssClass="tabItem">
+      <TabViewItem title="Challenges" ios:iconSource="{{ selectedIndex == 0 ? 'res://challenges-1' : 'res://challenges' }}" cssClass="tabItem">
         <TabViewItem.view>
 					  <!-- <Label id="navHeader" text="&#60; Choose A Challenge &#62;" horizontalAlignment="stretch" cssId="banner"/> -->
             
             <ScrollView>
               <ListView id="category-list" items="{{ categoryList }}" >
                 <ListView.itemTemplate>
-                  <GridLayout columns="auto, *" tap="{{ handler }}">
-                    <StackLayout col="1" orientation="horizontal" verticalAlignment="center" >
-                      <Image src="res://icon" stretch="none" verticalAlignment="center" cssClass="list-image"/>
+                    <StackLayout orientation="horizontal" tap="{{ handler }}" >
+                      <Image src="{{ imgSrc }}" stretch="none" verticalAlignment="center" cssClass="list-image"/>
                       <Label cssClass="categoryTitle" text="{{ name }}" verticalAlignment="center" />
-                      <Label text="&#62;" textWrap="true" verticalAlignment="center" cssClass=".arrow" />
+                      <Label cssClass="arrow" verticalAlignment="center" text=" &#62;"/>
                     </StackLayout>
-                    <StackLayout>
-
-                    </StackLayout>
-                  </GridLayout>
                 </ListView.itemTemplate>
               </ListView>
             </ScrollView>
         </TabViewItem.view>
       </TabViewItem>
       
-      <TabViewItem title="Leaderboard" ios:iconSource="res://leaderboard" cssClass="tabItem">
+      <TabViewItem title="Leaderboard" ios:iconSource="{{ selectedIndex == 1 ? 'res://leaderboard-1' : 'res://leaderboard' }}" cssClass="tabItem">
         <TabViewItem.view>
         	<ScrollView>
 	        <StackLayout orientation="vertical">
@@ -82,7 +85,7 @@
         </TabViewItem.view>
       </TabViewItem>
      
-      <TabViewItem title="Profile" ios:iconSource="res://profile" cssClass="tabItem">
+      <TabViewItem title="Profile" ios:iconSource="{{ selectedIndex == 2 ? 'res://profile-1' : 'res://profile' }}" cssClass="tabItem">
         <TabViewItem.view>
           <StackLayout verticalAlignment="center" horizontalAlignment="center" orientation="vertical">
 		        <!-- <Image src="~/Downloads/download.jpeg" stretch ="none" / >  -->

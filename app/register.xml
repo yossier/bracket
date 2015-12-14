@@ -1,4 +1,7 @@
 <Page xmlns="http://schemas.nativescript.org/tns.xsd" loaded="loaded" actionBarHidden="true">
+  <Page.actionBar>
+    <ActionBar/>
+  </Page.actionBar>
   <ScrollView>
     <StackLayout orientation="vertical">
       <Label text="&lt;bracket&gt;" horizontalAlignment="center" cssClass="title logoText"/>
