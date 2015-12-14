@@ -21,6 +21,17 @@
 	border-color: #07DD07;
 	border-width: 2;
 	border-radius: 8;
+	height: 55;
+	width: 105;
+	margin:0;
+}
+
+#moveBackButton {
+	margin-right: 20;
+}
+
+#buttonContainer {
+	width: 250;
 }
 
 .swipe-page-back {

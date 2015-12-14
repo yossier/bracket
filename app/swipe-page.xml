@@ -6,7 +6,7 @@
 	        <StackLayout orientation="horizontal">
 	          <Label cssClass="bracketBarTitle" text="&#60; " />
 	          <Label cssClass="tabViewTitle" text="{{ title }}" />
-	          <Label cssClass="bracketBarTitle" text="&#62; " />
+	          <Label cssClass="bracketBarTitle" text=" &#62;" />
 	        </StackLayout>
       	</ActionBar.titleView>
 	 </ActionBar>
