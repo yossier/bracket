@@ -1,5 +1,4 @@
 <Page loaded="loaded">
-<ScrollView>
 	<StackLayout orientation="vertical">
 		<WrapLayout>
             <Label cssClass="description1 indent0" text="/* GOAL: Implement the IntStack Class."/>
@@ -101,5 +100,4 @@
 		</WrapLayout>
 		<Button text="Submit" cssClass="submitButton" tap="print"/>
 	</StackLayout>
-</ScrollView>
 </Page>

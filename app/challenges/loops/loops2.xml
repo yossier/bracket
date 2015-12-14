@@ -1,6 +1,15 @@
 <Page loaded="loaded">
   <ScrollView>
 	<StackLayout orientation="vertical">
+		<WrapLayout>
+            <Label cssClass="description1 indent0" text="/* GOAL: search array for val."/>
+        </WrapLayout>
+        <WrapLayout> 
+            <Label cssClass="description2 indent0" text="* Return how many times val occurs."/>
+        </WrapLayout>
+        <WrapLayout>
+            <Label cssClass="description3 indent0" text="*/"/>
+        </WrapLayout>
 		<!-- Line 1 - Function Declaration -->
 		<WrapLayout>
 			<Label cssClass= "type" text="int " />
@@ -14,12 +23,6 @@
 			<Label cssClass="plain" text="],"/>
 			<Label cssClass="type" text="int "/>
 			<Label cssClass="plain" text="val){"/>
-		</WrapLayout>
-		<WrapLayout>
-			<Label cssClass= "type indent1" text="int " />
-			<Label cssClass="plain" text="countPerRow = "/>
-			<TextField id="CPR" cssClass="oneChar" hint="??" text="{{ CPR }}"/>
-			<Label cssClass="plain" text=";"/>
 		</WrapLayout>
 		<WrapLayout>
 			<Label cssClass= "type indent1" text="int " />
@@ -52,9 +55,6 @@
 			<Label cssClass="plain" text="("/>
 			<TextField id="ifval" cssClass="big" hint="???????" text = "{{ ifval }}"/>
 			<Label cssClass="plain" text=" == val){"/>
-		</WrapLayout>
-		<WrapLayout>
-			<Label cssClass="plain indent4" text="++countPerRow;"/>
 		</WrapLayout>
 		<WrapLayout>
 			<Label cssClass="plain indent4" text="++"/>
