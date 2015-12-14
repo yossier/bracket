@@ -5,7 +5,7 @@ function ChallengeListViewModel(items) {
     var viewModel = new ObservableArray(items);
 
     viewModel.load = function(category = null) {
-        var challenges_append = "/challenges" + category ? "/" + category : "";
+        var challenges_append = "challenges" + category ? "/" + category : "";
         //if (category)
         //    challenges_append += "/" + category;
         
