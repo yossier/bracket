@@ -36,6 +36,8 @@ var pageData = new observableModule.Observable({
 	title: ""
 });
 
+var didPageLoadFromChallenge = false;
+
 function pageLoaded(args) {
     var page = args.object;
 
@@ -104,7 +106,7 @@ function pageLoaded(args) {
 		var challengeDescriptions = loops;
 	} else if (context === "recursion") {
 		var challengeDescriptions = recursion;
-	}
+	} 
 
 	handleEdges();
 
@@ -236,26 +238,41 @@ function pageLoaded(args) {
       	code.previous = challengeDescriptions[cardIndex - 1];
       	code.next = challengeDescriptions[cardIndex + 1];
      };
+
+     	if ( typeof this.oldLeftMiddle === 'undefined' ) {
+	        this.oldLeftMiddle = swipeCard._oldLeft;
+	        this.oldLeftPrevious = swipeCardPrevious._oldLeft;
+	        this.oldLeftNext = swipeCardNext._oldLeft;
+	    }
      
-     moveBackButton.on(buttonModule.Button.tapEvent, function (args) {
-    	if (canSwipe("previous")) {
-    		moveBack();
-    	}
-	 });
+     if (!didPageLoadFromChallenge) {
+     	moveBackButton.on(buttonModule.Button.tapEvent, function (args) {
+	    	console.log("previous button tapped");
+	    	if (canSwipe("previous")) {
+	    		moveBack();
+	    	}
+		 });
 
-	 moveForwardButton.on(buttonModule.Button.tapEvent, function (args) {
-    	if (canSwipe("next")) {
-    		moveForward();
-    	}
-	 });
+		 moveForwardButton.on(buttonModule.Button.tapEvent, function (args) {
+	    	console.log("next button tapped");
+	    	if (canSwipe("next")) {
+	    		moveForward();
+	    	}
+		 });
+     }
 
-	// page.on(pageModule.Page.navigatingFromEvent, function (isBackNavigation) {
- //    	if(isBackNavigation) {
- //    		console.log("in isBackNavigation");
- //    		// page.css = "cardPrevious { visibility: collapse }";
- //    		page.css = "cardPrevious { opacity: 0 }";
- //    	}
-	// });
+	page.on(pageModule.Page.navigatingToEvent, function (args) {
+    	if(args.isBackNavigation) {
+    		console.log("loaded from challenge");
+    		didPageLoadFromChallenge = true;
+    	} else {
+    		didPageLoadFromChallenge = false;
+    	}
+	});
+
+	page.on(pageModule.Page.navigatingFromEvent, function (args) {
+    	didPageLoadFromChallenge = false;
+	});
 
 }
 exports.pageLoaded = pageLoaded;
