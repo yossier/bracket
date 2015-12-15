@@ -1,4 +1,5 @@
 <Page loaded="loaded">
+<ScrollView>
 	<StackLayout orientation="vertical">
 		<WrapLayout>
             <Label cssClass="descriptionSingle indent0" text="/* GOAL: Determine the BigO of this function */"/>
@@ -89,5 +90,5 @@
 		</WrapLayout>
 		<Button text="Submit" cssClass="submitButton" tap="print"/>
 	</StackLayout>
-
+</ScrollView>
 </Page>
