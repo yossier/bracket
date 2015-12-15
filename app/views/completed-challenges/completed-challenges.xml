@@ -4,18 +4,15 @@
 	</Page.actionBar>
 
   <ScrollView>
-    <Repeater items="{{ completed_challenge_list }}">
-      <Repeater.itemsLayout>
-        <StackLayout orientation="vertical" />
-      </Repeater.itemsLayout>
-      <Repeater.itemTemplate>
-        <WrapLayout>
-          <Label text="{{ title }}" />
-          <Label text="{{ user_score, ' Score: ' + user_score  }}"/>
-          <Label text="{{ max_points, ' Max: ' + max_points  }}" />
-        </WrapLayout>
-      </Repeater.itemTemplate>
-    </Repeater>
+    <ListView items="{{ user.challenges }}">
+      <ListView.itemTemplate>
+        <GridLayout columns="*, *" rows="*, *" horizontalAlignment="stretch">
+          <Label text="{{ title }}" row="0" col="0" colSpan="2" horizontalAlignment="center" cssClass="lname" />
+          <Label text="{{user_score, ' Score: ' + user_score  }}" row="1" col="0" colSpan="1" horizontalAlignment="center" cssClass=".pts" />
+          <Label text="{{ max_points, ' Max: ' + max_points  }}" row="1" col="1" colSpan="1" horizontalAlignment="center" cssClass=".pts" />
+        </GridLayout>
+      </ListView.itemTemplate>
+    </ListView>
   </ScrollView>
   
 </Page>

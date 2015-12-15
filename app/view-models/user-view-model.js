@@ -3,6 +3,9 @@ var Observable = require("data/observable").Observable;
 var ObservableArray = require("data/observable-array").ObservableArray;
 var validator = require("email-validator");
 
+var challenges = new ObservableArray([]);
+
+
 function User(info) {
     info = info || {};
 
@@ -16,7 +19,7 @@ function User(info) {
         total_points: info.total_points || "",
         completed_challenges: info.completed_challenges || "",
         attempted_challenges: info.attempted_challenges || "",
-        challenges: new ObservableArray([])
+        challenges: challenges
     });
 
     //Method to get basic user info 
@@ -92,18 +95,36 @@ function User(info) {
     };
 
     viewModel.getCompletedChallenges = function(){
-        return fetch(config.apiUrl + "users/" + viewModel.get("id")+"/completed-challenges")
+        return fetch(config.apiUrl + "users/" + viewModel.get("id") + "/completed-challenges")
             .then(handleErrors)
             .then(function (response) {
                 return response.json();
             })
             .then(function (data) {
                 console.log('getting data');
-                viewModel.get("challenges").push(data.challenges);
+                viewModel.emptyChallenges();
+                data.challenges.forEach(function(challenge) {
+                    
+                    challenges.push({
+                        title: challenge.challenge_title,
+                        id: challenge.challenge_id,
+                        category: challenge.challenge_category,
+                        completed: challenge.challenge_completed,
+                        max_points: challenge.challenge_points,
+                        user_score: challenge.user_score,
+                    });
+                    
+                });
+                
                 viewModel.set("attempted_challenges", data.attempted_challenges);
                 viewModel.set("completed_challenges", data.completed_challenges);
             });
     }
+
+    viewModel.emptyChallenges = function() {
+        while(challenges.length)
+            challenges.pop();
+    };
     
     viewModel.isValidEmail = function() {
         var email = this.get("email");
