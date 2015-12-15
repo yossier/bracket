@@ -31,23 +31,25 @@ var pageData = new observableModule.Observable({
 
 var actionBarTitleList = ["Choose a Challenge", "Leaderboard", "Profile"];
 
+
 function pageLoaded(args) {
 	var page = args.object;
     page.bindingContext = pageData;
     
     var tabView  = view.getViewById(page, "homeTabView");
-    var repeaterView = view.getViewById(page, "topTenList");
     var activityIndicatorTopTen = view.getViewById(page, "actIndTopTen");
+    
     tabView.on(tabViewModule.TabView.selectedIndexChangedEvent, function(eventData){
         newIndex = eventData.newIndex;
+        topTen.empty();
         pageData.set("title", actionBarTitleList[newIndex]);
         if (newIndex === 1) {
+            
             pageData.set("topTenIsLoading", true);
             activityIndicatorTopTen.visibility = "visible";
             topTen.empty();
             topTen.getTopTenUsers()
                 .then(function() {
-//                    repeaterView.refresh();
                     pageData.set("topTenIsLoading", false);
                     activityIndicatorTopTen.visibility = "collapse";
                 })

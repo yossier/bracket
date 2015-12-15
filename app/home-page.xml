@@ -41,10 +41,10 @@
                   <StackLayout orientation="vertical" />
                 </Repeater.itemsLayout>
                 <Repeater.itemTemplate>
-                  <GridLayout columns="*, *" rows="*, *" verticalAlignment="left" horizontalAlignment="stretch">
-                    <Border cssClass="elts" row="0" col="0" rowSpan="2" colSpan="2"></Border>
+                  <GridLayout columns="*, *, *" rows="*, *" verticalAlignment="left" horizontalAlignment="stretch">
+                    <Border cssClass="elts" row="0" col="0" rowSpan="2" colSpan="3"></Border>
                     <Label cssClass="rank" text="{{ num, '&#35;' + num }}" row="0" rowSpan="2" col="0"/>
-                    <Label horizontalAlign="left" id="n1" cssClass="lname" row="0" col="1">
+                    <Label horizontalAlign="Left" id="n1" cssClass="lname" row="0" col="1" colSpan="2">
                       <Label.formattedText>
                         <FormattedString>
                           <FormattedString.spans>
