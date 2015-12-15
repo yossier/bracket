@@ -198,12 +198,18 @@ function pageLoaded(args) {
 		if(indexes[context] === 0) {
 			swipeCardPrevious.style.visibility = "collapse";
 			swipeCardNext.style.visibility = "visible";
+			moveBackButton.style.opacity = 0;
+			moveForwardButton.style.opacity = 1;
 		} else if (indexes[context] === challengeDescriptions.length - 1) {
 			swipeCardPrevious.style.visibility = "visible";
 			swipeCardNext.style.visibility = "collapse";
+			moveBackButton.style.opacity = 1;
+			moveForwardButton.style.opacity = 0;
 		} else {
 			swipeCardPrevious.style.visibility = "visible";
 			swipeCardNext.style.visibility = "visible";
+			moveBackButton.style.opacity = 1;
+			moveForwardButton.style.opacity = 1;
 		}
 	};
 
