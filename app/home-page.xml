@@ -35,16 +35,30 @@
         <TabViewItem.view>
         	<ScrollView>
 	          <StackLayout orientation="vertical">
-              <ActivityIndicator busy="{{ topTenIsLoading }}" />
-              <Repeater items="{{ topTen }}">
-
+              <ActivityIndicator busy="{{ topTenIsLoading }}" id="actIndTopTen" />
+              <Repeater items="{{ topTen }}" id="topTenList">
                 <Repeater.itemsLayout>
-                  <DockLayout />
+                  <StackLayout orientation="vertical" />
                 </Repeater.itemsLayout>
-                <Repeater.itemsTemplate>
-                  <Label text="{{ num, 'Rank: #' + num }}" dock="left" />
-                  
-                </Repeater.itemsTemplate>
+                <Repeater.itemTemplate>
+                  <GridLayout columns="*, *" rows="*, *" verticalAlignment="left" horizontalAlignment="stretch">
+                    <Border cssClass="elts" row="0" col="0" rowSpan="2" colSpan="2"></Border>
+                    <Label cssClass="rank" text="{{ num, '&#35;' + num }}" row="0" rowSpan="2" col="0"/>
+                    <Label horizontalAlign="left" id="n1" cssClass="lname" row="0" col="1">
+                      <Label.formattedText>
+                        <FormattedString>
+                          <FormattedString.spans>
+                            <Span text="{{ first_name, first_name + ' ' }}" /> <Span text="{{ last_name }}" />
+                          </FormattedString.spans>
+                        </FormattedString>
+                      </Label.formattedText>
+                    </Label>
+                    <WrapLayout row="1" col="1">
+                      <Label cssClass="pts" text="Points: "/>
+                      <Label id="place1" cssClass="pts" text="{{ points }}"/>
+                    </WrapLayout>
+                  </GridLayout>
+                </Repeater.itemTemplate>
               </Repeater>
 	          </StackLayout>
 	        </ScrollView>

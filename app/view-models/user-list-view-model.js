@@ -11,9 +11,9 @@ function UserListViewModel(items) {
                 return response.json();
             })
             .then(function(data) {
-                var i = 0;
+                var i = 1;
                 data.users.forEach(function(user) {
-                    console.log("Email: " + user.email + ", Name: "+ user.first_name +" " + user.last_name + " Points: " + user.points );
+                    //console.log("Email: " + user.email + ", Name: "+ user.first_name +" " + user.last_name + " Points: " + user.points );
                     viewModel.push({
                         num: i,
                         email: user.email,

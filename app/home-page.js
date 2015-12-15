@@ -11,7 +11,7 @@ var frameModule = require("ui/frame");
 
 
 var user = new UserViewModel({loading: false});
-var userList = new UserListViewModel([]);
+var topTen = new UserListViewModel([]);
 var categoryList = new observableArrayModule.ObservableArray([
     { name: "Recursion", imgSrc:"res://recursion", handler: () => { navigation.goToSwipePage("recursion"); }},
     { name: "Data Structures", imgSrc:"res://data_structures", handler: () => { navigation.goToSwipePage("dataStructures"); }},
@@ -26,7 +26,7 @@ var pageData = new observableModule.Observable({
     categoryList: categoryList,
     selectedIndex: 0,
     topTenIsLoading: false,
-    topTen: userList
+    topTen: topTen
 });
 
 var actionBarTitleList = ["Choose a Challenge", "Leaderboard", "Profile"];
@@ -35,21 +35,28 @@ function pageLoaded(args) {
 	var page = args.object;
     page.bindingContext = pageData;
     
-    var tabView  = view.getViewById(page, "homeTabView");    
+    var tabView  = view.getViewById(page, "homeTabView");
+    var repeaterView = view.getViewById(page, "topTenList");
+    var activityIndicatorTopTen = view.getViewById(page, "actIndTopTen");
     tabView.on(tabViewModule.TabView.selectedIndexChangedEvent, function(eventData){
         newIndex = eventData.newIndex;
         pageData.set("title", actionBarTitleList[newIndex]);
         if (newIndex === 1) {
-            userList.empty();
             pageData.set("topTenIsLoading", true);
-            userList.getTopTenUsers()
+            activityIndicatorTopTen.visibility = "visible";
+            topTen.empty();
+            topTen.getTopTenUsers()
+                .then(function() {
+//                    repeaterView.refresh();
+                    pageData.set("topTenIsLoading", false);
+                    activityIndicatorTopTen.visibility = "collapse";
+                })
                 .catch(function(error) {
                     dialogs.alert({
                         message: "Unable to fetch top ten users. Please try again in a little while" + error,
                         okButtonText: "OK"
                     });
                 });
-            pageData.set("topTenIsLoading", false);
         }
         if (newIndex === 2)
             getUserInfo();

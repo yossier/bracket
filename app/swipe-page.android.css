@@ -1,0 +1,40 @@
+.swipe-page {
+	background-color: #f4f4f4;
+}
+
+.card {
+	font-size: 18;
+	background-color: #34495e;
+	color: #07DD07;
+}
+
+.cardContainer {
+	top:0;
+	left: 0;
+}
+
+.swipePageButton {
+	font-size: 12;
+	background-color: #f4f4f4;
+	color:#414141;
+  font-weight: bold;
+	border-color: #07DD07;
+	border-width: 2;
+	border-radius: 8;
+	height: 55;
+	width: 105;
+	margin:0;
+}
+
+#moveBackButton {
+	margin-right: 20;
+}
+
+#buttonContainer {
+	width: 250;
+}
+
+.swipe-page-back {
+	background-color: #07DD07;
+	color:#07DD07;
+}
