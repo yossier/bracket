@@ -31,13 +31,16 @@ var pageData = new observableModule.Observable({
 
 var actionBarTitleList = ["Choose a Challenge", "Leaderboard", "Profile"];
 
-
 function pageLoaded(args) {
 	var page = args.object;
     page.bindingContext = pageData;
+    //topTen.empty();
     
     var tabView  = view.getViewById(page, "homeTabView");
     var activityIndicatorTopTen = view.getViewById(page, "actIndTopTen");
+    var repeater = view.getViewById(page, "topTenList");
+
+    //repeater.refresh();
     
     tabView.on(tabViewModule.TabView.selectedIndexChangedEvent, function(eventData){
         newIndex = eventData.newIndex;
@@ -47,7 +50,7 @@ function pageLoaded(args) {
             
             pageData.set("topTenIsLoading", true);
             activityIndicatorTopTen.visibility = "visible";
-            topTen.empty();
+            //topTen.empty();
             topTen.getTopTenUsers()
                 .then(function() {
                     pageData.set("topTenIsLoading", false);
@@ -59,6 +62,7 @@ function pageLoaded(args) {
                         okButtonText: "OK"
                     });
                 });
+            //            repeater.refresh();
         }
         if (newIndex === 2)
             getUserInfo();
@@ -126,3 +130,7 @@ exports.complexity_cb = function() {
 exports.signOut = navigation.signOut;
 
 exports.compChallenges = ()=>{ navigation.goToCompletedChallengesPage(); };
+
+exports.onNavigatedTo = function() {
+    topTen.empty();
+};
