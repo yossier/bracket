@@ -11,7 +11,7 @@ var completedChallengeList = new observableArrayModule.ObservableArray([
 var user = new User();
 
 var pageData = new observableModule.Observable({
-    title: "Completed and Attempted Challenges",
+    title: "Completed & Attempted Challenges",
     user: user
 });
 
