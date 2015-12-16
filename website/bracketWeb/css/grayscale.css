@@ -192,9 +192,13 @@ a:focus {
 
 .logoW{
     /*color: #0375be !important;*/
-    color: black !important; 
+    color: #414141 !important; 
     text-transform: lowercase;
     /*BLUE*/
+}
+
+.fa.fa-angle-double-down {
+    color: #414141 !important; 
 }
 
 .bc{
