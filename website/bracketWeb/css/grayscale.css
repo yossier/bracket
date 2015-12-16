@@ -185,18 +185,20 @@ a:focus {
 }
 
 .logoS{
-    color: #808285 !important; 
+    /*color: #808285 !important; */
+    color: #18db00 !important;
     /*GRAY*/
 }
 
 .logoW{
-    color: #0375be !important;
+    /*color: #0375be !important;*/
+    color: black !important; 
     text-transform: lowercase;
     /*BLUE*/
 }
 
 .bc{
-    color: #0375be !important;
+    color: #18db00 !important;
 }
 
 .intro .intro-body .intro-text {
@@ -224,7 +226,7 @@ a:focus {
     height: 70px;
     margin-top: 15px;
     padding: 7px 16px;
-    border: 2px solid #0375be;
+    border: 2px solid #18db00;
     border-radius: 100%!important;
     font-size: 40px;
     color: #fff;
@@ -294,7 +296,7 @@ a:focus {
 }
 
 #about h2, #download h2, #contact h2{
-    color: #0375be;
+    color: #18db00;
 }
 
 #about p, #download p, #contact p{
@@ -316,6 +318,7 @@ a:focus {
 .content-section {
     padding-top: 100px;
     background-color: #e7e8e8;
+    /*background-color: #ebebeb;*/
 }
 
 .download-section {
