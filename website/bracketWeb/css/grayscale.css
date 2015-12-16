@@ -67,6 +67,11 @@ a:focus {
     margin-bottom: 6%;
 }
 
+.inside{
+    display: inline-block;
+    text-align: center;
+}
+
 .screenshots img{
     margin-left: 2%;
 }
